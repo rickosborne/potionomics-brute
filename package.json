@@ -1,0 +1,26 @@
+{
+	"devDependencies": {
+		"@istanbuljs/esm-loader-hook": "0.2.0",
+		"chai": "4.3.10",
+		"eslint": "8.50.0",
+		"eslint-plugin-jsdoc": "46.8.2",
+		"eslint-plugin-mocha": "10.2.0",
+		"eslint-plugin-sort-keys-fix": "1.1.2",
+		"esm": "3.2.25",
+		"mocha": "10.2.0",
+		"n-readlines": "1.0.1",
+		"nyc": "15.1.0"
+	},
+	"name": "potionomics-brute",
+	"private": true,
+	"scripts": {
+		"brute": "node --no-warnings --experimental-specifier-resolution=node --experimental-modules scripts/brute.js",
+		"lint": "eslint .",
+		"lint:fix": "eslint --fix .",
+		"test": "mocha",
+		"test:coverage": "NODE_OPTIONS='--no-warnings --experimental-loader=@istanbuljs/esm-loader-hook' nyc mocha",
+		"update": "npx npm-check-updates -u"
+	},
+	"type": "module",
+	"version": "1.0.0"
+}

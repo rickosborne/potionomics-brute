@@ -1,0 +1,54 @@
+{
+	"root": true,
+	"env": {
+		"es2021": true
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:jsdoc/recommended",
+		"plugin:mocha/recommended"
+	],
+	"parserOptions": {
+		"sourceType": "module"
+	},
+	"plugins": [
+		"jsdoc",
+		"mocha",
+		"sort-keys-fix"
+	],
+	"rules": {
+		"comma-dangle": [
+			"error",
+			"always-multiline"
+		],
+		"jsdoc/require-param-description": "off",
+		"jsdoc/require-property-description": "off",
+		"jsdoc/require-returns-description": "off",
+		"mocha/no-mocha-arrows": "off",
+		"semi": [
+			"error",
+			"always"
+		],
+		"semi-style": [
+			"error",
+			"last"
+		],
+		"sort-keys": [
+			"error",
+			"asc",
+			{
+				"allowLineSeparatedGroups": true,
+				"caseSensitive": false,
+				"natural": false
+			}
+		],
+		"sort-keys-fix/sort-keys-fix": [
+			"error",
+			"asc",
+			{
+				"caseSensitive": false,
+				"natural": false
+			}
+		]
+	}
+}

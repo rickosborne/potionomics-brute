@@ -1,0 +1,15 @@
+{
+	"node-option": [
+		"no-warnings",
+		"experimental-specifier-resolution=node"
+	],
+	"ignore": [
+		"**/node_modules/**"
+	],
+	"extension": [
+		"js"
+	],
+	"spec": [
+		"**/*.test.js"
+	]
+}

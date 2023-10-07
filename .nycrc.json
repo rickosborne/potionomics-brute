@@ -1,0 +1,11 @@
+{
+	"all": true,
+	"check-coverage": false,
+	"exclude": [
+		"**/node_modules/**",
+		"**/*.test.js"
+	],
+	"include": [
+		"src/**/*.js"
+	]
+}

@@ -1,0 +1,193 @@
+Name	A	B	C	D	E	Magimin	Price	Value	Taste	Touch	Smell	Sight	Sound	PriceMod	Type	Rarity	Location
+Fairy Flower Bulb	4	0	0	0	0	4	14	0.286			Good			5%	Flower	Common	Enchanted Forest
+Impstool Mushroom	0	4	0	0	0	4	17	0.235		Good				5%	Fungus	Common	Enchanted Forest
+Rotfly Larva	0	0	4	0	0	4	10	0.400	Good					5%	Bug	Common	Enchanted Forest
+Feyberry	6	0	0	0	0	6	4	1.500						0%	Fruit	Common	Enchanted Forest
+Mandrake Root	0	6	0	0	0	6	4	1.500						0%	Plant	Common	Enchanted Forest
+Sack of Slime	0	0	6	0	0	6	7	0.857						0%	Slime	Common	Enchanted Forest
+Kappa Pheromones	4	0	4	0	0	8	13	0.615						0%	Essences	Uncommon	Enchanted Forest
+Pixiedust Diamond	0	4	4	0	0	8	14	0.571						0%	Gem	Uncommon	Enchanted Forest
+River Calamari	8	0	0	0	0	8	5	1.600		Bad				-5%	Fish	Common	Enchanted Forest
+River-Pixie's Shell	4	4	0	0	0	8	11	0.727						0%	Mineral	Uncommon	Enchanted Forest
+Serpent's Slippery Tongue	0	8	0	0	0	8	6	1.333			Bad			-5%	Flesh	Common	Enchanted Forest
+Unicorn Horn	0	0	8	0	0	8	6	1.333	Bad					-5%	Bone	Common	Enchanted Forest
+Cubic Ooze	3	3	3	0	0	9	16	0.563						0%	Slime	Rare	Enchanted Forest
+Desert Metal	0	12	0	0	0	12	25	0.480		Good				5%	Ores	Common	Bone Wastes
+Fairy Flower Bud	12	0	0	0	0	12	23	0.522			Good			5%	Flower	Common	Bone Wastes
+Murkwater Pearl	0	0	0	12	0	12	27	0.444					Good	5%	Gem	Uncommon	Mushroom Mire
+Rotfly Cocoon	0	0	12	0	0	12	25	0.480	Good					5%	Bug	Uncommon	Bone Wastes
+Trollstool Mushroom	0	12	0	0	0	12	20	0.600		Good				5%	Fungus	Common	Mushroom Mire
+Wraith Orchid	0	0	0	12	0	12	19	0.632						0%	Flower	Common	Mushroom Mire
+Bramble Rose	16	0	0	0	0	16	45	0.356		Good			Good	10%	Flower	Uncommon	Sulfuric Falls
+Celestial Ore	0	0	16	0	0	16	45	0.356	?	?	?	?	?	10%
+Eye of Newt	0	16	0	0	0	16	34	0.471	Good	Good				10%	Flesh	Uncommon	Ice Craggs
+Crocodile Tooth	6	0	12	0	0	18	20	0.900						0%	Bone	Common	Bone Wastes
+Glass Ore	0	0	0	18	0	18	24	0.750						0%	Ores	Common	Bone Wastes
+Horned Jelly	18	0	0	0	0	18	20	0.900		Bad			Good	0%	Slime	Uncommon	Bone Wastes
+Manwyrm Root	0	18	0	0	0	18	14	1.286						0%	Plant	Common	Bone Wastes
+Mud Shrimp	6	0	12	0	0	18	""				Good			5%	Fish	Rare	Mushroom Mire
+Puckberry	18	0	0	0	0	18	16	1.125						0%	Fruit	Common	Mushroom Mire
+Sack of Hive Slime	0	0	18	0	0	18	21	0.857						0%	Slime	Common	Mushroom Mire
+Sphinx Flea	12	6	0	0	0	18	35	0.514		Good				5%	Bug	Rare	Bone Wastes
+Swamp Fish	12	0	0	6	0	18	22	0.818						0%	Fish	Common	Mushroom Mire
+Fairy Flower Bloom	20	0	0	0	0	20	35	0.571			Good			5%	Flower	Common	Storm Plains
+Giantstool Mushroom	0	20	0	0	0	20	80	0.250		Good				5%	Fungus	Common	Shadow Steppe
+Rotfly Adult	0	0	20	0	0	20	38	0.526	Good					5%	Bug	Uncommon	Ocean Coasts
+Shadowveil Pearl	0	0	0	20	0	20	38	0.526					Good	5%	Gem	Uncommon	Storm Plains
+Basilisk's Cornea	0	22	0	0	0	22	54	0.407	Good	Good				10%	Flesh	Uncommon	Past day 30
+Nether Ore	0	0	22	0	0	22	51	0.431			Good	Good		10%	Ores	Rare	Past day 30
+Figment Pomme	0	18	6	0	0	24	26	0.923						0%	Fruit	Uncommon	Bone Wastes
+Ghostlight Bloom	18	0	0	6	0	24	28	0.857						0%	Flower	Uncommon	Mushroom Mire
+Golem's-Eye Diamond	0	12	12	0	0	24	28	0.857						0%	Gem	Uncommon	Bone Wastes
+Leech Snail's Shell	12	12	0	0	0	24	26	0.923						0%	Mineral	Uncommon	Bone Wastes
+Miasma Spore	0	18	0	6	0	24	30	0.800						0%	Fungus	Uncommon	Mushroom Mire
+Qilin's Tri-Horn	0	0	24	0	0	24	18	1.333	Bad					-5%	Bone	Common	Mushroom Mire
+Salamander's Fiery Tongue	0	24	0	0	0	24	22	1.091			Bad			-5%	Flesh	Common	Bone Wastes
+Swamp Octopus	24	0	0	0	0	24	18	1.333		Bad				-5%	Fish	Common	Mushroom Mire
+Warg Pheromones	12	0	12	0	0	24	26	0.923						0%
+Bog Beet	0	27	0	0	0	27	27	1.000	Bad			Good		0%	Plant	Rare	Mushroom Mire
+Hydra Vertebra	9	9	9	0	0	27	35	0.771						0%	Bone	Common	Mushroom Mire
+Antlered Jelly	30	0	0	0	0	30	28	1.071		Bad			Good	0%	Slime	Uncommon	Shadow Steppe
+Bogeyberry	30	0	0	0	0	30	30	1.000						0%	Fruit	Common	Shadow Steppe
+Cobweb Crayfish	10	0	20	0	0	30	48	0.625			Good			5%	Fish	Rare	Storm Plains
+Electrocution Eel	10	10	10	0	0	30	45	0.667					Good	5%	Fish	Uncommon	Shadow Steppe
+Fulgurite Ore	0	0	0	30	0	30	40	0.750						0%	Ores	Uncommon	Shadow Steppe
+Hallucinatory Shroom	0	0	30	0	0	30	18	1.667	Good				Bad	#REF!	Fungus	Rare	Storm Plains
+Jelly Blossom	0	0	0	0	30	30	55	0.545						0%
+Mandragon Root	0	30	0	0	0	30	34	0.882						0%	Plant	Common	Ocean Coasts
+Moss Berries	0	10	0	20	0	30	35	0.857						0%	Fruit	Common	Mushroom Mire
+Reef Radish	0	30	0	0	0	30	32	0.938	Bad			Good		0%	Plant	Rare	Ocean Coasts
+Sack of Composite Slime	0	0	30	0	0	30	18	1.667						0%	Slime	Common	Storm Plains
+Selkie Lice	10	20	0	0	0	30	50	0.600		Good				5%	Bug	Rare	Ocean Coasts
+Static Spiderling	0	0	0	0	30	30	50	0.600				Good	Bad	0%	Bug	Rare	Shadow Steppe
+Crag Crab	0	0	0	0	32	32	75	0.427			Good			5%	Fish	Rare	Crystalline Forest
+Daydream Pomme	0	24	8	0	0	32						Good	Good	10%	Fruit	Rare	Sulfuric Falls
+Djinn Blossom	24	0	0	8	0	32	68	0.471	Good		Good			10%	Flower	Uncommon	Past day 30
+Lustrous Pearl	0	0	0	32	0	32	60	0.533					Good	5%	Gem	Common	Ice Craggs
+Rock Salt	24	0	0	0	8	32	68	0.471	Good			Good		10%	Mineral	Uncommon	Crystalline Forest
+Rotfly Matriarch	0	0	32	0	0	32			Good					5%	Bug	Common	Sulfuric Falls
+Frog Leg	0	0	24	12	0	36	33	1.091					Bad	-5%	Flesh	Epic	Bone Wastes
+Banshee's Bloody Tongue	0	40	0	0	0	40	32	1.250			Bad			-5%	Flesh	Common	Storm Plains
+Barghast Canine	0	30	0	0	10	40	110	0.364						0%	Bone	Rare	Storm Plains
+Dwarf Kraken	40	0	0	0	0	40	30	1.333		Bad				-5%	Fish	Common	Ocean Coasts
+Golemite	18	12	0	10	0	40	38	1.053						0%	Mineral	Rare	Bone Wastes
+Nessie Pheromones	20	0	20	0	0	40	50	0.800						0%	Essences	Common	Ocean Coasts
+Phantom Pomme	0	10	30	0	0	40	64	0.625	Good			Bad		0%	Fruit	Epic	Ocean Coasts
+Photonic Spore	0	10	0	30	0	40	52	0.769	Bad		Good			0%	Fungus	Epic	Storm Plains
+Raiju Droppings	0	0	30	10	0	40	55	0.727						0%	Essences	Uncommon	Shadow Steppe
+Raven's Shadow	0	10	12	18	0	40	52	0.769						0%	Essence	Rare	Mushroom Mire
+Saltwatermelon	0	0	0	40	0	40	44	0.909					Bad	-5%	Fruit	Uncommon	Ocean Coasts
+Sea Salt	30	0	0	0	10	40	55	0.727						0%	Mineral	Uncommon	Ocean Coasts
+Slapping Turtle's Shell	20	20	0	0	0	40	92	0.435						0%	Mineral	Common	Shadow Steppe
+Spider's-Bait Diamond	0	20	20	0	0	40	50	0.800						0%	Gem	Uncommon	Storm Plains
+Spriggan Antler	0	0	40	0	0	40	38	1.053	Bad					-5%	Bone	Uncommon	Shadow Steppe
+Thunderbird's Molted Feather	0	0	30	0	10	40	60	0.667						0%	Flesh	Rare	Shadow Steppe
+Bubble Ooze	9	9	12	12	0	42	60	0.700						0%	Slime	Epic	Mushroom Mire
+Blackfrost Lobster	0	0	0	0	44	44	104	0.423			Good			5%	Fish	Uncommon	Past day 30
+Diamond Salt	33	0	0	0	11	44	85	0.518	Good			Good		10%	Mineral	Uncommon	Past day 30
+Dragonbreath Blossom	33	0	0	11	0	44	76	0.579	Good		Good			10%	Flower	Uncommon	Past day 30
+Dragonfire Pearl	0	0	0	44	0	44	76	0.579					Good	5%	Gem	Rare
+Nightmare Pomme	0	33	11	0	0	44						Good	Good	10%	Fruit	Rare	Past day 30
+Rotfly Mutant	0	0	44	0	0	44	74	0.595	Good					5%	Bug	Common	Past day 30
+Acid Rutabaga	0	48	0	0	0	48	54	0.889	Bad			Good		0%	Plant	Common	Sulfuric Falls
+Delirium Shroom	0	0	48	0	0	48	63	0.762	Good			Bad		0%	Fungus	Common	Ice Craggs
+Feathered Gelatin	0	0	0	48	0	48	62	0.774		Good	Bad			0%	Slime	Uncommon	Crystalline Forest
+Harpy's Heart of Stone	16	0	0	32	0	48	76	0.632		Good				5%	Flesh	Uncommon	Crystalline Forest
+Sepulcher Widow	0	0	0	0	48	48	82	0.585				Good	Bad	0%	Bug	Uncommon	Crystalline Forest
+Sequined Custard	0	0	32	0	16	48	84	0.571				Good		5%	Slime	Uncommon	Ice Craggs
+Courtier's Orchid	8	24	24	0	0	56	72	0.778			Good			5%	Flower	Epic	Crystalline Forest
+Phoenix Tear	0	24	24	8	0	56	82	0.683		Good				5%	Essence	Epic	Ice Craggs
+Abyssalite	30	20	0	0	10	60	79	0.759						0%	Mineral	Uncommon	Ocean Coasts
+Copper Dollop	15	15	15	15	0	60	95	0.632						0%	Slime	Rare	Shadow Steppe
+Dropspider's Shadow	0	0	30	20	10	60	90	0.667						0%	Essences	Rare	Storm Plains
+Fire Flower	40	0	0	20	0	60	55	1.091			Bad			-5%	Flower	Rare	Shadow Steppe
+Malachite Ore	30	10	0	0	20	60	93	0.645						0%	Ores	Rare	Ocean Coasts
+Mosquito Plant	10	0	20	0	30	60	105	0.571						0%	Plant	Epic	Storm Plains
+Thunder Quartz	30	10	20	0	0	60	144	0.417						0%	Gem	Uncommon	Shadow Steppe
+Creeping Mildew	16	0	0	0	48	64								0%	Fungus	Uncommon	Sulfuric Falls
+Daredevil Pepper	0	32	0	32	0	64	90	0.711						0%	Plant	Common	Ice Craggs
+Geode Citrus	0	16	0	0	48	64	94	0.681						0%	Fruit	Uncommon	Ice Craggs
+Griffin's-Whetstone Diamond	0	32	32	0	0	64	86	0.744						0%	Gem	Common	Crystalline Forest
+Lamia's Shed Scales	0	0	0	48	16	64	110	0.582						0%
+Medusa Spore	0	48	0	16	0	64	94	0.681	Bad		Good			0%	Fungus	Common	Crystalline Forest
+Naga's Fang	0	48	0	0	16	64	98	0.653		Bad			Good	0%	Bone	Common	Sulfuric Falls
+Ogre's Shadow	32	0	32	0	0	64	74	0.865						0%	Essences	Common	Ice Craggs
+Owlbear Pheromones	0	0	0	0	64	64	90	0.711			Bad			-5%	Essences	Uncommon	Ice Craggs
+Rottermelon	0	0	0	64	0	64	68	0.941				Bad		-5%	Fruit	Common	Sulfuric Falls
+Scimitar Crab's Shell	32	32	0	0	0	64								0%	Mineral	Common	Sulfuric Falls
+Shelled Pudding	32	0	0	32	0	64	90	0.711						0%	Slime	Common	Sulfuric Falls
+Silver Stag Antler	0	0	64	0	0	64	72	0.889	Bad					-5%	Bone	Common	Crystalline Forest
+Watchdog Daisy	0	16	0	48	0	64	83	0.771						0%			Ice Craggs
+Abominable Tarantula	0	0	0	0	66	66	105	0.629				Bad	Good	0%	Bug	Uncommon	Past day 30
+Bedazzled Custard	0	0	44	0	22	66	95	0.695	?	?	?	?	?	5%
+Jotunn's Frozen Heart	22	0	0	44	0	66	98	0.673		Good				5%	Flesh	Uncommon	Past day 30
+Pandemonium Shroom	66	0	0	0	0	66	72	0.917	Good				Bad	0%	Fungus	Common	Past day 30
+Winged Gelatin	0	0	0	66	0	66	103	0.641		Good	Bad			0%	Slime	Uncommon	Past day 30
+Squid Vine	20	20	15	0	15	70	135	0.519						0%	Plant	Rare	Ocean Coasts
+Hangman Eel	24	24	24	0	0	72	95	0.758						0%
+Jeweled Scarab	0	24	24	24	0	72	105	0.686						0%	Bug	Common	Ice Craggs
+Mote of Mana	15	15	15	15	15	75	130	0.577						0%	Pure Mana	Epic	Storm Plains
+Slaughtermelon	0	0	0	76	0	76	105	0.724				Bad		-5%	Fruit	Common	Past day 30
+Dragon Tear	0	33	33	11	0	77	118	0.653		Good				5%	Essences	Uncommon	Past day 30
+Orchid of the Ice Princess	11	33	0	33	0	77	116	0.664			Good			5%	Flower	Rare	Past day 30
+Amphitere's Shadow	44	0	44	0	0	88	114	0.772						0%	Essences	Common	Past day 30
+Body Snatcher's Sloughed Skin	0	0	0	66	22	88	132	0.667						0%	Flesh	Rare	Past day 30
+Direwolf's-Breath Diamond	0	44	44	0	0	88	118	0.746						0%	Gem	Common	Past day 30
+Dragon Pheromones	0	0	0	0	88	88	151	0.583			Bad			-5%	Essences	Uncommon	Past day 30
+Dragonegg Citrus	0	22	0	0	66	88	124	0.710						0%	Fruit	Uncommon	Past day 30
+Elder Being's Tusk	0	66	0	0	22	88	114	0.772		Bad			Good	0%	Bone	Uncommon	Past day 30
+Hellhound Daisy	0	22	0	66	0	88	125	0.704						0%	Flower	Uncommon	Past day 30
+Space Nautilus's Shell	44	44	0	0	0	88	102	0.863						0%
+Widowmaker Pepper	0	44	0	44	0	88	126	0.698						0%	Plant	Common	Past day 30
+Acid Pitfall Plant	16	0	40	0	40	96	145	0.662						0%	Plant	Uncommon	Sulfuric Falls
+Bioplasm	0	48	32	16	0	96	125	0.768				Good	Bad	0%	Essences	Rare	Sulfuric Falls
+Chimera Waste	0	0	64	32	0	96	118	0.814			Bad			-5%	Essences	Common	Ice Craggs
+Harpy's Snare	24	24	24	0	24	96	150	0.640						0%	Plant	Epic	Crystalline Forest
+Silver Dollop	24	24	24	24	0	96	138	0.696						0%	Slime	Epic	Ice Craggs
+Stalking Skeleton's Fibula	0	0	40	40	16	96	150	0.640						0%	Bone	Uncommon	Crystalline Forest
+Supernalite	48	32	0	16	0	96	134	0.716	Bad				Good	0%	Mineral	Rare	Crystalline Forest
+Avalanche Cricket	24	24	32	32	0	112	140	0.800	Good	Bad				0%	Bug	Common	Crystalline Forest
+Ember of Mana	24	24	24	24	24	120	165	0.727						0%	Pure Mana	Epic	Crystalline Forest
+Blightroach	0	42	42	42	0	126	185	0.681						0%	Bug	Common	Past day 30
+Cyclops Skull	0	0	42	42	42	126	200	0.630						0%	Bone	Common	Past day 30
+Lethal Injection Eel	42	42	42	0	0	126	164	0.768						0%	Fish	Common	Past day 30
+Death's Embrace	33	33	33	0	33	132	196	0.673						0%
+Dragon Dung	0	0	88	44	0	132	173	0.763			Bad			-5%	Essences	Uncommon	Past day 30
+Draugr's Tibia	0	0	55	55	22	132	184	0.717						0%	Bone	Uncommon	Past day 30
+Gold Dollop	33	33	33	33	0	132	176	0.750						0%	Slime	Rare	Past day 30
+Hoarite	55	55	0	22	0	132	167	0.790						0%
+Liquid Metal Ore	0	44	88	0	0	132	162	0.815		Bad				-5%	Ores	Common	Past day 30
+Xenoplasm	0	55	55	22	0	132	83	1.590				Good	Bad	0%	Essences	Rare
+Buoyant Blowfish	96	0	48	0	0	144	138	1.043				Bad	Bad	-10%	Fish	Uncommon	Crystalline Forest
+Charredonnay	48	0	48	24	24	144	260	0.554	?	?	?	?	?	-5%
+Lazuli Ore	64	48	0	0	32	144	174	0.828				Bad		-5%	Ores	Rare	Ice Craggs
+Pegasus Mite	96	48	0	0	0	144	134	1.075		Bad		Bad		-10%	Bug	Uncommon	Ice Craggs
+Poison Quartz	64	48	0	32	0	144	185	0.778				Bad		-5%	Gem	Rare	Sulfuric Falls
+Mana Blaze	50	40	30	20	10	150	234	0.641						0%
+Frost Hopper	33	33	44	44	0	154	196	0.786	Good	Bad				0%	Bug	Common	Past day 30
+Amethyst Ore	66	66	0	0	33	165	206	0.801					Bad	-5%	Ores	Uncommon	Past day 30
+Cosmic Quartz	66	33	0	66	0	165	204	0.809					Bad	-5%	Gem	Uncommon	Past day 30
+Arcane Truffle	0	42	42	42	42	168	236	0.712						0%
+Ectoplasm	0	70	70	28	0	168	226	0.743				Good	Bad	0%	Essences	Rare	Past day 30
+Lich's Femur	0	0	70	70	28	168	247	0.680						0%	Bone	Uncommon	Past day 30
+Nuclear Shadow	0	70	70	28	0	168	228	0.737		Good				5%	Essences	Rare	Past day 30
+Orchid of the Witch Queen	28	70	0	70	0	168	248	0.677			Good			5%	Flower	Rare	Past day 30
+Platinum Slime	42	42	42	42	0	168	178	0.944						0%	Slime	Rare	Past day 30
+Sorcerite	70	70	0	28	0	168	232	0.724	Bad				Good	0%	Mineral	Rare	Past day 30
+Venous Witch-Trap	28	0	70	0	70	168	214	0.785						0%	Plant	Uncommon	Past day 30
+Witchbramble Vine	42	42	42	0	42	168	210	0.800						0%
+Shallow Grave Enoki	32	64	64	32	0	192	100	1.920		Bad	Bad			-10%	Fungus	Rare	Ice Craggs
+Dragonblood Tick	132	66	0	0	0	198	174	1.138		Bad			Bad	-10%	Bug	Uncommon	Past day 30
+Icicle Pufferfish	132	0	66	0	0	198	210	0.943				Bad	Bad	-10%	Fish	Uncommon	Past day 30
+Xeno Noir	66	0	66	33	33	198	236	0.839	Bad					-5%	Fruit	Rare	Past day 30
+Blackgold Ore	84	84	0	0	42	210	256	0.820					Bad	-5%	Ores	Uncommon	Past day 30
+Mana Heart	28	28	28	98	28	210	450	0.467						0%	Pure Mana	Epic	Past day 30
+Mana Maelstrom	98	28	28	28	28	210	375	0.560				Good	Good	10%	Pure Mana	Epic	Past day 30
+Mana Prism	28	28	98	28	28	210	425	0.494		Good			Good	10%	Pure Mana	Epic	Past day 30
+Mana Singularity	28	28	28	28	98	210	475	0.442			Good	Good		10%	Pure Mana	Epic	Past day 30
+Mana Vortex	28	98	28	28	28	210	400	0.525	Good			Good		10%	Pure Mana	Epic	Past day 30
+Hocus Locust	28	28	140	28	0	224	287	0.780	Good	Bad				0%	Bug	Epic	Past day 30
+Underworld Pomegranate	28	28	28	140	0	224	332	0.675						0%
+Funeral Pyre Enoki	88	88	44	44	0	264	280	0.943		Bad	Bad			-10%	Fungus	Epic	Past day 30
+Sinfandel	80	0	80	80	40	280	362	0.773	Bad					-5%	Fruit	Rare	Past day 30
+Mass Grave Enoki	56	112	112	56	0	336	386	0.870						0%
