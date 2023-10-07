@@ -48,3 +48,20 @@ export let Potion;
  * @type {ExpandedPotion}
  */
 export let ExpandedPotion;
+
+/**
+ * @typedef PotionsRow
+ * @type {object}
+ * @property {string} Name
+ * @property {string} Category
+ * @property {string} A
+ * @property {string} B
+ * @property {string} C
+ * @property {string} D
+ * @property {string} E
+ */
+
+/**
+ * @type {PotionsRow}
+ */
+export let PotionsRow;

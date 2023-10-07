@@ -51,3 +51,29 @@ export let IngredientType;
  * @type {Ingredient}
  */
 export let Ingredient;
+
+/**
+ * @typedef IngredientsRow
+ * @type {object}
+ * @property {string} Name
+ * @property {string} A
+ * @property {string} B
+ * @property {string} C
+ * @property {string} D
+ * @property {string} E
+ * @property {string} Price
+ * @property {string} Taste
+ * @property {string} Touch
+ * @property {string} Smell
+ * @property {string} Sight
+ * @property {string} Sound
+ * @property {string} PriceMod
+ * @property {string} Type
+ * @property {string} Rarity
+ * @property {string} Location
+ */
+
+/**
+ * @type {IngredientsRow}
+ */
+export let IngredientsRow;

@@ -9,18 +9,6 @@
 export let Tier;
 
 /**
- * @type {string[]}
- */
-export const TIER_NAMES = [
-    "Minor",
-    "Common",
-    "Greater",
-    "Grand",
-    "Superior",
-    "Masterwork",
-];
-
-/**
  * @typedef Stars
  * @type {0|1|2|3|4|5}
  */

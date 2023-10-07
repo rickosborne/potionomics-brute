@@ -3,10 +3,9 @@ import process from "node:process";
 import {parseArgs} from "node:util";
 import {multiChooseCount} from "../src/combinations.js";
 import {countdownTimer} from "../src/countdown-timer.js";
+import {givens} from "../src/givens.js";
 import {lastSeenRecipe} from "../src/last-seen-recipe.js";
 import {Ledger} from "../src/ledger.js";
-import {loadIngredients} from "../src/load-ingredients.js";
-import {loadPotions} from "../src/load-potions.js";
 import {TryEverything} from "../src/try-everything.js";
 import {COLORS} from "../src/type/color.js";
 
@@ -46,19 +45,11 @@ const {
     },
     strict: true,
 });
-const chapterLocations = {
-    "1": ["Enchanted Forest", "Bone Wastes", "Mushroom Mire"],
-    "2": ["Shadow Steppe", "Ocean Coasts", "Storm Plains"],
-    "3": ["Sulfuric Falls", "Crystalline Forest", "Ice Craggs"],
-    "4": ["Dragon Oasis", "Crater", "Arctic", "Past day 30"],
-    "5": ["Magical Wasteland"],
-};
-
 wantChapters.forEach((chapter) => {
-    chapterLocations[chapter].forEach((location) => wantLocations.push(location));
+    givens.chapterLocations[chapter].forEach((location) => wantLocations.push(location));
 });
 const maxItems = parseInt(wantMax, 10);
-const potions = loadPotions().filter((p) => wantPotions.length === 0 || wantPotions.includes(p.name));
+const potions = givens.potions.filter((p) => wantPotions.length === 0 || wantPotions.includes(p.name));
 const needColors = {
     A: false,
     B: false,
@@ -75,7 +66,7 @@ potions.forEach((potion) => {
 });
 const colorsWanted = COLORS.filter((color) => needColors[color]);
 console.log(`Loaded ${potions.length} potions`);
-const rawIngredients = loadIngredients();
+const rawIngredients = givens.ingredients;
 const ingredientsAfterLocations = rawIngredients
     .filter((i) => wantLocations.length === 0 || wantLocations.includes(i.location));
 const ingredients = ingredientsAfterLocations
