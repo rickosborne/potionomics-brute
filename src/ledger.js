@@ -1,4 +1,6 @@
 import console from "node:console";
+import {mkdirSync} from "node:fs";
+import {existsSync} from "./exists-sync.js";
 import {RECIPE_DB_HEADERS} from "./recipe-db-headers.js";
 import {spreadsheetStream} from "./spreadsheet-stream.js";
 import {IngredientName} from "./type/ingredient.js";
@@ -22,6 +24,9 @@ export class Ledger {
         const prefix = prefixMaybe ?? "";
         // const allFilePath = `db/${prefix}recipes-all.tsv`;
         // this.allOut = spreadsheetStream(allFilePath, RECIPE_DB_HEADERS);
+        if (!existsSync("db")) {
+            mkdirSync("db");
+        }
         this.perfectOut = spreadsheetStream(`db/${prefix}recipes-perfect.tsv`, RECIPE_DB_HEADERS);
         this.stableOut = spreadsheetStream(`db/${prefix}recipes-stable.tsv`, RECIPE_DB_HEADERS);
         this.stableCutoff = stableCutoff ?? 0.95;
@@ -55,7 +60,12 @@ export class Ledger {
     }
 
     /**
-     * @param {{key: ?(LedgerKey|undefined), potion: Potion, quality: Quality, recipe: Recipe, stability: number}} mixture
+     * @param {object} mixture
+     * @param {LedgerKey} [mixture.key]
+     * @param {Potion} mixture.potion
+     * @param {Quality} mixture.quality
+     * @param {Recipe} mixture.recipe
+     * @param {number} mixture.stability
      * @returns {void}
      */
     recordRecipe({key: maybeKey, recipe, potion, quality, stability}) {

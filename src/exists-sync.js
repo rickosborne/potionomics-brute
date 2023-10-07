@@ -2,8 +2,9 @@ import {Stats, statSync} from "node:fs";
 import {isFunction} from "./is-function.js";
 
 /**
+ * @function
  * @param {string} path
- * @param {?(function(Stats):boolean)} predicate
+ * @param {function(Stats):boolean} [predicate]
  * @returns {boolean}
  */
 export const existsSync = (path, predicate) => {

@@ -9,7 +9,9 @@ import {assertIsString, isString} from "./is-string";
  * @template T
  * @param {!string} filePath
  * @param {!(function({[key:string]:*}):T)} rowMapper
- * @param {{delimiter: ?(string | RegExp)=, headers: ?(string[] | undefined)}} config
+ * @param {{}} [config]
+ * @param {string | RegExp} [config.delimiter]
+ * @param {string[]} [config.headers]
  * @returns {T[]}
  */
 export const loadSpreadsheet = (filePath, rowMapper, {delimiter, headers} = {}) => {

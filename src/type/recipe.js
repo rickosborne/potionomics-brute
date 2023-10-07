@@ -22,11 +22,11 @@ import {NEUTRAL, Sensation} from "./sense.js";
  * @property {Sensation} smell
  * @property {Sensation} sight
  * @property {Sensation} sound
- * @property {?(string|undefined)} key
- * @property {?(PotionName|undefined)} potionName
- * @property {?(Tier|undefined)} tier
- * @property {?(Stars|undefined)} stars
- * @property {?(number|undefined)} stability
+ * @property {string} [key]
+ * @property {PotionName} [potionName]
+ * @property {Tier} [tier]
+ * @property {Stars} [stars]
+ * @property {number} [stability]
  */
 
 /**
