@@ -15,9 +15,7 @@ Approximately 1 in every 100,000 yields a Perfect potion.
 But, as the largest cauldron accepts 14 ingredients, and there are 192 ingredients total, there's no way to try every
 single one:
 
-> 192 multichoose 14 &rarr; 1,686,493,144,133,056,300,000
-
-My napkin math says that's about 380M compute-years.
+> 206 multichoose 14 &rarr; 4,380,486,799,548,977,500,000
 
 A laptop running overnight can generally get you into combinations of 8 ingredients.
 If you're willing to target a single potion, or limit yourself to ingredients from the first chapter or two, you'll get

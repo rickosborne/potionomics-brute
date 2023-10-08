@@ -1,0 +1,39 @@
+Name	Price	IngredientCost	MaxIngredients	MaxMagimins	UnlockDay	Description
+Wooden Cauldron			4	75	1	A basic cauldron. This repurposed rain barrel suits your needs, but just barely.
+Clay Cauldron			6	115	3	Muktuk's test cauldron. It's a cauldron only Muktuk can lift.
+Mudpack Cauldron	100		6	160	3	Channels the macabre magic of things lost and buried in the mud.
+Mudpack+ Cauldron	85	Ghostlight Bloom	6	180	3	Channels the macabre magic of things lost and buried in the mud.
+Mudpack++ Cauldron	110	Bog Beet	7	225	3	Deeper mud. Older fossils. More potent magic
+Glass Cauldron	100		7	140	3	Though physically fragile, this cauldron of bone and glass has an impressive magical affinity for heat.
+Glass+ Cauldron	85	Golem's-Eye Diamond	7	170	3	Though physically fragile, this cauldron of bone and glass has an impressive magical affinity for heat.
+Glass++ Cauldron	110	Sphinx Flea	8	200	3	The addition of metallic salts adds color and durability to the standard glass-and-bone cauldron.
+Storm Cauldron	225		7	240	11	Adds a stylish spark to any shop.
+Storm+ Cauldron	195	Fulgurite Ore	8	295	11	Adds a stylish spark to any shop.
+Storm++ Cauldron	254	Static Spiderling	9	375	11	Potions really pop against the arcing lightning of this unit.
+Ocean Cauldron	225		8	240	11	This cauldron, made in the merfolk style, harnesses the primal magic of the sea. If the ocean is the cradle of life, then this is the mother of all cauldrons.
+Ocean+ Cauldron	195	Abyssalite	8	275	11	This cauldron, made in the merfolk style, harnesses the primal magic of the sea. If the ocean is the cradle of life, then this is the mother of all cauldrons.
+Ocean++ Cauldron	245	Reef Radish	8	320	11	A precise alloy of the sea metal, orichalcum, keeps this cauldron rust-free. Coral adds a flair of color and life-giving magic.
+Shadow Cauldron	225		7	255	11	Conquer your fear of the dark with this cauldron of the living shadow.
+Shadow+ Cauldron	195	Shadowveil Pearl	7	295	11	Conquer your fear of the dark with this cauldron of the living shadow.
+Shadow++ Cauldron	254	Dropspider's Shadow	7	345	11	There is unmistakable magic in the supernatural light that shines from this otherwise pitch-black cauldron.
+Crystal Cauldron	770		8	405	21	Based on Gothic motifs, this cauldron will surely wow your customers!
+Crystal+ Cauldron	440	Geode Citrus	9	480	21	Based on Gothic motifs, this cauldron will surely wow your customers!
+Crystal++ Cauldron	555	Lazuli Ore	10	575	21	Based on Gothic motifs and now pretty as can be, this cauldron will surely wow your customers!
+Steel Cauldron	770		8	420	21	Graceful details belie this industrial-strength cauldron's resilience to wear and tear.
+Steel+ Cauldron	440	Acid Pitfall Plant	8	480	21	Graceful details belie this industrial-strength cauldron's resilience to wear and tear.
+Steel++ Cauldron	555	Charredonnay	8	540	21	Exposure to acid lakes and caustic creeks has rendered this cauldron impressively durable.
+Celestial Cauldron	770		9	405	21	First designed for high-altitude brewing, this cauldron really cranks up pressure.
+Celestial+ Cauldron	440	Feathered Gelatin	9	465	21	First designed for high-altitude brewing, this cauldron really cranks up pressure.
+Celestial++ Cauldron	555	Supernalite	9	505	21	Crafted from celestial materials, this cauldron will bring your potion-making to new heights
+Arctic Cauldron	1730		10	640	31	Warded against heat, this icy cauldron allows the skilled potion-maker great control.
+Arctic+ Cauldron	985	Jotunn's Frozen Heart	11	785	31	Warded against heat, this icy cauldron allows the skilled potion-maker great control.
+Arctic++ Cauldron	1310	Hoarite	12	975	31	Magical hoarfrost gives this model an icy edge.
+Crater Cauldron	1730		10	675	31	This cauldron's not from around here ...
+Crater+ Cauldron	985	Elder Being's Tusk	10	790	31	This cauldron's not from around here ...
+Crater++ Cauldron	1310	Xenoplasm	10	940	31	Weird and wonderful, this cauldron hums with alien magic.
+Dragon Cauldron	1730		11	640	31	The king of monsters has inspired a cauldron fit for a queen.
+Dragon+ Cauldron	985	Dragonbreath Blossom	11	750	31	The king of monsters has inspired a cauldron fit for a queen.
+Dragon++ Cauldron	1310	Gold Dollop	11	860	31	Forged in draconic fire, this is a cauldron of truly mythic proportions.
+Magical Wasteland Cauldron	3900		13	900	41	Harness the unbridled magics of the forbidden sector with this imposing creation.
+Magical Wasteland+ Cauldron	2220	Arcane Quartz	13	1150	41	Harness the unbridled magics of the forbidden sector with this imposing creation.
+Magical Wasteland++ Cauldron	2810	Sorcerite	14	2000	41	Embrace your inner wicker witch with a cauldron that radiates sinister magic.

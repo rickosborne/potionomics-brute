@@ -34,12 +34,12 @@ export let IngredientType;
  * @property {number} E
  * @property {IngredientName} name
  * @property {number} magimins
- * @property {number} [price]
+ * @property {number} price
  * @property {boolean} anyBad
  * @property {number} priceMod
- * @property {IngredientType} [type]
- * @property {RarityName} [rarity]
- * @property {LocationName} [location]
+ * @property {IngredientType} type
+ * @property {RarityName} rarity
+ * @property {LocationName} location
  * @property {Sensation} taste
  * @property {Sensation} touch
  * @property {Sensation} smell
