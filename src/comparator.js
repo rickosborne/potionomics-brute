@@ -12,6 +12,7 @@ export let Comparator;
  * @type {object}
  * @template T
  * @property {function(function(T):number):ComparatorBuilder.<T>} numbers
+ * @property {function():(ComparatorBuilder.<T>)} reversed
  * @property {function(function(T):string):ComparatorBuilder.<T>} strings
  * @property {function():(Comparator.<T>)} build
  */
@@ -48,7 +49,15 @@ export const comparatorBuilder = () => {
         },
         numbers(accessor) {
             list.push((a, b) => accessor(a) - accessor(b));
-						return cmp;
+            return cmp;
+        },
+        reversed() {
+            if (list.length < 1) {
+                throw new Error("Cannot reverse an empty comparator");
+            }
+            const comparator = list[list.length - 1];
+            list[list.length - 1] = (a, b) => -1 * comparator(a, b);
+            return cmp;
         },
         strings(accessor) {
             list.push((a, b) => accessor(a).localeCompare(accessor(b)));

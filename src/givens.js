@@ -4,7 +4,7 @@ import {loadSpreadsheet} from "./load-csv.js";
 import {locationFromLocationsRow} from "./location-from-locations-row.js";
 import {potionFromPotionsRow} from "./potion-from-potions-row.js";
 import {readJsonSync} from "./read-json-sync.js";
-import {Cauldron} from "./type/cauldron.js";
+import {Cauldron, CAULDRON_SIZE_MAX} from "./type/cauldron.js";
 import {Chapter} from "./type/chapter.js";
 import {Ingredient} from "./type/ingredient.js";
 import {Location} from "./type/location.js";
@@ -18,6 +18,7 @@ import {QualityTier, TierName} from "./type/tier.js";
  * @property {{[key: LocationName]: Chapter}} chaptersByLocation
  * @property {Ingredient[]} ingredients
  * @property {Location[]} locations
+ * @property {number} MAGIMINS_MAX
  * @property {Potion[]} potions
  * @property {QualityTier[]} qualityTiers
  * @property {TierName[]} tierNames
@@ -36,6 +37,8 @@ export const givens = (() => {
     let ingredients;
     /** @type {Location[]|undefined} */
     let locations;
+    /** @type {number|undefined} */
+    let MAGIMINS_MAX;
     /** @type {Potion[]|undefined} */
     let potions;
     /** @type {QualityTier[]|undefined} */
@@ -62,6 +65,11 @@ export const givens = (() => {
         get locations() {
             locations ??= Object.freeze(loadSpreadsheet("data/locations.tsv", locationFromLocationsRow));
             return locations;
+        },
+        /** @returns {number} */
+        get MAGIMINS_MAX() {
+            MAGIMINS_MAX ??= _givens.ingredients.map((i) => i.magimins).reduce((p, c) => Math.max(p, c)) * CAULDRON_SIZE_MAX;
+            return MAGIMINS_MAX;
         },
         /** @returns {Potion[]} */
         get potions() {

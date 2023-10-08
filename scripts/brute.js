@@ -10,6 +10,7 @@ import {lastSeenRecipe} from "../src/last-seen-recipe.js";
 import {Ledger} from "../src/ledger.js";
 import {intFrom, maybeIntFrom} from "../src/spreadsheet-helpers.js";
 import {TryEverything} from "../src/try-everything.js";
+import {CAULDRON_SIZE_MAX} from "../src/type/cauldron.js";
 import {COLORS} from "../src/type/color.js";
 
 const {
@@ -73,7 +74,7 @@ if (wantChapters.length > 0) {
         .reduce((p, c) => Math.max(p, c));
     console.log(`MaxItems: ${maxItems}`);
 }
-maxItems ??= 14;
+maxItems ??= CAULDRON_SIZE_MAX;
 const potions = givens.potions
     .filter((p) => wantPotions.length === 0 || wantPotions.includes(p.name))
     .filter((p) => chapters.length === 0 || chapters.includes(p.earliestChapter))

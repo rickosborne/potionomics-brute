@@ -41,3 +41,5 @@ export let CauldronsRow;
  */
 /** @type {Cauldron} */
 export let Cauldron;
+
+export const CAULDRON_SIZE_MAX = 14;

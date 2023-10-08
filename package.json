@@ -19,6 +19,7 @@
 		"lint:fix": "eslint --fix .",
 		"test": "mocha",
 		"test:coverage": "NODE_OPTIONS='--no-warnings --experimental-loader=@istanbuljs/esm-loader-hook' nyc mocha",
+		"recipe-options": "node --no-warnings --experimental-specifier-resolution=node --experimental-modules scripts/recipe-options.js",
 		"update": "npx npm-check-updates -u"
 	},
 	"type": "module",

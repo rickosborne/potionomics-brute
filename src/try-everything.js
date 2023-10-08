@@ -5,6 +5,7 @@ import {assertIsArray} from "./is-array.js";
 import {Ledger} from "./ledger.js";
 import {qualityFromMagimins} from "./quality-from-magimins.js";
 import {stabilityOfRecipe} from "./stability-of-recipe.js";
+import {CAULDRON_SIZE_MAX} from "./type/cauldron.js";
 import {Ingredient} from "./type/ingredient.js";
 import {Potion} from "./type/potion.js";
 import {EMPTY_RECIPE, Recipe} from "./type/recipe.js";
@@ -32,7 +33,7 @@ export class TryEverything {
             /** @type {function(Recipe):number} */
             stabilityFn: stabilityOfRecipe(potion),
         }));
-        this.maxItems = maxItems ?? 14;
+        this.maxItems = maxItems ?? CAULDRON_SIZE_MAX;
     }
 
     go() {
