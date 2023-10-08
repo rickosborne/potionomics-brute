@@ -1,3 +1,4 @@
+import {intFrom} from "./spreadsheet-helpers.js";
 import {Ingredient, IngredientsRow} from "./type/ingredient.js";
 
 /**
@@ -5,18 +6,18 @@ import {Ingredient, IngredientsRow} from "./type/ingredient.js";
  * @returns {Ingredient}
  */
 export const ingredientFromIngredientsRow = (row) => {
-    const A = parseInt(row.A, 10);
-    const B = parseInt(row.B, 10);
-    const C = parseInt(row.C, 10);
-    const D = parseInt(row.D, 10);
-    const E = parseInt(row.E, 10);
+    const A = intFrom(row.A);
+    const B = intFrom(row.B);
+    const C = intFrom(row.C);
+    const D = intFrom(row.D);
+    const E = intFrom(row.E);
     return {
         A, B, C, D, E,
-        earliestChapter: parseInt(row.earliestChapter, 10),
+        earliestChapter: intFrom(row.earliestChapter),
         location: row.location,
         magimins: A + B + C + D + E,
         name: row.name,
-        price: parseInt(row.price, 10),
+        price: intFrom(row.price),
         rarity: row.rarity,
         sight: row.sight,
         smell: row.smell,

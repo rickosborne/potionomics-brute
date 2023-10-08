@@ -22,7 +22,6 @@ import {NEUTRAL, Sensation} from "./sense.js";
  * @property {Sensation} sight
  * @property {Sensation} sound
  * @property {Chapter} earliestChapter
- * @property {string} [key]
  * @property {PotionName} [potionName]
  * @property {Tier} [tier]
  * @property {Stars} [stars]

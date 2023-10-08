@@ -23,7 +23,6 @@ describe("spreadsheet", () => {
             .forEach((ingredient) => {
                 recipe = addIngredient(recipe, ingredient);
             });
-        recipe.key = recipe.ingredientNames.join("+");
         recipe.potionName = "test";
         recipe.stability = randInt(0, 1000);
         recipe.stars = randInt(0, 5);

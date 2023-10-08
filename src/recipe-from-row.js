@@ -1,11 +1,24 @@
-import {undefIfEmpty} from "./is-empty.js";
+import {isEmpty, undefIfEmpty} from "./is-empty.js";
 import {optional} from "./optional.js";
 import {Recipe} from "./type/recipe.js";
 
 /**
  * @typedef RecipeRow
  * @type {object}
- * @property {string} key
+ * @property {string} ingredient01
+ * @property {string} ingredient02
+ * @property {string} ingredient03
+ * @property {string} ingredient04
+ * @property {string} ingredient05
+ * @property {string} ingredient06
+ * @property {string} ingredient07
+ * @property {string} ingredient08
+ * @property {string} ingredient09
+ * @property {string} ingredient10
+ * @property {string} ingredient11
+ * @property {string} ingredient12
+ * @property {string} ingredient13
+ * @property {string} ingredient14
  * @property {string} A
  * @property {string} B
  * @property {string} C
@@ -51,17 +64,31 @@ export const recipeFromRow = (row) => ({
     E: parseInt(row.E, 10),
     earliestChapter: parseInt(row.earliestChapter, 10),
     ingredientCount: intFromText(row.ingredientCount),
-    ingredientNames: row.key.split("+"),
-    key: undefIfEmpty(row.key),
+    ingredientNames: [
+        row.ingredient01,
+        row.ingredient02,
+        row.ingredient03,
+        row.ingredient04,
+        row.ingredient05,
+        row.ingredient06,
+        row.ingredient07,
+        row.ingredient08,
+        row.ingredient09,
+        row.ingredient10,
+        row.ingredient11,
+        row.ingredient12,
+        row.ingredient13,
+        row.ingredient14,
+    ].filter((i) => !isEmpty(i)),
     magimins: intFromText(row.magimins),
     potionName: undefIfEmpty(row.potionName),
     price: intFromText(row.price),
-    sight: undefIfEmpty(row.sight),
-    smell: undefIfEmpty(row.smell),
-    sound: undefIfEmpty(row.sound),
+    sight: row.sight,
+    smell: row.smell,
+    sound: row.sound,
     stability: optional(intFromText(row.stability)).map((n) => n / 1_000).orElse(undefined),
     stars: intFromText(row.stars),
-    taste: undefIfEmpty(row.taste),
+    taste: row.taste,
     tier: intFromText(row.tier),
-    touch: undefIfEmpty(row.touch),
+    touch: row.touch,
 });

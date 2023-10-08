@@ -1,3 +1,4 @@
+import {intFrom} from "./spreadsheet-helpers.js";
 import {Location, LocationsRow} from "./type/location.js";
 
 /**
@@ -6,6 +7,6 @@ import {Location, LocationsRow} from "./type/location.js";
  * @returns {Location}
  */
 export const locationFromLocationsRow = (row) => ({
-	chapter: parseInt(row.Chapter, 10),
-	name: row.Name,
+    chapter: intFrom(row.Chapter),
+    name: row.Name,
 });

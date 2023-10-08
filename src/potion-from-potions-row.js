@@ -1,3 +1,4 @@
+import {intFrom, maybeIntFrom} from "./spreadsheet-helpers.js";
 import {Potion, PotionsRow} from "./type/potion.js";
 
 /**
@@ -6,11 +7,13 @@ import {Potion, PotionsRow} from "./type/potion.js";
  * @returns {Potion}
  */
 export const potionFromPotionsRow = (row) => ({
-    A: parseInt(row.A, 10),
-    B: parseInt(row.B, 10),
-    C: parseInt(row.C, 10),
+    A: intFrom(row.A),
+    B: intFrom(row.B),
+    C: intFrom(row.C),
     category: row.Category,
-    D: parseInt(row.D, 10),
-    E: parseInt(row.E, 10),
+    D: intFrom(row.D),
+    E: intFrom(row.E),
+    earliestChapter: intFrom(row.EarliestChapter),
+    goalChapter: maybeIntFrom(row.GoalChapter),
     name: row.Name,
 });

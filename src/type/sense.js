@@ -26,22 +26,22 @@ export let Sensation;
 /**
  * @type {Sensation}
  */
-export const GOOD = "good";
+export const GOOD = "+";
 
 /**
  * @type {Sensation}
  */
-export const BAD = "bad";
+export const BAD = "-";
 
 /**
  * @type {Sensation}
  */
-export const NEUTRAL = "neutral";
+export const NEUTRAL = "";
 
 /**
  * @type {Sensation}
  */
-export const RANDOM = "random";
+export const RANDOM = "~";
 
 /**
  * @type {Sensation[]}

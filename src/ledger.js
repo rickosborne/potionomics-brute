@@ -3,7 +3,6 @@ import {mkdirSync} from "node:fs";
 import {existsSync} from "./exists-sync.js";
 import {RECIPE_DB_HEADERS} from "./recipe-db-headers.js";
 import {spreadsheetStream} from "./spreadsheet-stream.js";
-import {IngredientName} from "./type/ingredient.js";
 import {Potion} from "./type/potion.js";
 import {Quality} from "./type/quality.js";
 import {Recipe} from "./type/recipe.js";
@@ -52,27 +51,16 @@ export class Ledger {
     }
 
     /**
-     * @param {IngredientName[]} ingredientNames
-     * @returns {LedgerKey}
-     */
-    keyForNames(ingredientNames) {
-        return ingredientNames.slice().sort().join("+");
-    }
-
-    /**
      * @param {object} mixture
-     * @param {LedgerKey} [mixture.key]
      * @param {Potion} mixture.potion
      * @param {Quality} mixture.quality
      * @param {Recipe} mixture.recipe
      * @param {number} mixture.stability
      * @returns {void}
      */
-    recordRecipe({key: maybeKey, recipe, potion, quality, stability}) {
-        const key = maybeKey ?? this.keyForNames(recipe.ingredientNames);
+    recordRecipe({recipe, potion, quality, stability}) {
         const combinedRecipe = {
             ...recipe,
-            key,
             potionName: potion?.name,
             stability,
             stars: quality.stars,

@@ -114,6 +114,8 @@ describe("givens", () => {
                 category: "Tonic",
                 D: 0,
                 E: 0,
+                earliestChapter: 1,
+                goalChapter: 1,
                 name: "Fire",
             };
             const fireTonic = potions.find((p) => p.name === "Fire");

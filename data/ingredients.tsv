@@ -1,207 +1,207 @@
 name	A	B	C	D	E	price	taste	touch	smell	sight	sound	type	rarity	location	earliestChapter
-Fairy Flower Bulb	4	0	0	0	0	14	neutral	neutral	good	neutral	neutral	Flower	Common	Enchanted Forest	1
-Impstool Mushroom	0	4	0	0	0	17	neutral	good	neutral	neutral	neutral	Fungus	Common	Enchanted Forest	1
-Rotfly Larva	0	0	4	0	0	10	good	neutral	neutral	neutral	neutral	Bug	Common	Enchanted Forest	1
-Feyberry	6	0	0	0	0	4	neutral	neutral	neutral	neutral	neutral	Fruit	Common	Enchanted Forest	1
-Mandrake Root	0	6	0	0	0	6	neutral	neutral	neutral	neutral	neutral	Plant	Common	Enchanted Forest	1
-Sack of Slime	0	0	6	0	0	7	neutral	neutral	neutral	neutral	neutral	Slime	Common	Enchanted Forest	1
-Kappa Pheromones	4	0	4	0	0	13	neutral	neutral	neutral	neutral	neutral	Essences	Uncommon	Enchanted Forest	1
-Pixiedust Diamond	0	4	4	0	0	14	neutral	neutral	neutral	neutral	neutral	Gem	Uncommon	Enchanted Forest	1
-River Calamari	8	0	0	0	0	5	neutral	bad	neutral	neutral	neutral	Fish	Common	Enchanted Forest	1
-River-Pixie's Shell	4	4	0	0	0	11	neutral	neutral	neutral	neutral	neutral	Mineral	Uncommon	Enchanted Forest	1
-Serpent's Slippery Tongue	0	8	0	0	0	6	neutral	neutral	bad	neutral	neutral	Flesh	Common	Enchanted Forest	1
-Unicorn Horn	0	0	8	0	0	6	bad	neutral	neutral	neutral	neutral	Bone	Common	Enchanted Forest	1
-Cubic Ooze	3	3	3	0	0	16	neutral	neutral	neutral	neutral	neutral	Slime	Rare	Enchanted Forest	1
-Desert Metal	0	12	0	0	0	25	neutral	good	neutral	neutral	neutral	Ores	Common	Bone Wastes	1
-Fairy Flower Bud	12	0	0	0	0	23	neutral	neutral	good	neutral	neutral	Flower	Common	Bone Wastes	1
-Rotfly Cocoon	0	0	12	0	0	25	good	neutral	neutral	neutral	neutral	Bug	Uncommon	Bone Wastes	1
-Glass Ore	0	0	0	18	0	24	neutral	neutral	neutral	neutral	neutral	Ores	Common	Bone Wastes	1
-Horned Jelly	18	0	0	0	0	20	neutral	bad	neutral	good	neutral	Slime	Uncommon	Bone Wastes	1
-Manwyrm Root	0	18	0	0	0	14	neutral	neutral	neutral	neutral	neutral	Plant	Common	Bone Wastes	1
-Sphinx Flea	12	6	0	0	0	35	neutral	good	neutral	neutral	neutral	Bug	Rare	Bone Wastes	1
-Figment Pomme	0	18	6	0	0	26	neutral	neutral	neutral	neutral	neutral	Fruit	Uncommon	Bone Wastes	1
-Golem's-Eye Diamond	0	12	12	0	0	28	neutral	neutral	neutral	neutral	neutral	Gem	Uncommon	Bone Wastes	1
-Leech Snail's Shell	12	12	0	0	0	26	neutral	neutral	neutral	neutral	neutral	Mineral	Uncommon	Bone Wastes	1
-Salamander's Fiery Tongue	0	24	0	0	0	22	neutral	neutral	bad	neutral	neutral	Flesh	Common	Bone Wastes	1
-Frog Leg	0	0	24	12	0	33	neutral	neutral	neutral	bad	neutral	Flesh	Epic	Bone Wastes	1
-Golemite	18	12	0	10	0	38	neutral	neutral	neutral	neutral	neutral	Mineral	Rare	Bone Wastes	1
-Murkwater Pearl	0	0	0	12	0	27	neutral	neutral	neutral	good	neutral	Gem	Uncommon	Mushroom Mire	1
-Trollstool Mushroom	0	12	0	0	0	20	neutral	good	neutral	neutral	neutral	Fungus	Common	Mushroom Mire	1
-Wraith Orchid	0	0	0	12	0	19	neutral	neutral	neutral	neutral	neutral	Flower	Common	Mushroom Mire	1
-Crocodile Tooth	6	0	12	0	0	20	neutral	neutral	neutral	neutral	neutral	Bone	Common	Mushroom Mire	1
-Mud Shrimp	6	0	12	0	0	26	neutral	neutral	good	neutral	neutral	Fish	Rare	Mushroom Mire	1
-Puckberry	18	0	0	0	0	16	neutral	neutral	neutral	neutral	neutral	Fruit	Common	Mushroom Mire	1
-Sack of Hive Slime	0	0	18	0	0	21	neutral	neutral	neutral	neutral	neutral	Slime	Common	Mushroom Mire	1
-Swamp Fish	12	0	0	6	0	22	neutral	neutral	neutral	neutral	neutral	Fish	Common	Mushroom Mire	1
-Ghostlight Bloom	18	0	0	6	0	28	neutral	neutral	neutral	neutral	neutral	Flower	Uncommon	Mushroom Mire	1
-Miasma Spore	0	18	0	6	0	30	neutral	neutral	neutral	neutral	neutral	Fungus	Uncommon	Mushroom Mire	1
-Qilin's Tri-Horn	0	0	24	0	0	18	bad	neutral	neutral	neutral	neutral	Bone	Common	Mushroom Mire	1
-Swamp Octopus	24	0	0	0	0	18	neutral	bad	neutral	neutral	neutral	Fish	Common	Mushroom Mire	1
-Warg Pheromones	12	0	12	0	0	26	neutral	neutral	neutral	neutral	neutral	Essences	Uncommon	Mushroom Mire	1
-Bog Beet	0	27	0	0	0	27	bad	neutral	neutral	neutral	good	Plant	Rare	Mushroom Mire	1
-Hydra Vertebra	9	9	9	0	0	35	neutral	neutral	neutral	neutral	neutral	Bone	Common	Mushroom Mire	1
-Moss Berries	0	10	20	0	0	35	neutral	neutral	neutral	neutral	neutral	Fruit	Common	Mushroom Mire	1
-Raven's Shadow	0	10	12	18	0	52	neutral	neutral	neutral	neutral	neutral	Essence	Rare	Mushroom Mire	1
-Bubble Ooze	9	9	12	12	0	60	neutral	neutral	neutral	neutral	neutral	Slime	Epic	Mushroom Mire	1
-Fairy Flower Bloom	20	0	0	0	0	35	neutral	neutral	good	neutral	neutral	Flower	Common	Shadow Steppe	2
-Shadowveil Pearl	0	0	0	20	0	38	neutral	neutral	neutral	good	neutral	Gem	Uncommon	Shadow Steppe	2
-Cobweb Crayfish	10	0	20	0	0	48	neutral	neutral	good	neutral	neutral	Fish	Rare	Shadow Steppe	2
-Hallucinatory Shroom	0	0	30	0	0	36	good	neutral	neutral	neutral	bad	Fungus	Rare	Shadow Steppe	2
-Sack of Composite Slime	0	0	30	0	0	36	neutral	neutral	neutral	neutral	neutral	Slime	Common	Shadow Steppe	2
-Banshee's Bloody Tongue	0	40	0	0	0	32	neutral	neutral	bad	neutral	neutral	Flesh	Common	Shadow Steppe	2
-Barghast Canine	0	30	0	0	10	55	neutral	neutral	neutral	neutral	neutral	Bone	Rare	Shadow Steppe	2
-Photonic Spore	0	10	0	30	0	52	bad	neutral	good	neutral	neutral	Fungus	Epic	Shadow Steppe	2
-Spider's-Bait Diamond	0	20	20	0	0	50	neutral	neutral	neutral	neutral	neutral	Gem	Uncommon	Shadow Steppe	2
-Dropspider's Shadow	0	0	30	20	10	90	neutral	neutral	neutral	neutral	neutral	Essences	Rare	Shadow Steppe	2
-Mosquito Plant	10	0	20	0	30	105	neutral	neutral	neutral	neutral	neutral	Plant	Epic	Shadow Steppe	2
-Mote of Mana	15	15	15	15	15	130	neutral	neutral	neutral	neutral	neutral	Pure Mana	Epic	Shadow Steppe	2
-Rotfly Adult	0	0	20	0	0	38	good	neutral	neutral	neutral	neutral	Bug	Uncommon	Ocean Coasts	2
-Jelly Blossom	0	0	0	0	30	55	neutral	neutral	neutral	neutral	neutral	Flower	Rare	Ocean Coasts	2
-Mandragon Root	0	30	0	0	0	34	neutral	neutral	neutral	neutral	neutral	Plant	Common	Ocean Coasts	2
-Reef Radish	0	30	0	0	0	32	bad	neutral	neutral	neutral	good	Plant	Rare	Ocean Coasts	2
-Selkie Lice	10	20	0	0	0	50	neutral	good	neutral	neutral	neutral	Bug	Rare	Ocean Coasts	2
-Dwarf Kraken	40	0	0	0	0	30	neutral	bad	neutral	neutral	neutral	Fish	Common	Ocean Coasts	2
-Nessie Pheromones	20	0	20	0	0	50	neutral	neutral	neutral	neutral	neutral	Essences	Common	Ocean Coasts	2
-Phantom Pomme	0	10	30	0	0	64	good	neutral	neutral	neutral	bad	Fruit	Epic	Ocean Coasts	2
-Saltwatermelon	0	0	0	40	0	44	neutral	neutral	neutral	bad	neutral	Fruit	Uncommon	Ocean Coasts	2
-Sea Salt	30	0	0	0	10	55	neutral	neutral	neutral	neutral	neutral	Mineral	Uncommon	Ocean Coasts	2
-Abyssalite	30	20	0	0	10	79	neutral	neutral	neutral	neutral	neutral	Mineral	Uncommon	Ocean Coasts	2
-Malachite Ore	30	10	0	0	20	93	neutral	neutral	neutral	neutral	neutral	Ores	Rare	Ocean Coasts	2
-Squid Vine	20	20	15	0	15	135	neutral	neutral	neutral	neutral	neutral	Plant	Rare	Ocean Coasts	2
-Giantstool Mushroom	0	20	0	0	0	40	neutral	good	neutral	neutral	neutral	Fungus	Common	Storm Plains	2
-Antlered Jelly	30	0	0	0	0	28	neutral	bad	neutral	good	neutral	Slime	Uncommon	Storm Plains	2
-Bogeyberry	30	0	0	0	0	30	neutral	neutral	neutral	neutral	neutral	Fruit	Common	Storm Plains	2
-Electrocution Eel	10	10	10	0	0	45	neutral	neutral	neutral	good	neutral	Fish	Uncommon	Storm Plains	2
-Fulgurite Ore	0	0	0	30	0	40	neutral	neutral	neutral	neutral	neutral	Ores	Uncommon	Storm Plains	2
-Static Spiderling	0	0	0	0	30	50	neutral	neutral	neutral	bad	good	Bug	Rare	Storm Plains	2
-Raiju Droppings	0	0	30	10	0	55	neutral	neutral	neutral	neutral	neutral	Essences	Uncommon	Storm Plains	2
-Slapping Turtle's Shell	20	20	0	0	0	46	neutral	neutral	neutral	neutral	neutral	Mineral	Common	Storm Plains	2
-Spriggan Antler	0	0	40	0	0	38	bad	neutral	neutral	neutral	neutral	Bone	Uncommon	Storm Plains	2
-Thunderbird's Molted Feather	0	0	30	0	10	60	neutral	neutral	neutral	neutral	neutral	Flesh	Rare	Storm Plains	2
-Copper Dollop	15	15	15	15	0	95	neutral	neutral	neutral	neutral	neutral	Slime	Rare	Storm Plains	2
-Fire Flower	40	0	0	20	0	55	neutral	neutral	bad	neutral	neutral	Flower	Rare	Storm Plains	2
-Thunder Quartz	30	10	20	0	0	72	neutral	neutral	neutral	neutral	neutral	Gem	Uncommon	Storm Plains	2
-Bramble Rose	16	0	0	0	0	45	neutral	good	neutral	neutral	good	Flower	Uncommon	Sulfuric Falls	3
-Daydream Pomme	0	24	8	0	0	75	neutral	neutral	neutral	good	good	Fruit	Rare	Sulfuric Falls	3
-Rotfly Matriarch	0	0	32	0	0	65	good	neutral	neutral	neutral	neutral	Bug	Common	Sulfuric Falls	3
-Acid Rutabaga	0	48	0	0	0	54	bad	neutral	neutral	neutral	good	Plant	Common	Sulfuric Falls	3
-Creeping Mildew	16	0	0	0	48	92	neutral	neutral	neutral	neutral	neutral	Fungus	Uncommon	Sulfuric Falls	3
-Lamia's Shed Scales	0	0	0	48	16	110	neutral	neutral	neutral	neutral	neutral	Flesh	Uncommon	Sulfuric Falls	3
-Naga's Fang	0	48	0	0	16	98	neutral	bad	neutral	neutral	good	Bone	Common	Sulfuric Falls	3
-Rottermelon	0	0	0	64	0	68	neutral	neutral	neutral	bad	neutral	Fruit	Common	Sulfuric Falls	3
-Scimitar Crab's Shell	32	32	0	0	0	76	neutral	neutral	neutral	neutral	neutral	Mineral	Common	Sulfuric Falls	3
-Shelled Pudding	32	0	0	32	0	90	neutral	neutral	neutral	neutral	neutral	Slime	Common	Sulfuric Falls	3
-Hangman Eel	24	24	24	0	0	95	neutral	neutral	neutral	neutral	neutral	Fish	Uncommon	Sulfuric Falls	3
-Acid Pitfall Plant	16	0	40	0	40	145	neutral	neutral	neutral	neutral	neutral	Plant	Uncommon	Sulfuric Falls	3
-Bioplasm	0	48	32	16	0	125	neutral	neutral	neutral	bad	good	Essences	Rare	Sulfuric Falls	3
-Weeping Metal Ore	0	32	64	0	0	66	neutral	bad	neutral	neutral	neutral	Ore	Common	Sulfuric Falls	3
-Charredonnay	48	0	48	24	24	260	bad	neutral	neutral	neutral	neutral	Fruit	Rare	Sulfuric Falls	3
-Poison Quartz	64	48	0	32	0	185	neutral	neutral	neutral	neutral	bad	Gem	Rare	Sulfuric Falls	3
-Eye of Newt	0	16	0	0	0	34	good	good	neutral	neutral	neutral	Flesh	Uncommon	Crystalline Forest	3
-Djinn Blossom	24	0	0	8	0	68	good	neutral	good	neutral	neutral	Flower	Uncommon	Crystalline Forest	3
-Lustrous Pearl	0	0	0	32	0	60	neutral	neutral	neutral	good	neutral	Gem	Common	Crystalline Forest	3
-Delirium Shroom	0	0	48	0	0	63	good	neutral	neutral	neutral	bad	Fungus	Common	Crystalline Forest	3
-Sequined Custard	0	0	32	0	16	84	neutral	neutral	neutral	good	neutral	Slime	Uncommon	Crystalline Forest	3
-Phoenix Tear	0	24	24	8	0	82	neutral	good	neutral	neutral	neutral	Essence	Epic	Crystalline Forest	3
-Daredevil Pepper	0	32	0	32	0	90	neutral	neutral	neutral	neutral	neutral	Plant	Common	Crystalline Forest	3
-Geode Citrus	0	16	0	0	48	94	neutral	neutral	neutral	neutral	neutral	Fruit	Uncommon	Crystalline Forest	3
-Ogre's Shadow	32	0	32	0	0	74	neutral	neutral	neutral	neutral	neutral	Essences	Common	Crystalline Forest	3
-Owlbear Pheromones	0	0	0	0	64	90	neutral	neutral	bad	neutral	neutral	Essences	Uncommon	Crystalline Forest	3
-Jeweled Scarab	0	24	24	24	0	105	neutral	neutral	neutral	neutral	neutral	Bug	Common	Crystalline Forest	3
-Chimera Waste	0	0	64	32	0	118	neutral	neutral	bad	neutral	neutral	Essences	Common	Crystalline Forest	3
-Silver Dollop	24	24	24	24	0	138	neutral	neutral	neutral	neutral	neutral	Slime	Epic	Crystalline Forest	3
-Lazuli Ore	64	48	0	0	32	174	neutral	neutral	neutral	neutral	bad	Ores	Rare	Crystalline Forest	3
-Pegasus Mite	96	48	0	0	0	134	neutral	bad	neutral	neutral	bad	Bug	Uncommon	Crystalline Forest	3
-Shallow Grave Enoki	32	64	64	32	0	200	neutral	bad	bad	neutral	neutral	Fungus	Rare	Crystalline Forest	3
-Celestial Ore	0	0	16	0	0	45	neutral	neutral	good	good	neutral	Ore	Uncommon	Ice Craggs	3
-Crag Crab	0	0	0	0	32	75	neutral	neutral	good	neutral	neutral	Fish	Rare	Ice Craggs	3
-Rock Salt	24	0	0	0	8	68	good	neutral	neutral	good	neutral	Mineral	Uncommon	Ice Craggs	3
-Feathered Gelatin	0	0	0	48	0	62	neutral	good	bad	neutral	neutral	Slime	Uncommon	Ice Craggs	3
-Harpy's Heart of Stone	16	0	0	32	0	76	neutral	good	neutral	neutral	neutral	Flesh	Uncommon	Ice Craggs	3
-Sepulcher Widow	0	0	0	0	48	82	neutral	neutral	neutral	bad	good	Bug	Uncommon	Ice Craggs	3
-Courtier's Orchid	8	24	24	0	0	72	neutral	neutral	good	neutral	neutral	Flower	Epic	Ice Craggs	3
-Griffin's-Whetstone Diamond	0	32	32	0	0	86	neutral	neutral	neutral	neutral	neutral	Gem	Common	Ice Craggs	3
-Medusa Spore	0	48	0	16	0	94	bad	neutral	good	neutral	neutral	Fungus	Common	Ice Craggs	3
-Silver Stag Antler	0	0	64	0	0	72	bad	neutral	neutral	neutral	neutral	Bone	Common	Ice Craggs	3
-Watchdog Daisy	0	16	0	48	0	83	neutral	neutral	neutral	neutral	neutral	Flower	Common	Ice Craggs	3
-Harpy's Snare	24	24	24	0	24	150	neutral	neutral	neutral	neutral	neutral	Plant	Epic	Ice Craggs	3
-Stalking Skeleton's Fibula	0	0	40	40	16	150	neutral	neutral	neutral	neutral	neutral	Bone	Uncommon	Ice Craggs	3
-Supernalite	48	32	0	16	0	134	bad	neutral	neutral	good	neutral	Mineral	Rare	Ice Craggs	3
-Avalanche Cricket	24	24	32	32	0	140	good	bad	neutral	neutral	neutral	Bug	Common	Ice Craggs	3
-Ember of Mana	24	24	24	24	24	165	neutral	neutral	neutral	neutral	neutral	Pure Mana	Epic	Ice Craggs	3
-Buoyant Blowfish	96	0	48	0	0	138	neutral	neutral	neutral	bad	bad	Fish	Uncommon	Ice Craggs	3
-Basilisk's Cornea	0	22	0	0	0	54	good	good	neutral	neutral	neutral	Flesh	Uncommon	Dragon Oasis	4
-Dragonbreath Blossom	33	0	0	11	0	76	good	neutral	good	neutral	neutral	Flower	Uncommon	Dragon Oasis	4
-Dragonfire Pearl	0	0	0	44	0	76	neutral	neutral	neutral	good	neutral	Gem	Rare	Dragon Oasis	4
-Bedazzled Custard	0	0	44	0	22	95	neutral	neutral	neutral	good	neutral	Slime	Common	Dragon Oasis	4
-Pandemonium Shroom	66	0	0	0	0	72	good	neutral	neutral	neutral	bad	Fungus	Common	Dragon Oasis	4
-Dragon Tear	0	33	33	11	0	118	neutral	good	neutral	neutral	neutral	Essences	Uncommon	Dragon Oasis	4
-Amphithere's Shadow	44	0	44	0	0	114	neutral	neutral	neutral	neutral	neutral	Essences	Common	Dragon Oasis	4
-Dragon Pheromones	0	0	0	0	88	151	neutral	neutral	bad	neutral	neutral	Essences	Uncommon	Dragon Oasis	4
-Dragonegg Citrus	0	22	0	0	66	124	neutral	neutral	neutral	neutral	neutral	Fruit	Uncommon	Dragon Oasis	4
-Widowmaker Pepper	0	44	0	44	0	126	neutral	neutral	neutral	neutral	neutral	Plant	Common	Dragon Oasis	4
-Magma Beetle	0	33	33	33	0	124	neutral	neutral	neutral	neutral	neutral	Bug	Common	Dragon Oasis	4
-Dragon Dung	0	0	88	44	0	173	neutral	neutral	bad	neutral	neutral	Essences	Uncommon	Dragon Oasis	4
-Gold Dollop	33	33	33	33	0	176	neutral	neutral	neutral	neutral	neutral	Slime	Rare	Dragon Oasis	4
-Mana Blaze	50	40	30	20	10	234	neutral	good	good	neutral	neutral	Pure Mana	Epic	Dragon Oasis	4
-Amethyst Ore	66	66	0	0	33	206	neutral	neutral	neutral	neutral	bad	Ores	Uncommon	Dragon Oasis	4
-Dragonblood Tick	132	66	0	0	0	174	neutral	bad	neutral	neutral	bad	Bug	Uncommon	Dragon Oasis	4
-Funeral Pyre Enoki	88	88	44	44	0	280	neutral	bad	bad	neutral	neutral	Fungus	Epic	Dragon Oasis	4
-Inverted Bramble-Rose	22	0	0	0	0	46	neutral	good	neutral	neutral	good	Flower	Uncommon	Crater	4
-Nightmare Pomme	0	33	11	0	0	72	neutral	neutral	neutral	good	good	Fruit	Rare	Crater	4
-Rotfly Mutant	0	0	44	0	0	74	good	neutral	neutral	neutral	neutral	Bug	Common	Crater	4
-Cosmic Cassava	0	66	0	0	0	82	bad	neutral	neutral	neutral	good	Plant	Common	Crater	4
-Slaughtermelon	0	0	0	76	0	105	neutral	neutral	neutral	bad	neutral	Fruit	Common	Crater	4
-Armored Pudding	44	0	0	44	0	115	neutral	neutral	neutral	neutral	neutral	Slime	Common	Crater	4
-Body Snatcher's Sloughed Skin	0	0	0	66	22	132	neutral	neutral	neutral	neutral	neutral	Flesh	Rare	Crater	4
-Elder Being's Tusk	0	66	0	0	22	114	neutral	bad	neutral	neutral	good	Bone	Uncommon	Crater	4
-Space Nautilus's Shell	44	44	0	0	0	102	neutral	neutral	neutral	neutral	neutral	Mineral	Common	Crater	4
-Stalking Mold	22	0	0	0	66	123	neutral	neutral	neutral	neutral	neutral	Fungus	Common	Crater	4
-Guillotine Eel	33	33	33	0	0	126	neutral	neutral	neutral	neutral	neutral	Fish	Common	Crater	4
-Barracuda Plant	22	0	55	0	55	172	neutral	neutral	neutral	neutral	neutral	Plant	Common	Crater	4
-Liquid Metal Ore	0	44	88	0	0	162	neutral	bad	neutral	neutral	neutral	Ores	Common	Crater	4
-Xenoplasm	0	55	55	22	0	166	neutral	neutral	neutral	bad	good	Essences	Rare	Crater	4
-Cosmic Quartz	66	33	0	66	0	204	neutral	neutral	neutral	neutral	bad	Gem	Uncommon	Crater	4
-Spark of Mana	33	33	33	33	33	215	neutral	neutral	neutral	neutral	neutral	Pure Mana	Epic	Crater	4
-Xeno Noir	66	0	66	33	33	236	bad	neutral	neutral	neutral	neutral	Fruit	Rare	Crater	4
-Nether Ore	0	0	22	0	0	51	neutral	neutral	good	good	neutral	Ores	Rare	Arctic	4
-Blackfrost Lobster	0	0	0	0	44	104	neutral	neutral	good	neutral	neutral	Fish	Uncommon	Arctic	4
-Diamond Salt	33	0	0	0	11	85	good	neutral	neutral	good	neutral	Mineral	Uncommon	Arctic	4
-Abominable Tarantula	0	0	0	0	66	105	neutral	neutral	neutral	bad	good	Bug	Uncommon	Arctic	4
-Jotunn's Frozen Heart	22	0	0	44	0	98	neutral	good	neutral	neutral	neutral	Flesh	Uncommon	Arctic	4
-Winged Gelatin	0	0	0	66	0	103	neutral	good	bad	neutral	neutral	Slime	Uncommon	Arctic	4
-Orchid of the Ice Princess	11	33	0	33	0	116	neutral	neutral	good	neutral	neutral	Flower	Rare	Arctic	4
-Direwolf's-Breath Diamond	0	44	44	0	0	118	neutral	neutral	neutral	neutral	neutral	Gem	Common	Arctic	4
-Hellhound Daisy	0	22	0	66	0	125	neutral	neutral	neutral	neutral	neutral	Flower	Uncommon	Arctic	4
-Snowflake Spore	0	66	0	22	0	108	bad	neutral	good	neutral	neutral	Fungus	Common	Arctic	4
-Yeti Antler	0	0	88	0	0	104	bad	neutral	neutral	neutral	neutral	Bone	Common	Arctic	4
-Death's Embrace	33	33	33	0	33	196	neutral	neutral	neutral	neutral	neutral	Plant	Epic	Arctic	4
-Draugr's Tibia	0	0	55	55	22	184	neutral	neutral	neutral	neutral	neutral	Bone	Uncommon	Arctic	4
-Hoarite	55	55	0	22	0	167	bad	neutral	neutral	good	neutral	Mineral	Rare	Arctic	4
-Frost Hopper	33	33	44	44	0	196	good	bad	neutral	neutral	neutral	Bug	Common	Arctic	4
-Icicle Pufferfish	132	0	66	0	0	210	neutral	neutral	neutral	bad	bad	Fish	Uncommon	Arctic	4
-Mana Conflagration	35	45	55	65	75	316	neutral	neutral	bad	bad	neutral	Pure Mana	Epic	Arctic	4
-Blightroach	0	42	42	42	0	185	neutral	neutral	neutral	neutral	neutral	Bug	Common	Magical Wasteland	5
-Cyclops Skull	0	0	42	42	42	200	neutral	neutral	neutral	neutral	neutral	Bone	Common	Magical Wasteland	5
-Lethal Injection Eel	42	42	42	0	0	164	neutral	neutral	neutral	neutral	neutral	Fish	Common	Magical Wasteland	5
-Platinum Slime	42	42	42	0	0	178	neutral	neutral	neutral	neutral	neutral	Slime	Rare	Magical Wasteland	5
-Arcane Truffle	0	42	42	42	42	236	neutral	neutral	neutral	neutral	neutral	Fungus	Rare	Magical Wasteland	5
-Ectoplasm	0	70	70	28	0	226	neutral	neutral	neutral	bad	good	Essences	Rare	Magical Wasteland	5
-Lich's Femur	0	0	70	70	28	247	neutral	neutral	neutral	neutral	neutral	Bone	Uncommon	Magical Wasteland	5
-Nuclear Shadow	0	70	70	28	0	228	neutral	good	neutral	neutral	neutral	Essences	Rare	Magical Wasteland	5
-Orchid of the Witch Queen	28	70	0	70	0	248	neutral	neutral	good	neutral	neutral	Flower	Rare	Magical Wasteland	5
-Sorcerite	70	70	0	28	0	232	bad	neutral	neutral	good	neutral	Mineral	Rare	Magical Wasteland	5
-Venous Witch-Trap	28	0	70	0	70	214	neutral	neutral	neutral	neutral	neutral	Plant	Uncommon	Magical Wasteland	5
-Witchbramble Vine	42	42	42	0	42	210	neutral	neutral	neutral	neutral	neutral	Plant	Rare	Magical Wasteland	5
-Arcane Quartz	84	0	0	84	42	264	neutral	neutral	neutral	neutral	bad	Gem	Uncommon	Magical Wasteland	5
-Blackgold Ore	84	84	0	0	42	256	neutral	neutral	neutral	neutral	bad	Ores	Uncommon	Magical Wasteland	5
-Dazzling Mana	42	42	42	42	42	345	neutral	good	good	neutral	neutral	Pure Mana	Epic	Magical Wasteland	5
-Mana Heart	28	28	28	98	28	450	good	neutral	good	neutral	neutral	Pure Mana	Epic	Magical Wasteland	5
-Mana Maelstrom	98	28	28	28	28	375	neutral	neutral	neutral	good	good	Pure Mana	Epic	Magical Wasteland	5
-Mana Prism	28	28	98	28	28	425	neutral	good	neutral	good	neutral	Pure Mana	Epic	Magical Wasteland	5
-Mana Singularity	28	28	28	28	98	475	neutral	neutral	good	neutral	good	Pure Mana	Epic	Magical Wasteland	5
-Mana Vortex	28	98	28	28	28	400	good	neutral	neutral	neutral	good	Pure Mana	Epic	Magical Wasteland	5
-Hocus Locust	28	28	140	28	0	287	good	bad	neutral	neutral	neutral	Bug	Epic	Magical Wasteland	5
-Underworld Pomegranate	28	28	28	140	0	332	good	neutral	neutral	bad	neutral	Fruit	Epic	Magical Wasteland	5
-Sinfandel	80	0	80	80	40	362	bad	neutral	neutral	neutral	neutral	Fruit	Rare	Magical Wasteland	5
-Mass Grave Enoki	56	112	112	56	0	386	neutral	bad	bad	neutral	neutral	Fungus	Rare	Magical Wasteland	5
+Fairy Flower Bulb	4	0	0	0	0	14			+			Flower	Common	Enchanted Forest	1
+Impstool Mushroom	0	4	0	0	0	17		+				Fungus	Common	Enchanted Forest	1
+Rotfly Larva	0	0	4	0	0	10	+					Bug	Common	Enchanted Forest	1
+Feyberry	6	0	0	0	0	4						Fruit	Common	Enchanted Forest	1
+Mandrake Root	0	6	0	0	0	6						Plant	Common	Enchanted Forest	1
+Sack of Slime	0	0	6	0	0	7						Slime	Common	Enchanted Forest	1
+Kappa Pheromones	4	0	4	0	0	13						Essences	Uncommon	Enchanted Forest	1
+Pixiedust Diamond	0	4	4	0	0	14						Gem	Uncommon	Enchanted Forest	1
+River Calamari	8	0	0	0	0	5		-				Fish	Common	Enchanted Forest	1
+River-Pixie's Shell	4	4	0	0	0	11						Mineral	Uncommon	Enchanted Forest	1
+Serpent's Slippery Tongue	0	8	0	0	0	6			-			Flesh	Common	Enchanted Forest	1
+Unicorn Horn	0	0	8	0	0	6	-					Bone	Common	Enchanted Forest	1
+Cubic Ooze	3	3	3	0	0	16						Slime	Rare	Enchanted Forest	1
+Desert Metal	0	12	0	0	0	25		+				Ores	Common	Bone Wastes	1
+Fairy Flower Bud	12	0	0	0	0	23			+			Flower	Common	Bone Wastes	1
+Rotfly Cocoon	0	0	12	0	0	25	+					Bug	Uncommon	Bone Wastes	1
+Glass Ore	0	0	0	18	0	24						Ores	Common	Bone Wastes	1
+Horned Jelly	18	0	0	0	0	20		-		+		Slime	Uncommon	Bone Wastes	1
+Manwyrm Root	0	18	0	0	0	14						Plant	Common	Bone Wastes	1
+Sphinx Flea	12	6	0	0	0	35		+				Bug	Rare	Bone Wastes	1
+Figment Pomme	0	18	6	0	0	26						Fruit	Uncommon	Bone Wastes	1
+Golem's-Eye Diamond	0	12	12	0	0	28						Gem	Uncommon	Bone Wastes	1
+Leech Snail's Shell	12	12	0	0	0	26						Mineral	Uncommon	Bone Wastes	1
+Salamander's Fiery Tongue	0	24	0	0	0	22			-			Flesh	Common	Bone Wastes	1
+Frog Leg	0	0	24	12	0	33				-		Flesh	Epic	Bone Wastes	1
+Golemite	18	12	0	10	0	38						Mineral	Rare	Bone Wastes	1
+Murkwater Pearl	0	0	0	12	0	27				+		Gem	Uncommon	Mushroom Mire	1
+Trollstool Mushroom	0	12	0	0	0	20		+				Fungus	Common	Mushroom Mire	1
+Wraith Orchid	0	0	0	12	0	19						Flower	Common	Mushroom Mire	1
+Crocodile Tooth	6	0	12	0	0	20						Bone	Common	Mushroom Mire	1
+Mud Shrimp	6	0	12	0	0	26			+			Fish	Rare	Mushroom Mire	1
+Puckberry	18	0	0	0	0	16						Fruit	Common	Mushroom Mire	1
+Sack of Hive Slime	0	0	18	0	0	21						Slime	Common	Mushroom Mire	1
+Swamp Fish	12	0	0	6	0	22						Fish	Common	Mushroom Mire	1
+Ghostlight Bloom	18	0	0	6	0	28						Flower	Uncommon	Mushroom Mire	1
+Miasma Spore	0	18	0	6	0	30						Fungus	Uncommon	Mushroom Mire	1
+Qilin's Tri-Horn	0	0	24	0	0	18	-					Bone	Common	Mushroom Mire	1
+Swamp Octopus	24	0	0	0	0	18		-				Fish	Common	Mushroom Mire	1
+Warg Pheromones	12	0	12	0	0	26						Essences	Uncommon	Mushroom Mire	1
+Bog Beet	0	27	0	0	0	27	-				+	Plant	Rare	Mushroom Mire	1
+Hydra Vertebra	9	9	9	0	0	35						Bone	Common	Mushroom Mire	1
+Moss Berries	0	10	20	0	0	35						Fruit	Common	Mushroom Mire	1
+Raven's Shadow	0	10	12	18	0	52						Essence	Rare	Mushroom Mire	1
+Bubble Ooze	9	9	12	12	0	60						Slime	Epic	Mushroom Mire	1
+Fairy Flower Bloom	20	0	0	0	0	35			+			Flower	Common	Shadow Steppe	2
+Shadowveil Pearl	0	0	0	20	0	38				+		Gem	Uncommon	Shadow Steppe	2
+Cobweb Crayfish	10	0	20	0	0	48			+			Fish	Rare	Shadow Steppe	2
+Hallucinatory Shroom	0	0	30	0	0	36	+				-	Fungus	Rare	Shadow Steppe	2
+Sack of Composite Slime	0	0	30	0	0	36						Slime	Common	Shadow Steppe	2
+Banshee's Bloody Tongue	0	40	0	0	0	32			-			Flesh	Common	Shadow Steppe	2
+Barghast Canine	0	30	0	0	10	55						Bone	Rare	Shadow Steppe	2
+Photonic Spore	0	10	0	30	0	52	-		+			Fungus	Epic	Shadow Steppe	2
+Spider's-Bait Diamond	0	20	20	0	0	50						Gem	Uncommon	Shadow Steppe	2
+Dropspider's Shadow	0	0	30	20	10	90						Essences	Rare	Shadow Steppe	2
+Mosquito Plant	10	0	20	0	30	105						Plant	Epic	Shadow Steppe	2
+Mote of Mana	15	15	15	15	15	130						Pure Mana	Epic	Shadow Steppe	2
+Rotfly Adult	0	0	20	0	0	38	+					Bug	Uncommon	Ocean Coasts	2
+Jelly Blossom	0	0	0	0	30	55						Flower	Rare	Ocean Coasts	2
+Mandragon Root	0	30	0	0	0	34						Plant	Common	Ocean Coasts	2
+Reef Radish	0	30	0	0	0	32	-				+	Plant	Rare	Ocean Coasts	2
+Selkie Lice	10	20	0	0	0	50		+				Bug	Rare	Ocean Coasts	2
+Dwarf Kraken	40	0	0	0	0	30		-				Fish	Common	Ocean Coasts	2
+Nessie Pheromones	20	0	20	0	0	50						Essences	Common	Ocean Coasts	2
+Phantom Pomme	0	10	30	0	0	64	+				-	Fruit	Epic	Ocean Coasts	2
+Saltwatermelon	0	0	0	40	0	44				-		Fruit	Uncommon	Ocean Coasts	2
+Sea Salt	30	0	0	0	10	55						Mineral	Uncommon	Ocean Coasts	2
+Abyssalite	30	20	0	0	10	79						Mineral	Uncommon	Ocean Coasts	2
+Malachite Ore	30	10	0	0	20	93						Ores	Rare	Ocean Coasts	2
+Squid Vine	20	20	15	0	15	135						Plant	Rare	Ocean Coasts	2
+Giantstool Mushroom	0	20	0	0	0	40		+				Fungus	Common	Storm Plains	2
+Antlered Jelly	30	0	0	0	0	28		-		+		Slime	Uncommon	Storm Plains	2
+Bogeyberry	30	0	0	0	0	30						Fruit	Common	Storm Plains	2
+Electrocution Eel	10	10	10	0	0	45				+		Fish	Uncommon	Storm Plains	2
+Fulgurite Ore	0	0	0	30	0	40						Ores	Uncommon	Storm Plains	2
+Static Spiderling	0	0	0	0	30	50				-	+	Bug	Rare	Storm Plains	2
+Raiju Droppings	0	0	30	10	0	55						Essences	Uncommon	Storm Plains	2
+Slapping Turtle's Shell	20	20	0	0	0	46						Mineral	Common	Storm Plains	2
+Spriggan Antler	0	0	40	0	0	38	-					Bone	Uncommon	Storm Plains	2
+Thunderbird's Molted Feather	0	0	30	0	10	60						Flesh	Rare	Storm Plains	2
+Copper Dollop	15	15	15	15	0	95						Slime	Rare	Storm Plains	2
+Fire Flower	40	0	0	20	0	55			-			Flower	Rare	Storm Plains	2
+Thunder Quartz	30	10	20	0	0	72						Gem	Uncommon	Storm Plains	2
+Bramble Rose	16	0	0	0	0	45		+			+	Flower	Uncommon	Sulfuric Falls	3
+Daydream Pomme	0	24	8	0	0	75				+	+	Fruit	Rare	Sulfuric Falls	3
+Rotfly Matriarch	0	0	32	0	0	65	+					Bug	Common	Sulfuric Falls	3
+Acid Rutabaga	0	48	0	0	0	54	-				+	Plant	Common	Sulfuric Falls	3
+Creeping Mildew	16	0	0	0	48	92						Fungus	Uncommon	Sulfuric Falls	3
+Lamia's Shed Scales	0	0	0	48	16	110						Flesh	Uncommon	Sulfuric Falls	3
+Naga's Fang	0	48	0	0	16	98		-			+	Bone	Common	Sulfuric Falls	3
+Rottermelon	0	0	0	64	0	68				-		Fruit	Common	Sulfuric Falls	3
+Scimitar Crab's Shell	32	32	0	0	0	76						Mineral	Common	Sulfuric Falls	3
+Shelled Pudding	32	0	0	32	0	90						Slime	Common	Sulfuric Falls	3
+Hangman Eel	24	24	24	0	0	95						Fish	Uncommon	Sulfuric Falls	3
+Acid Pitfall Plant	16	0	40	0	40	145						Plant	Uncommon	Sulfuric Falls	3
+Bioplasm	0	48	32	16	0	125				-	+	Essences	Rare	Sulfuric Falls	3
+Weeping Metal Ore	0	32	64	0	0	66		-				Ore	Common	Sulfuric Falls	3
+Charredonnay	48	0	48	24	24	260	-					Fruit	Rare	Sulfuric Falls	3
+Poison Quartz	64	48	0	32	0	185					-	Gem	Rare	Sulfuric Falls	3
+Eye of Newt	0	16	0	0	0	34	+	+				Flesh	Uncommon	Crystalline Forest	3
+Djinn Blossom	24	0	0	8	0	68	+		+			Flower	Uncommon	Crystalline Forest	3
+Lustrous Pearl	0	0	0	32	0	60				+		Gem	Common	Crystalline Forest	3
+Delirium Shroom	0	0	48	0	0	63	+				-	Fungus	Common	Crystalline Forest	3
+Sequined Custard	0	0	32	0	16	84				+		Slime	Uncommon	Crystalline Forest	3
+Phoenix Tear	0	24	24	8	0	82		+				Essence	Epic	Crystalline Forest	3
+Daredevil Pepper	0	32	0	32	0	90						Plant	Common	Crystalline Forest	3
+Geode Citrus	0	16	0	0	48	94						Fruit	Uncommon	Crystalline Forest	3
+Ogre's Shadow	32	0	32	0	0	74						Essences	Common	Crystalline Forest	3
+Owlbear Pheromones	0	0	0	0	64	90			-			Essences	Uncommon	Crystalline Forest	3
+Jeweled Scarab	0	24	24	24	0	105						Bug	Common	Crystalline Forest	3
+Chimera Waste	0	0	64	32	0	118			-			Essences	Common	Crystalline Forest	3
+Silver Dollop	24	24	24	24	0	138						Slime	Epic	Crystalline Forest	3
+Lazuli Ore	64	48	0	0	32	174					-	Ores	Rare	Crystalline Forest	3
+Pegasus Mite	96	48	0	0	0	134		-			-	Bug	Uncommon	Crystalline Forest	3
+Shallow Grave Enoki	32	64	64	32	0	200		-	-			Fungus	Rare	Crystalline Forest	3
+Celestial Ore	0	0	16	0	0	45			+	+		Ore	Uncommon	Ice Craggs	3
+Crag Crab	0	0	0	0	32	75			+			Fish	Rare	Ice Craggs	3
+Rock Salt	24	0	0	0	8	68	+			+		Mineral	Uncommon	Ice Craggs	3
+Feathered Gelatin	0	0	0	48	0	62		+	-			Slime	Uncommon	Ice Craggs	3
+Harpy's Heart of Stone	16	0	0	32	0	76		+				Flesh	Uncommon	Ice Craggs	3
+Sepulcher Widow	0	0	0	0	48	82				-	+	Bug	Uncommon	Ice Craggs	3
+Courtier's Orchid	8	24	24	0	0	72			+			Flower	Epic	Ice Craggs	3
+Griffin's-Whetstone Diamond	0	32	32	0	0	86						Gem	Common	Ice Craggs	3
+Medusa Spore	0	48	0	16	0	94	-		+			Fungus	Common	Ice Craggs	3
+Silver Stag Antler	0	0	64	0	0	72	-					Bone	Common	Ice Craggs	3
+Watchdog Daisy	0	16	0	48	0	83						Flower	Common	Ice Craggs	3
+Harpy's Snare	24	24	24	0	24	150						Plant	Epic	Ice Craggs	3
+Stalking Skeleton's Fibula	0	0	40	40	16	150						Bone	Uncommon	Ice Craggs	3
+Supernalite	48	32	0	16	0	134	-			+		Mineral	Rare	Ice Craggs	3
+Avalanche Cricket	24	24	32	32	0	140	+	-				Bug	Common	Ice Craggs	3
+Ember of Mana	24	24	24	24	24	165						Pure Mana	Epic	Ice Craggs	3
+Buoyant Blowfish	96	0	48	0	0	138				-	-	Fish	Uncommon	Ice Craggs	3
+Basilisk's Cornea	0	22	0	0	0	54	+	+				Flesh	Uncommon	Dragon Oasis	4
+Dragonbreath Blossom	33	0	0	11	0	76	+		+			Flower	Uncommon	Dragon Oasis	4
+Dragonfire Pearl	0	0	0	44	0	76				+		Gem	Rare	Dragon Oasis	4
+Bedazzled Custard	0	0	44	0	22	95				+		Slime	Common	Dragon Oasis	4
+Pandemonium Shroom	66	0	0	0	0	72	+				-	Fungus	Common	Dragon Oasis	4
+Dragon Tear	0	33	33	11	0	118		+				Essences	Uncommon	Dragon Oasis	4
+Amphithere's Shadow	44	0	44	0	0	114						Essences	Common	Dragon Oasis	4
+Dragon Pheromones	0	0	0	0	88	151			-			Essences	Uncommon	Dragon Oasis	4
+Dragonegg Citrus	0	22	0	0	66	124						Fruit	Uncommon	Dragon Oasis	4
+Widowmaker Pepper	0	44	0	44	0	126						Plant	Common	Dragon Oasis	4
+Magma Beetle	0	33	33	33	0	124						Bug	Common	Dragon Oasis	4
+Dragon Dung	0	0	88	44	0	173			-			Essences	Uncommon	Dragon Oasis	4
+Gold Dollop	33	33	33	33	0	176						Slime	Rare	Dragon Oasis	4
+Mana Blaze	50	40	30	20	10	234		+	+			Pure Mana	Epic	Dragon Oasis	4
+Amethyst Ore	66	66	0	0	33	206					-	Ores	Uncommon	Dragon Oasis	4
+Dragonblood Tick	132	66	0	0	0	174		-			-	Bug	Uncommon	Dragon Oasis	4
+Funeral Pyre Enoki	88	88	44	44	0	280		-	-			Fungus	Epic	Dragon Oasis	4
+Inverted Bramble-Rose	22	0	0	0	0	46		+			+	Flower	Uncommon	Crater	4
+Nightmare Pomme	0	33	11	0	0	72				+	+	Fruit	Rare	Crater	4
+Rotfly Mutant	0	0	44	0	0	74	+					Bug	Common	Crater	4
+Cosmic Cassava	0	66	0	0	0	82	-				+	Plant	Common	Crater	4
+Slaughtermelon	0	0	0	76	0	105				-		Fruit	Common	Crater	4
+Armored Pudding	44	0	0	44	0	115						Slime	Common	Crater	4
+Body Snatcher's Sloughed Skin	0	0	0	66	22	132						Flesh	Rare	Crater	4
+Elder Being's Tusk	0	66	0	0	22	114		-			+	Bone	Uncommon	Crater	4
+Space Nautilus's Shell	44	44	0	0	0	102						Mineral	Common	Crater	4
+Stalking Mold	22	0	0	0	66	123						Fungus	Common	Crater	4
+Guillotine Eel	33	33	33	0	0	126						Fish	Common	Crater	4
+Barracuda Plant	22	0	55	0	55	172						Plant	Common	Crater	4
+Liquid Metal Ore	0	44	88	0	0	162		-				Ores	Common	Crater	4
+Xenoplasm	0	55	55	22	0	166				-	+	Essences	Rare	Crater	4
+Cosmic Quartz	66	33	0	66	0	204					-	Gem	Uncommon	Crater	4
+Spark of Mana	33	33	33	33	33	215						Pure Mana	Epic	Crater	4
+Xeno Noir	66	0	66	33	33	236	-					Fruit	Rare	Crater	4
+Nether Ore	0	0	22	0	0	51			+	+		Ores	Rare	Arctic	4
+Blackfrost Lobster	0	0	0	0	44	104			+			Fish	Uncommon	Arctic	4
+Diamond Salt	33	0	0	0	11	85	+			+		Mineral	Uncommon	Arctic	4
+Abominable Tarantula	0	0	0	0	66	105				-	+	Bug	Uncommon	Arctic	4
+Jotunn's Frozen Heart	22	0	0	44	0	98		+				Flesh	Uncommon	Arctic	4
+Winged Gelatin	0	0	0	66	0	103		+	-			Slime	Uncommon	Arctic	4
+Orchid of the Ice Princess	11	33	0	33	0	116			+			Flower	Rare	Arctic	4
+Direwolf's-Breath Diamond	0	44	44	0	0	118						Gem	Common	Arctic	4
+Hellhound Daisy	0	22	0	66	0	125						Flower	Uncommon	Arctic	4
+Snowflake Spore	0	66	0	22	0	108	-		+			Fungus	Common	Arctic	4
+Yeti Antler	0	0	88	0	0	104	-					Bone	Common	Arctic	4
+Death's Embrace	33	33	33	0	33	196						Plant	Epic	Arctic	4
+Draugr's Tibia	0	0	55	55	22	184						Bone	Uncommon	Arctic	4
+Hoarite	55	55	0	22	0	167	-			+		Mineral	Rare	Arctic	4
+Frost Hopper	33	33	44	44	0	196	+	-				Bug	Common	Arctic	4
+Icicle Pufferfish	132	0	66	0	0	210				-	-	Fish	Uncommon	Arctic	4
+Mana Conflagration	35	45	55	65	75	316			-	-		Pure Mana	Epic	Arctic	4
+Blightroach	0	42	42	42	0	185						Bug	Common	Magical Wasteland	5
+Cyclops Skull	0	0	42	42	42	200						Bone	Common	Magical Wasteland	5
+Lethal Injection Eel	42	42	42	0	0	164						Fish	Common	Magical Wasteland	5
+Platinum Slime	42	42	42	0	0	178						Slime	Rare	Magical Wasteland	5
+Arcane Truffle	0	42	42	42	42	236						Fungus	Rare	Magical Wasteland	5
+Ectoplasm	0	70	70	28	0	226				-	+	Essences	Rare	Magical Wasteland	5
+Lich's Femur	0	0	70	70	28	247						Bone	Uncommon	Magical Wasteland	5
+Nuclear Shadow	0	70	70	28	0	228		+				Essences	Rare	Magical Wasteland	5
+Orchid of the Witch Queen	28	70	0	70	0	248			+			Flower	Rare	Magical Wasteland	5
+Sorcerite	70	70	0	28	0	232	-			+		Mineral	Rare	Magical Wasteland	5
+Venous Witch-Trap	28	0	70	0	70	214						Plant	Uncommon	Magical Wasteland	5
+Witchbramble Vine	42	42	42	0	42	210						Plant	Rare	Magical Wasteland	5
+Arcane Quartz	84	0	0	84	42	264					-	Gem	Uncommon	Magical Wasteland	5
+Blackgold Ore	84	84	0	0	42	256					-	Ores	Uncommon	Magical Wasteland	5
+Dazzling Mana	42	42	42	42	42	345		+	+			Pure Mana	Epic	Magical Wasteland	5
+Mana Heart	28	28	28	98	28	450	+		+			Pure Mana	Epic	Magical Wasteland	5
+Mana Maelstrom	98	28	28	28	28	375				+	+	Pure Mana	Epic	Magical Wasteland	5
+Mana Prism	28	28	98	28	28	425		+		+		Pure Mana	Epic	Magical Wasteland	5
+Mana Singularity	28	28	28	28	98	475			+		+	Pure Mana	Epic	Magical Wasteland	5
+Mana Vortex	28	98	28	28	28	400	+				+	Pure Mana	Epic	Magical Wasteland	5
+Hocus Locust	28	28	140	28	0	287	+	-				Bug	Epic	Magical Wasteland	5
+Underworld Pomegranate	28	28	28	140	0	332	+			-		Fruit	Epic	Magical Wasteland	5
+Sinfandel	80	0	80	80	40	362	-					Fruit	Rare	Magical Wasteland	5
+Mass Grave Enoki	56	112	112	56	0	386		-	-			Fungus	Rare	Magical Wasteland	5
