@@ -42,13 +42,17 @@ export const filterRecipesByInventory = (recipesFile, inventory, maxIngredients,
                 topRecipes.push(recipe);
             }
             const needs = groupIngredientNames(recipe.ingredientNames);
-            const viable = Object.entries(needs).every(([name, need]) => {
-                if (recipe.magimins === topMagimins) {
-                    topIngredients[name] = (topIngredients[name] ?? 0) + 1;
-                }
-                const stock = inventory[name] ?? 0;
-                return stock >= need;
-            });
+            const viable = Object.entries(needs)
+                .filter(([name]) => {
+                    if (recipe.magimins === topMagimins) {
+                        topIngredients[name] = (topIngredients[name] ?? 0) + 1;
+                    }
+                    return true;
+                })
+                .every(([name, need]) => {
+                    const stock = inventory[name] ?? 0;
+                    return stock >= need;
+                });
             return viable ? recipe : undefined;
         });
     return {
