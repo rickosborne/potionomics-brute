@@ -14,6 +14,8 @@ describe("givens", () => {
             expect(cauldrons.length).eq(38);
             /** @type {Cauldron} */
             const expected = {
+                bestStars: 4,
+                bestTier: "Grand",
                 description: "Graceful details belie this industrial-strength cauldron's resilience to wear and tear.",
                 ingredientCost: undefined,
                 maxIngredients: 8,

@@ -7,6 +7,8 @@ import {Cauldron, CauldronsRow} from "./type/cauldron.js";
  * @returns {Cauldron}
  */
 export const cauldronFromCauldronsRow = (row) => ({
+    bestStars: intFrom(row.BestStars),
+    bestTier: row.BestTier,
     description: row.Description,
     ingredientCost: undefIfEmpty(row.IngredientCost),
     maxIngredients: intFrom(row.MaxIngredients),

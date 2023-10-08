@@ -1,4 +1,5 @@
 import {IngredientName} from "./ingredient.js";
+import {TierName} from "./tier.js";
 
 /**
  * @typedef CauldronName
@@ -18,6 +19,8 @@ export let CauldronName;
  * @property {string} MaxMagimins
  * @property {string} UnlockDay
  * @property {string} Description
+ * @property {string} BestTier
+ * @property {string} BestStars
  */
 
 /** @type {CauldronsRow} */
@@ -32,6 +35,8 @@ export let CauldronsRow;
  * @property {number} maxIngredients
  * @property {number} maxMagimins
  * @property {number} unlockDay
+ * @property {TierName} bestTier
+ * @property {number} bestStars
  * @property {string} description
  */
 /** @type {Cauldron} */
