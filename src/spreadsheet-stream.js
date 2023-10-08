@@ -1,5 +1,14 @@
 import {createWriteStream} from "node:fs";
 import {existsSync} from "./exists-sync.js";
+import {SpreadsheetHeader} from "./type/spreadsheet.js";
+
+/**
+ * @function
+ * @template T
+ * @param {SpreadsheetHeader.<T>[]} headers
+ * @returns {function(T): string}
+ */
+export const spreadsheetSerializer = (headers) => (obj) => headers.map(({name, toString}) => toString(obj[name], name, obj)).join("\t").concat("\n");
 
 /**
  * @param {string} filePath
@@ -16,12 +25,13 @@ export const spreadsheetStream = (filePath, headers) => {
         const headerLine = headers.map(({name}) => name).join("\t").concat("\n");
         outStream.write(headerLine);
     }
+    const serializer = spreadsheetSerializer(headers);
     return {
         close() {
             outStream.close();
         },
         write(obj) {
-            const line = headers.map(({name, toString}) => toString(obj[name], name)).join("\t").concat("\n");
+            const line = serializer(obj);
             outStream.write(line);
         },
     };

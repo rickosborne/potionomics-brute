@@ -1,22 +1,12 @@
-/**
- * @function
- * @param {*} v
- * @returns {string}
- */
-const simpleToString = (v) => v == null ? "" : v.toString();
+import {simpleColumn} from "./spreadsheet-helpers.js";
+import {Recipe} from "./type/recipe.js";
+import {SpreadsheetValueSerializer} from "./type/spreadsheet.js";
 
 /**
- * @function
- * @param {string} name
- * @returns {{name: string, toString: (function(*): string)}}
- */
-const simpleColumn = (name) => ({name, toString: simpleToString});
-
-/**
- * @type {[{name: string, toString:(function(*,string): string)}]}
+ * @type {{name: string, toString:SpreadsheetValueSerializer.<Recipe, keyof Recipe>}[]}
  */
 export const RECIPE_DB_HEADERS = [
-    simpleColumn("key"),
+    {name: "key", toString: (key, _name, recipe) => key ?? recipe.ingredientNames.slice().sort().join("+")},
     simpleColumn("A"),
     simpleColumn("B"),
     simpleColumn("C"),
@@ -25,13 +15,12 @@ export const RECIPE_DB_HEADERS = [
     simpleColumn("ingredientCount"),
     simpleColumn("magimins"),
     simpleColumn("price"),
-    simpleColumn("priceMod"),
-    simpleColumn("anyBad"),
     simpleColumn("taste"),
     simpleColumn("touch"),
     simpleColumn("smell"),
     simpleColumn("sight"),
     simpleColumn("sound"),
+    simpleColumn("earliestChapter"),
     simpleColumn("potionName"),
     simpleColumn("tier"),
     simpleColumn("stars"),

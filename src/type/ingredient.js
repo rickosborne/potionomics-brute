@@ -1,3 +1,4 @@
+import {Chapter} from "./chapter.js";
 import {LocationName} from "./location.js";
 import {Magical} from "./magical.js";
 import {RarityName} from "./rarity.js";
@@ -35,11 +36,10 @@ export let IngredientType;
  * @property {IngredientName} name
  * @property {number} magimins
  * @property {number} price
- * @property {boolean} anyBad
- * @property {number} priceMod
  * @property {IngredientType} type
  * @property {RarityName} rarity
  * @property {LocationName} location
+ * @property {Chapter} earliestChapter
  * @property {Sensation} taste
  * @property {Sensation} touch
  * @property {Sensation} smell
@@ -55,22 +55,22 @@ export let Ingredient;
 /**
  * @typedef IngredientsRow
  * @type {object}
- * @property {string} Name
+ * @property {string} name
  * @property {string} A
  * @property {string} B
  * @property {string} C
  * @property {string} D
  * @property {string} E
- * @property {string} Price
- * @property {string} Taste
- * @property {string} Touch
- * @property {string} Smell
- * @property {string} Sight
- * @property {string} Sound
- * @property {string} PriceMod
- * @property {string} Type
- * @property {string} Rarity
- * @property {string} Location
+ * @property {string} price
+ * @property {string} taste
+ * @property {string} touch
+ * @property {string} smell
+ * @property {string} sight
+ * @property {string} sound
+ * @property {string} type
+ * @property {string} rarity
+ * @property {string} location
+ * @property {string} earliestChapter
  */
 
 /**

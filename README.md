@@ -12,7 +12,7 @@ Having said that, I do think there are a few clever bits in the code.
 As is, this code is able to burn through ~500M recipe attempts per hour with a single process on my M1 Air.
 Approximately 1 in every 100,000 yields a Perfect potion.
 
-But, as the largest cauldron accepts 14 ingredients, and there are 192 ingredients total, there's no way to try every
+But, as the largest cauldron accepts 14 ingredients, and there are 206 ingredients total, there's no way to try every
 single one:
 
 > 206 multichoose 14 &rarr; 4,380,486,799,548,977,500,000
@@ -26,10 +26,21 @@ That'll give you several hundred thousand Perfect recipes, at least.
 
 The following files in the `data/` directory have the following sources:
 
-`ingredients-list.tsv`: [This Google Sheet](https://docs.google.com/spreadsheets/d/1NG-Zsd6tkG3ndUKF5jYglNJWw4qSr0IqZWlDArEDpqc/edit),
-which I found via [this post on the Steam forums](https://steamcommunity.com/sharedfiles/filedetails/?id=2876744197).
+`cauldrons.tsv`: Assembled
+from [this page on the Potionomics wiki](https://potionomics.fandom.com/wiki/Cauldrons_and_Shelves)
+
+`ingredients.tsv`: [This Google Sheet](https://docs.google.com/spreadsheets/d/1NG-Zsd6tkG3ndUKF5jYglNJWw4qSr0IqZWlDArEDpqc/edit),
+which I found via [this post on the Steam forums](https://steamcommunity.com/sharedfiles/filedetails/?id=2876744197),
+and then cleaned up to match the Wikia file.
+
+`ingredients-wikia.json`: Assembled
+from [this page on the Potionomics wiki](https://potionomics.fandom.com/wiki/Ingredients).
+
+`locations.tsv`: Assembled from [this page on the Potionomics wiki](https://potionomics.fandom.com/wiki/Adventure).
 
 `potions.tsv`: Assembled from [this list on the Potionomics wiki](https://potionomics.fandom.com/wiki/Potions).
+
+`quality-tiers.json`: Assembled from [this page on the Potionomics wiki](https://potionomics.fandom.com/wiki/Potions).
 
 ## Disclaimers and Legal
 

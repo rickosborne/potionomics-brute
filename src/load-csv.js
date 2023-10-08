@@ -7,6 +7,20 @@ import {assertIsString, isString} from "./is-string";
 /**
  * @function
  * @template T
+ * @param {!(string[])} headerNames
+ * @param {!string} delim
+ * @param {!(function({[key:string]:*}):T)} rowMapper
+ * @returns {function(string): T}
+ */
+export const spreadsheetDeserializer = (headerNames, delim, rowMapper) => (line) => {
+    const values = line.split(delim);
+    const unmapped = Object.fromEntries(values.map((value, index) => [headerNames[index], value?.trim()]));
+    return rowMapper(unmapped);
+};
+
+/**
+ * @function
+ * @template T
  * @param {!string} filePath
  * @param {!(function({[key:string]:*}):T)} rowMapper
  * @param {{}} [config]
@@ -29,13 +43,12 @@ export const loadSpreadsheet = (filePath, rowMapper, {delimiter, headers} = {}) 
     }
     assertIsArray(headerNames, "loadSpreadsheet:headers");
     const records = [];
+    const deserializer = spreadsheetDeserializer(headerNames, delim, rowMapper);
     while ((buffer = reader.next())) {
         // noinspection JSCheckFunctionSignatures
         const line = buffer.toString("utf8").trim();
         if (line === "") continue;
-        const values = line.split(delim);
-        const unmapped = Object.fromEntries(values.map((value, index) => [headerNames[index], value?.trim()]));
-        const record = rowMapper(unmapped);
+        const record = deserializer(line);
         if (record != null) {
             records.push(record);
         }
