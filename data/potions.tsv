@@ -7,15 +7,15 @@ Potion	Tolerance	0	0	0	1	1	2	4
 Tonic	Fire	1	0	1	0	0	1	1
 Tonic	Ice	1	0	0	1	0	1	2
 Tonic	Thunder	0	1	0	1	0	1	3
-Tonic	Shadow	0	1	0	0	1	2
+Tonic	Shadow	0	1	0	0	1	2	
 Tonic	Radiation	0	0	1	0	1	2	5
 Enhancer	Sight	3	4	3	0	0	1	2
-Enhancer	Alertness	0	3	4	3	0	1
+Enhancer	Alertness	0	3	4	3	0	1	
 Enhancer	Insight	4	3	0	0	3	2	4
-Enhancer	Dowsing	3	0	0	3	4	2
+Enhancer	Dowsing	3	0	0	3	4	2	
 Enhancer	Seeking	0	0	3	4	3	2	5
 Cures	Poison	2	0	1	1	0	1	3
-Cures	Drowsiness	1	1	0	2	0	1
-Cures	Petrification	1	0	2	0	1	2
+Cures	Drowsiness	1	1	0	2	0	1	
+Cures	Petrification	1	0	2	0	1	2	
 Cures	Silence	0	2	1	0	1	2	4
 Cures	Curse	0	1	1	0	2	2	5
