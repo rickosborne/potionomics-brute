@@ -31,7 +31,7 @@ export let PotionCategory;
  * @property {number} D
  * @property {number} E
  * @property {number} earliestChapter
- * @property {number} [goalChapter]
+ * @property {number|undefined} [goalChapter]
  */
 
 /**

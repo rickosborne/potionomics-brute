@@ -1,6 +1,17 @@
 import {zeroPad} from "./zero-pad.js";
 
-const DURATION_PARTS = [
+/**
+ * @typedef TimeUnit
+ * @type {[number, string, number, string]}
+ */
+
+/** @type {TimeUnit} */
+export let TimeUnit;
+
+/**
+ * @type {TimeUnit[]}
+ */
+export const DURATION_PARTS = [
     [1000, "", 3, "ms"],
     [60, ".", 2, "s"],
     [60, ":", 2, "m"],
