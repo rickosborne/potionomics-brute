@@ -18,7 +18,7 @@ const {
         inventory: inventoryPath,
         maxItems: maxItemsText,
         maxMagimins: maxMagiminsText,
-        recipes: recipesPath,
+        recipes: recipesPaths,
         count: wantCount,
     },
 } = parseArgs({
@@ -27,7 +27,8 @@ const {
         inventory: {type: "string"},
         maxItems: {default: "", type: "string"},
         maxMagimins: {default: "", type: "string"},
-        recipes: {type: "string"},
+        recipes: {multiple: true, type: "string"},
+        skipRecipes: {multiple: true, type: "string"},
     },
     strict: true,
 });
@@ -35,7 +36,7 @@ const {
 if (isEmpty(inventoryPath)) {
     throw new Error("Required: --inventory");
 }
-if (isEmpty(recipesPath)) {
+if (isEmpty(recipesPaths)) {
     throw new Error("Required: --recipes");
 }
 const count = maybeIntFrom(wantCount) ?? 25;
@@ -43,7 +44,22 @@ const maxItems = maybeIntFrom(maxItemsText) ?? CAULDRON_SIZE_MAX;
 const maxMagimins = maybeIntFrom(maxMagiminsText) ?? givens.MAGIMINS_MAX;
 const inventory = loadInventory(inventoryPath);
 console.log({count, inventoryCount: Object.keys(inventory).length, maxItems, maxMagimins});
-const {recipes, topIngredients, topRecipes} = filterRecipesByInventory(recipesPath, inventory, maxItems, maxMagimins);
+/** @type {Recipe[]} */
+let recipes = [];
+/** @type {Recipe[]|undefined} */
+let topRecipes = undefined;
+/** @type {{[key: string]: number} | undefined} */
+let topIngredients = undefined;
+for (let recipesPath of recipesPaths) {
+    console.log(`Scanning ${recipesPath} for matching recipes ...`);
+    const filtered = filterRecipesByInventory(recipesPath, inventory, maxItems, maxMagimins);
+    recipes = filtered.recipes;
+    topRecipes ??= filtered.topRecipes;
+    topIngredients ??= filtered.topIngredients;
+    if (recipes.length > 0) {
+        break;
+    }
+}
 /** @type {ComparatorBuilder.<Recipe>} */
 const builder = comparatorBuilder();
 const comparator = builder
@@ -55,6 +71,9 @@ const comparator = builder
     .build();
 
 if (recipes.length === 0) {
+    if (topRecipes == null || topIngredients == null) {
+        throw new Error(`No recipes found, nor any suggestions available.  Brute more recipes.`);
+    }
     console.log("⚠️ No recipes found which match your inventory. ⚠️\nShopping list:");
     const shopping = Object.entries(topIngredients)
         .sort((a, b) => b[1] - a[1])

@@ -22,6 +22,7 @@ export const filterRecipesByInventory = (recipesFile, inventory, maxIngredients,
     let topIngredients = {};
     /** @type {Recipe[]} */
     let topRecipes = [];
+    let anyMatch = false;
     const recipes = loadSpreadsheet(
         recipesFile,
         /**
@@ -38,13 +39,13 @@ export const filterRecipesByInventory = (recipesFile, inventory, maxIngredients,
                 topIngredients = {};
                 topRecipes = [];
             }
-            if (recipe.magimins === topMagimins) {
+            if (!anyMatch && (recipe.magimins === topMagimins)) {
                 topRecipes.push(recipe);
             }
             const needs = groupIngredientNames(recipe.ingredientNames);
             const viable = Object.entries(needs)
                 .filter(([name]) => {
-                    if (recipe.magimins === topMagimins) {
+                    if (!anyMatch && (recipe.magimins === topMagimins)) {
                         topIngredients[name] = (topIngredients[name] ?? 0) + 1;
                     }
                     return true;
@@ -53,6 +54,11 @@ export const filterRecipesByInventory = (recipesFile, inventory, maxIngredients,
                     const stock = inventory[name] ?? 0;
                     return stock >= need;
                 });
+            if (viable && !anyMatch) {
+                anyMatch = true;
+                topRecipes = [];
+                topIngredients = {};
+            }
             return viable ? recipe : undefined;
         });
     return {

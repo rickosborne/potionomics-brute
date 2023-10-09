@@ -5,18 +5,26 @@ import {chapterFromDay} from "../src/chapter-from-day.js";
 import {multiChooseCount} from "../src/combinations.js";
 import {countdownTimer} from "../src/countdown-timer.js";
 import {duration, DURATION_PARTS} from "../src/duration.js";
+import {filterPipeline, FilterPipeline} from "../src/filter-pipeline.js";
 import {givens} from "../src/givens.js";
+import {undefIfEmpty} from "../src/is-empty.js";
 import {lastSeenRecipe} from "../src/last-seen-recipe.js";
 import {Ledger} from "../src/ledger.js";
+import {loadInventory} from "../src/load-inventory.js";
+import {optional} from "../src/optional.js";
 import {intFrom, maybeIntFrom} from "../src/spreadsheet-helpers.js";
 import {TryEverything} from "../src/try-everything.js";
 import {CAULDRON_SIZE_MAX} from "../src/type/cauldron.js";
 import {COLORS} from "../src/type/color.js";
+import {Ingredient} from "../src/type/ingredient.js";
+import {Inventory} from "../src/type/inventory.js";
+import {Potion} from "../src/type/potion.js";
 
 const {
     values: {
         chapter: wantChapters,
         goal,
+        inventory: wantInventory,
         location: wantLocations,
         maxItems: wantMax,
         potion: wantPotions,
@@ -34,6 +42,10 @@ const {
             default: false,
             multiple: false,
             type: "boolean",
+        },
+        inventory: {
+            default: "",
+            type: "string",
         },
         location: {
             default: [],
@@ -62,12 +74,7 @@ const {
 });
 let maxItems = maybeIntFrom(wantMax);
 const chapters = wantChapters.map((c) => intFrom(c));
-if (wantChapters.length > 0) {
-    chapters.forEach((chapter) => {
-        givens.locations
-            .filter((l) => l.chapter === chapter)
-            .forEach((location) => wantLocations.push(location.name));
-    });
+if (chapters.length > 0) {
     maxItems ??= givens.cauldrons
         .filter((cauldron) => chapters.includes(chapterFromDay(cauldron.unlockDay)))
         .map((cauldron) => cauldron.maxIngredients)
@@ -75,10 +82,18 @@ if (wantChapters.length > 0) {
     console.log(`MaxItems: ${maxItems}`);
 }
 maxItems ??= CAULDRON_SIZE_MAX;
-const potions = givens.potions
-    .filter((p) => wantPotions.length === 0 || wantPotions.includes(p.name))
-    .filter((p) => chapters.length === 0 || chapters.includes(p.earliestChapter))
-    .filter((p) => !goal || (chapters.length === 0 && p.goalChapter != null) || (chapters.length > 0 && chapters.includes(p.goalChapter)));
+/** @type {FilterPipeline.<Potion>} */
+const potionsFilter = filterPipeline(givens.potions, "loaded")
+    .stepIf(wantPotions.length > 0, `specified(${wantPotions.length})`, (/**Potion*/p) => wantPotions.includes(p.name))
+    .stepIf(chapters.length > 0, `chapters(${chapters.join(",")})`, (/**Potion*/p) => chapters.includes(p.earliestChapter))
+    .stepIf(goal && chapters.length === 0, "all goals", (/**Potion*/p) => p.goalChapter != null)
+    .stepIf(goal && chapters.length > 0, "goals", (/**Potion*/p) => chapters.includes(p.goalChapter));
+/** @type {Potion[]} */
+const potions = potionsFilter.apply();
+console.log(`Potion${potions.length === 1 ? "" : "s"}: ${potionsFilter.summary(" → ")}${potions.length === 1 ? ` → ${potions[0].name}` : ""}`);
+if (potions.length === 0) {
+    throw new Error("No potions found which match the given criteria.");
+}
 const needColors = {
     A: false,
     B: false,
@@ -95,13 +110,19 @@ potions.forEach((potion) => {
 });
 const colorsWanted = COLORS.filter((color) => needColors[color]);
 console.log(`Loaded ${potions.length} potions`);
-const rawIngredients = givens.ingredients;
-const ingredientsAfterLocations = rawIngredients
-    .filter((i) => wantLocations.length === 0 || wantLocations.includes(i.location))
-    .filter((i) => wantChapters.length === 0 || wantChapters.includes(String(i.earliestChapter)));
-const ingredients = ingredientsAfterLocations
-    .filter((i) => colorsWanted.some((color) => i[color] > 0));
-console.log(`Loaded ${rawIngredients.length} => ${ingredientsAfterLocations.length} => ${ingredients.length} ingredients`);
+/** @type {Inventory|undefined} */
+const inventory = optional(undefIfEmpty(wantInventory))
+    .map((inventoryPath) => loadInventory(inventoryPath))
+    .orElse(undefined);
+/** @type {FilterPipeline.<Ingredient>} */
+const ingredientsPipeline = filterPipeline(givens.ingredients, "loaded")
+    .stepIf(wantLocations.length > 0, `locations(${wantLocations.length})`, (/**Ingredient*/i) => wantLocations.includes(i.location))
+    .stepIf(chapters.length > 0, `chapters(${chapters.join(",")})`, (/**Ingredient*/i) => chapters.includes(i.earliestChapter))
+    .stepIf(colorsWanted.length < COLORS.length, `colors(${colorsWanted.join("")})`, (/**Ingredient*/i) => colorsWanted.some((color) => i[color] > 0))
+    .stepIf(inventory != null, `inventory(${inventory == null ? "" : Object.keys(inventory).length})`, (/**Ingredient*/i) => i.name in inventory);
+/** @type {Ingredient[]} */
+const ingredients = ingredientsPipeline.apply();
+console.log(`Ingredients: ${ingredientsPipeline.summary(" → ")}`);
 if (ingredients.length === 0) {
     console.error({colorsWanted, needColors, wantChapters, wantLocations, wantPotions, wantPrefix});
     throw new Error(`Loaded no ingredients!`);
