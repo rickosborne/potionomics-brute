@@ -1,3 +1,4 @@
+import {Predicate} from "./filter-pipeline.js";
 import {givens} from "./givens.js";
 import {groupIngredientNames} from "./group-ingredients.js";
 import {loadSpreadsheet} from "./load-csv.js";
@@ -12,11 +13,16 @@ import {Recipe} from "./type/recipe.js";
  * @param {Inventory} inventory
  * @param {number|undefined} [maxIngredients]
  * @param {number|undefined} [maxMagimins]
+ * @param {Predicate.<Recipe>|undefined} [predicate]
  * @returns {{recipes: Recipe[], topIngredients: {[key: string]: number}, topRecipes: Recipe[]}}
  */
-export const filterRecipesByInventory = (recipesFile, inventory, maxIngredients, maxMagimins) => {
-    const maxItems = maxIngredients ?? CAULDRON_SIZE_MAX;
-    const magiminsMax = maxMagimins ?? givens.MAGIMINS_MAX;
+export const filterRecipesByInventory = (
+    recipesFile,
+    inventory,
+    maxIngredients = CAULDRON_SIZE_MAX,
+    maxMagimins = givens.MAGIMINS_MAX,
+    predicate = () => true,
+) => {
     let topMagimins = 0;
     /** @type {{[key: string]: number}} */
     let topIngredients = {};
@@ -31,7 +37,7 @@ export const filterRecipesByInventory = (recipesFile, inventory, maxIngredients,
          */
         (row) => {
             const recipe = recipeFromRow(row);
-            if (recipe.ingredientNames.length > maxItems || recipe.magimins > magiminsMax) {
+            if (recipe.ingredientNames.length > maxIngredients || recipe.magimins > maxMagimins) {
                 return undefined;
             }
             if (recipe.magimins > topMagimins) {
@@ -59,7 +65,7 @@ export const filterRecipesByInventory = (recipesFile, inventory, maxIngredients,
                 topRecipes = [];
                 topIngredients = {};
             }
-            return viable ? recipe : undefined;
+            return viable && predicate(recipe) ? recipe : undefined;
         });
     return {
         recipes,

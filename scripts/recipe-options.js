@@ -15,11 +15,12 @@ import {zeroPad} from "../src/zero-pad.js";
 
 const {
     values: {
+        count: wantCount,
         inventory: inventoryPath,
         maxItems: maxItemsText,
         maxMagimins: maxMagiminsText,
         recipes: recipesPaths,
-        count: wantCount,
+        shoppingOnly,
     },
 } = parseArgs({
     options: {
@@ -28,6 +29,7 @@ const {
         maxItems: {default: "", type: "string"},
         maxMagimins: {default: "", type: "string"},
         recipes: {multiple: true, type: "string"},
+        shoppingOnly: {type: "boolean"},
         skipRecipes: {multiple: true, type: "string"},
     },
     strict: true,
@@ -44,19 +46,19 @@ const maxItems = maybeIntFrom(maxItemsText) ?? CAULDRON_SIZE_MAX;
 const maxMagimins = maybeIntFrom(maxMagiminsText) ?? givens.MAGIMINS_MAX;
 const inventory = loadInventory(inventoryPath);
 console.log({count, inventoryCount: Object.keys(inventory).length, maxItems, maxMagimins});
-/** @type {Recipe[]} */
-let recipes = [];
+/** @type {Recipe[]|undefined} */
+let recipes = undefined;
 /** @type {Recipe[]|undefined} */
 let topRecipes = undefined;
 /** @type {{[key: string]: number} | undefined} */
 let topIngredients = undefined;
 for (let recipesPath of recipesPaths) {
     console.log(`Scanning ${recipesPath} for matching recipes ...`);
-    const filtered = filterRecipesByInventory(recipesPath, inventory, maxItems, maxMagimins);
+    const filtered = filterRecipesByInventory(recipesPath, inventory, maxItems, maxMagimins, () => !shoppingOnly);
     recipes = filtered.recipes;
     topRecipes ??= filtered.topRecipes;
     topIngredients ??= filtered.topIngredients;
-    if (recipes.length > 0) {
+    if (recipes.length > 0 || shoppingOnly) {
         break;
     }
 }
@@ -71,10 +73,17 @@ const comparator = builder
     .build();
 
 if (recipes.length === 0) {
+    // noinspection PointlessBooleanExpressionJS
     if (topRecipes == null || topIngredients == null) {
         throw new Error(`No recipes found, nor any suggestions available.  Brute more recipes.`);
     }
-    console.log("⚠️ No recipes found which match your inventory. ⚠️\nShopping list:");
+    if (shoppingOnly) {
+        // noinspection JSObjectNullOrUndefined
+        console.log(`Found ${Object.keys(topIngredients).length} ingredients in ${topRecipes.length} recipes.`);
+    } else {
+        console.log("⚠️ No recipes found which match your inventory. ⚠️");
+    }
+    console.log("Shopping list:");
     const shopping = Object.entries(topIngredients)
         .sort((a, b) => b[1] - a[1])
         .slice(0, count);
