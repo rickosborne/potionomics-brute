@@ -79,6 +79,12 @@ This will output two files to the `db/` directory: `*-recipes-perfect.tsv` and `
 what they sound like.
 They will have a prefix which is calculated from your other options, which you can override with `--prefix`.
 
+You can also specify `--stable`, a stability cutoff percent, which controls how many recipes end up in
+the `*-stable.tsv` file.
+The default is `95`.
+If you set it to `100`, then only the `perfect` file will be created, and the Ingredients list will be further reduced
+to only ones which can provide exactly the correct necessary magimins.
+
 If you're not familiar with `.tsv` files, they are just tab-delimited text spreadsheets.
 You can open them in Numbers, Excel, Google Sheets, etc.
 The column names are self-explanatory.

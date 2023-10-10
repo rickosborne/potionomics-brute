@@ -1,3 +1,6 @@
+import {isArray} from "./is-array.js";
+import {isString} from "./is-string.js";
+
 /**
  * @typedef Predicate
  * @template T
@@ -25,26 +28,39 @@ export let FilterPipeline;
 /**
  * @function
  * @template T
- * @param {T[]} list
- * @param {string=} name
+ * @param {T[]|string|undefined} [listOrName]
+ * @param {string=} [initialName]
  * @returns {FilterPipeline.<T>}
  */
-export const filterPipeline = (list, name = "initial size") => {
-    /** @type {{name: string, predicate:Predicate}[]} */
-    const predicates = [];
-    const initialCount = list.length;
+export const filterPipeline = (listOrName, initialName) => {
+    /** @type {string} */
+    let name = initialName ?? "initial";
+    /** @type {number|undefined} */
+    let initialCount = undefined;
+    /** @type {[]|undefined} */
+    let list = undefined;
     /** @type {{[key: string]: number}} */
     const counts = {};
+    if (isArray(listOrName)) {
+        list = listOrName;
+        initialCount = list.length;
+        counts[name] = initialCount;
+    } else if (isString(listOrName)) {
+        name = listOrName;
+    }
+    /** @type {{name: string, predicate:Predicate}[]} */
+    const predicates = [];
     /** @type {FilterPipeline} */
     const pipeline = {
         apply() {
-            return list.filter(pipeline.predicate);
+            return list?.filter(pipeline.predicate);
         },
         get counts() {
             return {...counts};
         },
         get predicate() {
             return (item, index, all) => {
+                initialCount ??= all?.length;
                 for (const {name, predicate} of predicates) {
                     const outcome = predicate(item, index, all);
                     if (!outcome) return false;
@@ -66,7 +82,7 @@ export const filterPipeline = (list, name = "initial size") => {
         },
         summary(delimiter = "; ") {
             return [
-                `${name}=${initialCount.toLocaleString()}`,
+                ...(initialCount == null ? [] : [`${name}=${initialCount.toLocaleString()}`]),
                 ...predicates.map(({name}) => `${name}=${counts[name].toLocaleString()}`),
             ].join(delimiter);
         },

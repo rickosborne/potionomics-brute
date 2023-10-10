@@ -3,6 +3,18 @@ import {existsSync} from "./exists-sync.js";
 import {SpreadsheetHeader} from "./type/spreadsheet.js";
 
 /**
+ * @typedef SpreadsheetStream
+ * @template T
+ * @type {object}
+ * @property {function():void} close
+ * @property {function(T):void} write
+ */
+
+/** @type {SpreadsheetStream} */
+export let SpreadsheetStream;
+
+
+/**
  * @function
  * @template T
  * @param {SpreadsheetHeader.<T>[]} headers
@@ -11,9 +23,10 @@ import {SpreadsheetHeader} from "./type/spreadsheet.js";
 export const spreadsheetSerializer = (headers) => (obj) => headers.map(({name, toString}) => toString(obj[name], name, obj)).join("\t").concat("\n");
 
 /**
+ * @template T
  * @param {string} filePath
- * @param {{name: string, toString: (function(*,string):string)}[]} headers
- * @returns {{close:(function():void), write:(function(*):void)}}
+ * @param {{name: string, toString: (function(*,string,T):string)}[]} headers
+ * @returns {SpreadsheetStream.<T>}
  */
 export const spreadsheetStream = (filePath, headers) => {
     const didExist = existsSync(filePath, (s) => s.isFile());

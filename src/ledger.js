@@ -27,7 +27,7 @@ export class Ledger {
             mkdirSync("db");
         }
         this.perfectOut = spreadsheetStream(`db/${prefix}recipes-perfect.tsv`, RECIPE_DB_HEADERS);
-        this.stableOut = spreadsheetStream(`db/${prefix}recipes-stable.tsv`, RECIPE_DB_HEADERS);
+        this.stableOut = stableCutoff < 1 ? spreadsheetStream(`db/${prefix}recipes-stable.tsv`, RECIPE_DB_HEADERS) : undefined;
         this.stableCutoff = stableCutoff ?? 0.95;
         this.perfectCount = 0;
         this.stableCount = 0;

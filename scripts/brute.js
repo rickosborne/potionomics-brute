@@ -109,16 +109,25 @@ potions.forEach((potion) => {
     });
 });
 const colorsWanted = COLORS.filter((color) => needColors[color]);
+const colorsUnwanted = COLORS.filter((color) => needColors[color] === false);
 console.log(`Loaded ${potions.length} potions`);
 /** @type {Inventory|undefined} */
 const inventory = optional(undefIfEmpty(wantInventory))
     .map((inventoryPath) => loadInventory(inventoryPath))
     .orElse(undefined);
+let stableCutoff = maybeIntFrom(wantStable);
+if (stableCutoff != null) {
+    if (stableCutoff > 1) {
+        stableCutoff /= 100;
+    }
+    console.log(`Stable cutoff: ${stableCutoff.toPrecision(4)}`);
+}
 /** @type {FilterPipeline.<Ingredient>} */
 const ingredientsPipeline = filterPipeline(givens.ingredients, "loaded")
     .stepIf(wantLocations.length > 0, `locations(${wantLocations.length})`, (/**Ingredient*/i) => wantLocations.includes(i.location))
     .stepIf(chapters.length > 0, `chapters(${chapters.join(",")})`, (/**Ingredient*/i) => chapters.includes(i.earliestChapter))
     .stepIf(colorsWanted.length < COLORS.length, `colors(${colorsWanted.join("")})`, (/**Ingredient*/i) => colorsWanted.some((color) => i[color] > 0))
+    .stepIf(stableCutoff === 1, `colors(!${colorsUnwanted.join("")})`, (/**Ingredient*/i) => colorsUnwanted.every((color) => i[color] === 0))
     .stepIf(inventory != null, `inventory(${inventory == null ? "" : Object.keys(inventory).length})`, (/**Ingredient*/i) => i.name in inventory);
 /** @type {Ingredient[]} */
 const ingredients = ingredientsPipeline.apply();
@@ -140,13 +149,6 @@ if (prefix === "*") {
     prefixParts.push("");
     prefix = prefixParts.join("-");
     console.log(`Prefix: ${prefix}`);
-}
-let stableCutoff = maybeIntFrom(wantStable);
-if (stableCutoff != null) {
-    if (stableCutoff > 1) {
-        stableCutoff /= 100;
-    }
-    console.log(`Stable cutoff: ${stableCutoff.toPrecision(4)}`);
 }
 const ledger = new Ledger({prefix, stableCutoff});
 const tryEverything = new TryEverything({

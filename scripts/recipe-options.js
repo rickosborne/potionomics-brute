@@ -16,6 +16,7 @@ import {zeroPad} from "../src/zero-pad.js";
 const {
     values: {
         count: wantCount,
+        ignoreStock,
         inventory: inventoryPath,
         maxItems: maxItemsText,
         maxMagimins: maxMagiminsText,
@@ -25,6 +26,7 @@ const {
 } = parseArgs({
     options: {
         count: {default: "", short: "n", type: "string"},
+        ignoreStock: {type: "boolean"},
         inventory: {type: "string"},
         maxItems: {default: "", type: "string"},
         maxMagimins: {default: "", type: "string"},
@@ -54,7 +56,7 @@ let topRecipes = undefined;
 let topIngredients = undefined;
 for (let recipesPath of recipesPaths) {
     console.log(`Scanning ${recipesPath} for matching recipes ...`);
-    const filtered = filterRecipesByInventory(recipesPath, inventory, maxItems, maxMagimins, () => !shoppingOnly);
+    const filtered = filterRecipesByInventory(recipesPath, inventory, maxItems, maxMagimins, ignoreStock, () => !shoppingOnly);
     recipes = filtered.recipes;
     topRecipes ??= filtered.topRecipes;
     topIngredients ??= filtered.topIngredients;
