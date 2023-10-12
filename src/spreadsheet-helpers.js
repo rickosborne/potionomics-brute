@@ -24,4 +24,12 @@ export const intFrom = (value) => parseInt(value, 10);
  * @param {string} [value]
  * @returns {number|undefined}
  */
-export const maybeIntFrom = (value) => optional(undefIfEmpty(value)).map((s) => parseInt(s, 10)).orElse(undefined);
+export const maybeIntFrom = (value) => optional(undefIfEmpty(value))
+	.filter((s) => /^-?\d+$/.test(s))
+	.map((s) => intFrom(s))
+	.orElse(undefined);
+
+export const maybeFloatFrom = (value) => optional(undefIfEmpty(value))
+	.filter((s) => /^-?(\d+|\d+\.\d*|\.\d+)$/.test(s))
+	.map((s) => parseFloat(s))
+	.orElse(undefined);

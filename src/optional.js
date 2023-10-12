@@ -18,6 +18,7 @@ export let OptionalMapper;
  * @typedef Optional
  * @template T
  * @template U
+ * @property {function(function(T):boolean):Optional<T>} filter
  * @property {function(T):void} ifPresent
  * @property {function(T):T} orElse
  * @property {function(OptionalMapper<T, U>):Optional<U>} map
@@ -34,6 +35,12 @@ export let Optional;
  * @returns {Optional<T>}
  */
 export const optional = (value) => ({
+    filter(predicate) {
+        if (value == null || predicate(value)) {
+            return optional(value);
+        }
+        return optional(undefined);
+    },
     ifPresent(accept) {
         if (value != null) {
             accept(value);

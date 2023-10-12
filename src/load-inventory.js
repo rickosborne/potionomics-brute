@@ -4,11 +4,27 @@ import {loadSpreadsheet} from "./load-csv.js";
 import {Inventory, InventoryItem} from "./type/inventory.js";
 
 /**
+ * @typedef LoadInventory
+ * @type {object}
+ * @property {boolean} [quinnOnly]
+ * @property {boolean} [stockedOnly]
+ */
+
+/** @type {LoadInventory} */
+export let LoadInventory;
+
+
+/**
  * @function
  * @param {string} filePath
+ * @param {LoadInventory} config
+ * @param {boolean=} [config.quinnOnly]
+ * @param {boolean=} [config.stockedOnly]
  * @returns {Inventory}
  */
-export const loadInventory = (filePath) => {
+export const loadInventory = (filePath, config = {}) => {
+    const quinnOnly = config.quinnOnly ?? true;
+    const stockedOnly = config.stockedOnly ?? false;
     /** @type {InventoryItem[]} */
     const items = loadSpreadsheet(filePath, inventoryItemFromInventoryRow);
     return Object.fromEntries(items
@@ -17,7 +33,10 @@ export const loadInventory = (filePath) => {
             if (ingredient == null) {
                 throw new Error(`Unknown item in inventory: ${JSON.stringify(item.ingredientName)}`);
             }
-            return item.stock > 0;
+            if (quinnOnly && !item.quinn) {
+                return false;
+            }
+            return !stockedOnly || (item.stock > 0);
         })
         .map((item) => [item.ingredientName, item.stock]));
 };

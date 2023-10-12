@@ -1,4 +1,5 @@
-import {intFrom} from "./spreadsheet-helpers.js";
+import {maybeBoolFrom} from "./bool-from.js";
+import {maybeIntFrom} from "./spreadsheet-helpers.js";
 import {InventoryItem, InventoryRow} from "./type/inventory.js";
 
 export const STOCK_PLENTY = 99;
@@ -8,7 +9,12 @@ export const STOCK_PLENTY = 99;
  * @param {InventoryRow} row
  * @returns {InventoryItem}
  */
-export const inventoryItemFromInventoryRow = (row) => ({
-    ingredientName: row.Ingredient,
-    stock: row.Stock === "" ? 0 : /^\d+/.test(row.Stock) ? intFrom(row.Stock) : STOCK_PLENTY,
-});
+export const inventoryItemFromInventoryRow = (row) => {
+    const stock = maybeIntFrom(row.Stock) ?? 0;
+    const quinn = maybeBoolFrom(row.Quinn) ?? (stock > 0);
+    return {
+        ingredientName: row.Ingredient,
+        quinn,
+        stock,
+    };
+};

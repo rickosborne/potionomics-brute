@@ -47,3 +47,17 @@ export const RANDOM = "~";
  * @type {Sensation[]}
  */
 export const SENSATIONS = Object.freeze([GOOD, BAD, NEUTRAL, RANDOM]);
+
+/**
+ * @typedef HasSensations
+ * @type {object}
+ * @property {Sensation} taste
+ * @property {Sensation} touch
+ * @property {Sensation} smell
+ * @property {Sensation} sight
+ * @property {Sensation} sound
+ */
+
+/** @type {HasSensations} */
+export let HasSensations;
+

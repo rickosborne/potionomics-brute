@@ -81,7 +81,7 @@ const {
  * @property {number} C
  * @property {number} D
  * @property {number} E
- * @property {string} OOS
+ * @property {string} InStock
  */
 
 /** @type {WideRecipe} */
@@ -93,12 +93,6 @@ const minMagimins = maybeIntFrom(wantMagiminsMin) ?? 1;
 const maxMagimins = maybeIntFrom(wantMagiminsMax) ?? givens.MAGIMINS_MAX;
 /** @type {number[]} */
 const indexes = "*".repeat(maxItems).split("").map((_v, index) => index + 1);
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-const colNames = [...letters, ...letters.map((l) => `A${l}`), ...letters.map((l) => `B${l}`)];
-const I1Index = 11;
-// Left + (2 * Count) + ABCDE + OOS
-const S1Index = I1Index + (2 * maxItems) + 6;
-const SNIndex = S1Index + maxItems - 1;
 
 /** @type {({name: string, toString:(function(*,string,WideRecipe):string)})[]} */
 const WIDE_COLUMNS = [
@@ -122,8 +116,7 @@ const WIDE_COLUMNS = [
     simpleColumn("C"),
     simpleColumn("D"),
     simpleColumn("E"),
-    {name: "Out of Stock", toString: (_v, _n, r) => r.OOS},
-    ...(indexes.map((index) => ({name: `Stock ${index}`, toString: (_v, _n, r) => r[`S${index}`]}))),
+    {name: "In Stock", toString: (_v, _n, r) => r.InStock},
 ];
 /** @type {Predicate.<PotionName>} */
 let potionFilter;
@@ -145,6 +138,11 @@ if (wantPotions.length > 0 && wantPotions.every((name) => name.startsWith("!")))
     potionFilter = () => true;
 }
 
+const stockRefs = Object.fromEntries(givens.ingredients
+    .map((i) => i.name)
+    .sort()
+    .map((name, index) => [name, `Ingredients!$C$${index + 2}`]));
+
 let writeCount = 0;
 let readCount = 0;
 let magiminMin = givens.MAGIMINS_MAX;
@@ -165,7 +163,6 @@ recipesPaths.map((recipesPath) => {
 }).forEach(([recipesPath, outPath]) => {
     /** @type {SpreadsheetStream.<WideRecipe>} */
     const out = spreadsheetStream(outPath, WIDE_COLUMNS);
-    let rowNum = 1;
     loadSpreadsheet(recipesPath, (/**RecipeRow*/row) => {
         readCount++;
         const recipe = recipeFromRow(row);
@@ -173,8 +170,11 @@ recipesPaths.map((recipesPath) => {
         if (recipe.ingredientCount > maxItems) return undefined;
         if (!potionFilter(recipe.potionName)) return undefined;
         if (recipe.magimins < minMagimins || recipe.magimins > maxMagimins) return undefined;
-        rowNum++;
-        const ref = (index) => `$${colNames[index]}${rowNum}`;
+        /** @type {{[key: string]: number}} */
+        const countOf = {};
+        recipe.ingredientNames.forEach((name) => {
+            countOf[name] = (countOf[name] ?? 0) + 1;
+        });
         /** @type {WideRecipe} */
         const wide = {
             A: recipe.A,
@@ -185,7 +185,6 @@ recipesPaths.map((recipesPath) => {
             D: recipe.D,
             E: recipe.E,
             MM: recipe.magimins,
-            OOS: `=COUNTIF(${ref(S1Index)}:${ref(SNIndex)},FALSE)`,
             Potion: recipe.potionName,
             Sight: recipe.sight,
             Smell: recipe.smell,
@@ -195,26 +194,22 @@ recipesPaths.map((recipesPath) => {
             Tier: recipe.tier,
             Touch: recipe.touch,
         };
+        /** @type {string[]} */
+        let stockExpressions = [];
+        Object.entries(countOf)
+            .sort((a, b) => a[0].localeCompare(b[0]))
+            .forEach(([name, count], index) => {
+                const colIndex = index + 1;
+                wide[`I${colIndex}`] = name;
+                wide[`C${colIndex}`] = count;
+                stockExpressions.push(`${stockRefs[name]}>=${count}`);
+            });
+        wide.InStock = `=AND(${stockExpressions.join(",")})`;
         if (recipe.magimins > magiminMax) {
             magiminMax = recipe.magimins;
         } else if (recipe.magimins < magiminMin) {
             magiminMin = recipe.magimins;
         }
-        /** @type {IngredientName[]} */
-        const uniqueIngredients = [];
-        let lastIndex = 0;
-        recipe.ingredientNames.forEach((raw) => {
-            const name = raw.replace("Qilin", "Quilin");
-            if (!uniqueIngredients.includes(name)) {
-                lastIndex++;
-                uniqueIngredients.push(name);
-                wide[`I${lastIndex}`] = name;
-                const IIndex = I1Index + ((lastIndex - 1) * 2);
-                const CIndex = IIndex + 1;
-                wide[`S${lastIndex}`] = `=IF(${ref(CIndex)}="","",VLOOKUP(${ref(IIndex)},Ingredients!$A:$C,3,FALSE)>=${ref(CIndex)})`;
-            }
-            wide[`C${lastIndex}`] = (wide[`C${lastIndex}`] ?? 0) + 1;
-        });
         out.write(wide);
         writeCount++;
         return undefined;
