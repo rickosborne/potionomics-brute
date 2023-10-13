@@ -21,6 +21,7 @@ import {Ingredient} from "./type/ingredient.js";
 import {Inventory} from "./type/inventory.js";
 import {LocationName} from "./type/location.js";
 import {Potion, PotionName} from "./type/potion.js";
+import {Recipe} from "./type/recipe.js";
 
 /**
  * @typedef BruteRecipesConfig
@@ -36,6 +37,7 @@ import {Potion, PotionName} from "./type/potion.js";
  * @property {string|undefined} inventoryPath
  * @property {LocationName[]|undefined} [locations]
  * @property {string|undefined} prefix
+ * @property {(function(Recipe):void)|undefined} [onRecipe]
  */
 
 /** @type {BruteRecipesConfig} */
@@ -60,6 +62,8 @@ export const bruteRecipes = (config) => {
 	const potionNames = config.potionNames ?? [];
 	const goal = maybeBoolFrom(config.goal) ?? false;
 	const locations = config.locations ?? [];
+	const onRecipe = config.onRecipe ?? (() => {
+	});
 	if (chapters.length > 0) {
 		maxItems ??= givens.cauldrons
 			.filter((cauldron) => chapters.includes(chapterFromDay(cauldron.unlockDay)))
@@ -136,12 +140,13 @@ export const bruteRecipes = (config) => {
 		prefix = prefixParts.join("-");
 		console.log(`Prefix: ${prefix}`);
 	}
-	const ledger = new Ledger({prefix, stableCutoff});
+	const ledger = new Ledger({onRecipe, prefix, stableCutoff});
 	const tryEverything = new TryEverything({
 		ingredients,
 		ledger,
 		maxItems,
 		minItems,
+		onRecipe,
 		potions,
 	});
 	let itemCount = 0;
