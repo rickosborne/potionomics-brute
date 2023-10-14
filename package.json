@@ -20,6 +20,7 @@
 		"test": "mocha",
 		"test:coverage": "NODE_OPTIONS='--no-warnings --experimental-loader=@istanbuljs/esm-loader-hook' nyc mocha",
 		"recipe-options": "node --no-warnings --experimental-specifier-resolution=node --experimental-modules scripts/recipe-options.js",
+		"remove-ingredient": "node --no-warnings --experimental-specifier-resolution=node --experimental-modules scripts/remove-ingredient.js",
 		"update": "npx npm-check-updates -u",
 		"widen": "node --no-warnings --experimental-specifier-resolution=node --experimental-modules scripts/widen.js"
 	},

@@ -1,9 +1,15 @@
 import console from "node:console";
-import {bruteRecipes} from "../src/brute-recipes.js";
+import path from "node:path";
+import {Worker} from "node:worker_threads";
+import {existsSync} from "../src/exists-sync.js";
 import {givens} from "../src/givens.js";
 import {Potion} from "../src/type/potion.js";
 
 const exhaustive = async () => {
+	const workerScript = path.resolve("src", "worker", "exhaustive-worker.js");
+	if (!existsSync(workerScript)) {
+		throw new Error(`Not found: ${workerScript}`);
+	}
 	/** @type {number[]} */
 	let chapters = [];
 	for (let chapter = 1; chapter <= 5; chapter++) {
@@ -22,21 +28,24 @@ const exhaustive = async () => {
 		}
 		const maxItems = cauldrons.map((c) => c.maxIngredients).reduce((p, c) => Math.max(p, c));
 		for (let itemCount = minItems; itemCount <= maxItems; itemCount++) {
-			for (let potion of potions) {
+			await Promise.all(potions.map((potion) => {
 				console.log(`Chapter ${chapter}, ${potion.name} ${potion.category}`);
 				const prefix = `${potion.name}-c${chapter}-x${itemCount}-`;
-				/** @type {string[]} */
-				const potionNames = [potion.name];
-				await bruteRecipes({
-					chapters,
-					maxItems: itemCount,
-					maxMagimins,
-					minItems: itemCount,
-					potionNames,
-					prefix,
-					stable: 100,
+				/** @type {Promise.<number>} */
+				return new Promise((resolve, reject) => {
+					const worker = new Worker(workerScript, {
+						workerData: {
+							chapters,
+							itemCount,
+							maxMagimins,
+							potionNames: [potion.name],
+							prefix,
+						},
+					});
+					worker.on("error", reject);
+					worker.on("exit", resolve);
 				});
-			}
+			}));
 		}
 	}
 };

@@ -3,19 +3,19 @@ Potion	Health	1	1	0	0	0	1	1
 Potion	Mana	0	1	1	0	0	1	1
 Potion	Stamina	1	0	0	0	1	2	3
 Potion	Speed	0	0	1	1	0	2	2
-Potion	Tolerance	0	0	0	1	1	3	4
+Potion	Tolerance	0	0	0	1	1	4	4
 Tonic	Fire	1	0	1	0	0	1	1
 Tonic	Ice	1	0	0	1	0	2	2
 Tonic	Thunder	0	1	0	1	0	2	3
 Tonic	Shadow	0	1	0	0	1	2	
-Tonic	Radiation	0	0	1	0	1	3	5
+Tonic	Radiation	0	0	1	0	1	4	5
 Enhancer	Sight	3	4	3	0	0	1	2
 Enhancer	Alertness	0	3	4	3	0	2	
 Enhancer	Insight	4	3	0	0	3	3	4
 Enhancer	Dowsing	3	0	0	3	4	3	
-Enhancer	Seeking	0	0	3	4	3	3	5
+Enhancer	Seeking	0	0	3	4	3	4	5
 Cures	Poison	2	0	1	1	0	1	3
 Cures	Drowsiness	1	1	0	2	0	2	
 Cures	Petrification	1	0	2	0	1	3	
 Cures	Silence	0	2	1	0	1	3	4
-Cures	Curse	0	1	1	0	2	3	5
+Cures	Curse	0	1	1	0	2	4	5

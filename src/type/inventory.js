@@ -4,6 +4,7 @@ import {IngredientName} from "./ingredient.js";
  * @typedef InventoryRow
  * @type {object}
  * @property {string} Ingredient
+ * @property {string} Name
  * @property {string} Quinn
  * @property {string} Stock
  */

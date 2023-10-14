@@ -15,46 +15,72 @@ import {maybeIntFrom} from "../src/spreadsheet-helpers.js";
 import {CAULDRON_SIZE_MAX} from "../src/type/cauldron.js";
 import {PotionName} from "../src/type/potion.js";
 import {Recipe} from "../src/type/recipe.js";
+import {SENSES} from "../src/type/sense.js";
 import {zeroPad} from "../src/zero-pad.js";
 
 const {
 	values: {
 		all: wantAll,
 		available,
+		butNot,
 		count: wantCount,
+		goodSense,
 		ignoreStock,
 		ignoreQuinn,
 		inventory: inventoryPath,
 		minItems: minItemsText,
+		minStars: minStarsText,
+		maxStars: maxStarsText,
 		maxItems: maxItemsText,
 		maxMagimins: maxMagiminsText,
 		potion: potions,
 		recipes: recipesPaths,
+		sense: plusSenses,
 		shoppingOnly,
+		tier: tierTexts,
 	},
 } = parseArgs({
 	options: {
 		all: {default: "", type: "string"},
 		available: {type: "boolean"},
+		butNot: {default: [], multiple: true, type: "string"},
 		count: {default: "", short: "n", type: "string"},
+		goodSense: {default: false, type: "boolean"},
 		ignoreQuinn: {type: "boolean"},
 		ignoreStock: {type: "boolean"},
 		inventory: {type: "string"},
 		maxItems: {default: "", type: "string"},
 		maxMagimins: {default: "", type: "string"},
+		maxStars: {default: "", type: "string"},
 		minItems: {default: "", type: "string"},
+		minStars: {default: "", type: "string"},
 		potion: {default: [], multiple: true, type: "string"},
 		recipes: {default: [], multiple: true, type: "string"},
+		sense: {default: [], multiple: true, type: "string"},
 		shoppingOnly: {type: "boolean"},
 		skipRecipes: {default: [], multiple: true, type: "string"},
+		tier: {default: [], multiple: true, type: "string"},
 	},
 	strict: true,
 });
 
+if (plusSenses.length > 0) {
+	plusSenses.forEach((sense) => {
+		if (!SENSES.includes(sense)) {
+			throw new Error(`Unknown --sense: ${JSON.stringify(sense)}`);
+		}
+	});
+	console.log(`Plus senses: ${plusSenses.join(", ")}`);
+}
 const all = undefIfEmpty(wantAll) ?? "";
+potions.filter((p) => p.startsWith("!")).forEach((p) => butNot.push(p.replace("!", "")));
+const butNotPatterns = butNot.map((pattern) => new RegExp(pattern, "i"));
+if (butNot.length > 0) {
+	console.log(`But not: ${butNot.join(", ")}`);
+}
 if (all !== "") {
 	readdirSync("db", {encoding: "utf8", withFileTypes: true})
-		.filter((d) => d.isFile() && d.name.includes(all) && !d.name.endsWith("-wide.tsv") && d.name.endsWith(".tsv") && !d.name.startsWith("."))
+		.filter((d) => d.isFile() && d.name.includes(all) && !d.name.endsWith("-wide.tsv") && d.name.endsWith(".tsv") && !d.name.startsWith(".") && !butNotPatterns.some((re) => re.test(d.name)))
 		.map((d) => `db/${d.name}`)
 		.forEach((path) => recipesPaths.push(path));
 }
@@ -68,8 +94,21 @@ if (isEmpty(recipesPaths)) {
 const count = maybeIntFrom(wantCount) ?? 25;
 const maxItems = maybeIntFrom(maxItemsText) ?? CAULDRON_SIZE_MAX;
 const minItems = maybeIntFrom(minItemsText) ?? 2;
+const minStars = maybeIntFrom(minStarsText) ?? 0;
+const maxStars = maybeIntFrom(maxStarsText) ?? 5;
 const maxMagimins = maybeIntFrom(maxMagiminsText) ?? givens.MAGIMINS_MAX;
 const inventory = loadInventory(inventoryPath, {quinnOnly: !ignoreQuinn, stockedOnly: !shoppingOnly && !ignoreStock});
+const tiers = tierTexts.map((tier) => {
+	const index = givens.tierNames.indexOf(tier);
+	if (index >= 0) {
+		return index;
+	}
+	const num = maybeIntFrom(tier);
+	if (num != null) {
+		return num;
+	}
+	throw new Error(`Unknown --tier: ${JSON.stringify(tier)}`);
+});
 /** @type {Predicate.<PotionName>} */
 let potionFilter;
 if (potions.length > 0) {
@@ -100,7 +139,7 @@ let topRecipes = [];
 let topIngredients = {};
 for (let recipesPath of recipesPaths) {
 	console.log(`Scanning ${recipesPath} for matching recipes ...`);
-	const filtered = filterRecipesByInventory(recipesPath, inventory, minItems, maxItems, maxMagimins, ignoreStock, !ignoreQuinn, potionFilter, () => !shoppingOnly);
+	const filtered = filterRecipesByInventory(recipesPath, inventory, minItems, maxItems, maxMagimins, goodSense, plusSenses, ignoreStock, tiers, !ignoreQuinn, minStars, maxStars, potionFilter, () => !shoppingOnly);
 	filtered.recipes
 		.filter((r) => potionFilter(r.potionName))
 		.forEach((r) => recipes.push(r));
@@ -177,6 +216,6 @@ if (recipes.length === 0) {
 
 const zeroes = Math.ceil(Math.log10(count + 1));
 
-recipes.sort(comparator).slice(0, count).forEach((recipe, index) => {
-	console.log(`${zeroPad(index + 1, zeroes)}. ${formatRecipe(recipe)}`);
+recipes.sort(comparator).slice(0, count).reverse().forEach((recipe, index) => {
+	console.log(`${zeroPad(count - index, zeroes)}. ${formatRecipe(recipe)}`);
 });

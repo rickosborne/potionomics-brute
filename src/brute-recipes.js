@@ -75,7 +75,7 @@ export const bruteRecipes = (config) => {
 	/** @type {FilterPipeline.<Potion>} */
 	const potionsFilter = filterPipeline(givens.potions, "loaded")
 		.stepIf(potionNames.length > 0, `specified(${potionNames.length})`, (/**Potion*/p) => potionNames.includes(p.name))
-		.stepIf(chapters.length > 0, `chapters(${chapters.join(",")})`, (/**Potion*/p) => chapters.includes(p.earliestChapter))
+		.stepIf(potionNames.length === 0 && chapters.length > 0, `chapters(${chapters.join(",")})`, (/**Potion*/p) => chapters.includes(p.earliestChapter))
 		.stepIf(goal && chapters.length === 0, "all goals", (/**Potion*/p) => p.goalChapter != null)
 		.stepIf(goal && chapters.length > 0, "goals", (/**Potion*/p) => chapters.includes(p.goalChapter));
 	/** @type {Potion[]} */
@@ -160,7 +160,7 @@ export const bruteRecipes = (config) => {
 			}
 			return index;
 		});
-		console.log(`Last offsets: `, offsets);
+		console.log(`Last offsets: ${offsets.map((n) => ingredients[n].name).join(" + ")}`);
 		tryEverything.offsets = offsets;
 		itemCount = offsets.length;
 		countdown = countdownTimer(multiChooseCount(ingredients.length, itemCount));
@@ -176,7 +176,7 @@ export const bruteRecipes = (config) => {
 		if (timeUntilNextLog === 0) {
 			timeUntilNextLog = 1000;
 			const elapsedMs = Date.now() - startMs;
-			console.log(`${duration(elapsedMs)}: ${countdown.toString()} @ ${itemCount}/${ingredients.length} items: ${ledger.perfectCount.toLocaleString()} / ${ledger.stableCount.toLocaleString()} / ${ledger.totalCount.toLocaleString()}`);
+			console.log(`${duration(elapsedMs)}: ${countdown.toString()} @ ${itemCount}/${ingredients.length} items: ${ledger.perfectCount.toLocaleString()} / ${ledger.stableCount.toLocaleString()} / ${ledger.totalCount.toLocaleString()} for ${prefix}`);
 		}
 		timeUntilNextLog -= 1;
 		// eslint-disable-next-line no-undef

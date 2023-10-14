@@ -7,6 +7,7 @@ import {CAULDRON_SIZE_MAX} from "./type/cauldron.js";
 import {Inventory} from "./type/inventory.js";
 import {PotionName} from "./type/potion.js";
 import {Recipe} from "./type/recipe.js";
+import {BAD, GOOD, RANDOM, SENSES} from "./type/sense.js";
 
 /**
  * @function
@@ -15,8 +16,13 @@ import {Recipe} from "./type/recipe.js";
  * @param {number|undefined} [minIngredients]
  * @param {number|undefined} [maxIngredients]
  * @param {number|undefined} [maxMagimins]
+ * @param {boolean|undefined} [goodSense]
+ * @param {string[]|undefined} [plusSenses]
  * @param {boolean|undefined} [ignoreStock]
+ * @param {number[]|undefined} [tiers]
  * @param {boolean|undefined} [matchInventory]
+ * @param {number|undefined} [minStars]
+ * @param {number|undefined} [maxStars]
  * @param {Predicate.<PotionName>} [matchPotionName]
  * @param {Predicate.<Recipe>|undefined} [predicate]
  * @returns {{recipes: Recipe[], topIngredients: {[key: string]: number}, topMagimins: number, topRecipes: Recipe[]}}
@@ -27,8 +33,13 @@ export const filterRecipesByInventory = (
 	minIngredients = 2,
 	maxIngredients = CAULDRON_SIZE_MAX,
 	maxMagimins = givens.MAGIMINS_MAX,
+	goodSense = false,
+	plusSenses = [],
 	ignoreStock = false,
+	tiers = [],
 	matchInventory = false,
+	minStars = 0,
+	maxStars = 5,
 	matchPotionName = () => true,
 	predicate = () => true,
 ) => {
@@ -47,6 +58,15 @@ export const filterRecipesByInventory = (
 			topIngredients[need] = (topIngredients[need] ?? 0) + 1;
 		}
 	});
+	/** @type {Predicate.<Recipe>} */
+	const goodSenseCheck = goodSense ? ((/**Recipe*/recipe) => {
+		return SENSES.every((sense) => recipe[sense] !== BAD && recipe[sense] !== RANDOM);
+	}) : (() => true);
+	/** @type {Predicate.<Recipe>} */
+	const plusSenseCheck = plusSenses.length > 0 ? ((/**Recipe*/recipe) => {
+		return plusSenses.every((sense) => recipe[sense] === GOOD);
+	}) : (() => true);
+	const tierCheck = tiers.length > 0 ? ((/**Recipe*/recipe) => tiers.includes(recipe.tier)) : (() => true);
 	const recipes = loadSpreadsheet(
 		recipesFile,
 		/**
@@ -55,7 +75,18 @@ export const filterRecipesByInventory = (
 		 */
 		(row) => {
 			const recipe = recipeFromRow(row);
-			if (recipe.ingredientNames.length > maxIngredients || recipe.ingredientNames.length < minIngredients || recipe.magimins > maxMagimins || recipe.price == null || !matchPotionName(recipe.potionName) || !matchInventoryCheck(recipe)) {
+			if (recipe.ingredientNames.length > maxIngredients
+				|| recipe.ingredientNames.length < minIngredients
+				|| recipe.magimins > maxMagimins
+				|| recipe.price == null
+				|| !matchPotionName(recipe.potionName)
+				|| !matchInventoryCheck(recipe)
+				|| recipe.stars < minStars
+				|| recipe.stars > maxStars
+				|| !goodSenseCheck(recipe)
+				|| !plusSenseCheck(recipe)
+				|| !tierCheck(recipe)
+			) {
 				return undefined;
 			}
 			if (recipe.magimins > topMagimins) {

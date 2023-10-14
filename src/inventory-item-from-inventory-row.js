@@ -10,11 +10,11 @@ export const STOCK_PLENTY = 99;
  * @returns {InventoryItem}
  */
 export const inventoryItemFromInventoryRow = (row) => {
-    const stock = maybeIntFrom(row.Stock) ?? 0;
-    const quinn = maybeBoolFrom(row.Quinn) ?? (stock > 0);
-    return {
-        ingredientName: row.Ingredient,
-        quinn,
-        stock,
-    };
+	const stock = maybeIntFrom(row.Stock) ?? 0;
+	const quinn = maybeBoolFrom(row.Quinn) ?? (stock > 0);
+	return {
+		ingredientName: row.Ingredient ?? row.Name,
+		quinn,
+		stock,
+	};
 };
