@@ -9,7 +9,8 @@
 		"esm": "3.2.25",
 		"mocha": "10.2.0",
 		"n-readlines": "1.0.1",
-		"nyc": "15.1.0"
+		"nyc": "15.1.0",
+		"workerpool": "6.5.1"
 	},
 	"name": "potionomics-brute",
 	"private": true,

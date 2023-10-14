@@ -502,8 +502,8 @@
 	{
 		"A": 0,
 		"B": 10,
-		"C": 20,
-		"D": 0,
+		"C": 0,
+		"D": 20,
 		"E": 0,
 		"description": "These fuzzy berries can't possibly be OK to eat, can they?",
 		"icon": "data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAQAICTAEAOw%3D%3D",

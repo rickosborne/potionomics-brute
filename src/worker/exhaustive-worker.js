@@ -1,5 +1,5 @@
 import console from "node:console";
-import {isMainThread, workerData} from "node:worker_threads";
+import workerpool from "workerpool";
 import {bruteRecipes} from "../brute-recipes.js";
 
 /**
@@ -15,12 +15,13 @@ import {bruteRecipes} from "../brute-recipes.js";
 /** @type {ExhaustiveWorkerConfig} */
 export let ExhaustiveWorkerConfig;
 
-/** @type {ExhaustiveWorkerConfig} */
-const config = workerData;
-
-if (!isMainThread) {
+/**
+ * @param {ExhaustiveWorkerConfig} config
+ * @returns {Promise<void>}
+ */
+async function exhaustiveWorker(config) {
 	console.log(`Worker starting: ${config.prefix}`);
-	bruteRecipes({
+	return bruteRecipes({
 		chapters: config.chapters,
 		maxItems: config.itemCount,
 		maxMagimins: config.maxMagimins,
@@ -32,3 +33,7 @@ if (!isMainThread) {
 		console.log(`Worker done: ${config.prefix}`);
 	});
 }
+
+workerpool.worker({
+	exhaustiveWorker,
+});
