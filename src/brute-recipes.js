@@ -160,7 +160,7 @@ export const bruteRecipes = (config) => {
 			}
 			return index;
 		});
-		console.log(`Last offsets: ${offsets.map((n) => ingredients[n].name).join(" + ")}`);
+		console.log(`Last recipe: ${lastRecipe.ingredientNames.join(" + ")}`);
 		tryEverything.offsets = offsets;
 		itemCount = offsets.length;
 		countdown = countdownTimer(multiChooseCount(ingredients.length, itemCount));
