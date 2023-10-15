@@ -1,6 +1,6 @@
-import {givens} from "./givens.js";
-import {IngredientName} from "./type/ingredient.js";
-import {Recipe} from "./type/recipe.js";
+const {givens} = require("./givens.js");
+const {IngredientName} = require("./type/ingredient.js");
+const {Recipe} = require("./type/recipe.js");
 
 /**
  * @typedef RecipeSet
@@ -10,13 +10,13 @@ import {Recipe} from "./type/recipe.js";
  */
 
 /** @type {RecipeSet} */
-export let RecipeSet;
+let RecipeSet;
 
 /**
  * @function
  * @returns {RecipeSet}
  */
-export const recipeSet = () => {
+const recipeSet = () => {
 	const chars = "0123456789ABCDEFGHJKMNPQRSTVWXYZ".split("");
 	const pairs = chars.flatMap((a) => chars.map((b) => `${a}${b}`));
 	/** @type {Map.<IngredientName,string>} */
@@ -39,3 +39,6 @@ export const recipeSet = () => {
 		},
 	};
 };
+
+// noinspection JSUnusedAssignment
+module.exports = {recipeSet, RecipeSet};

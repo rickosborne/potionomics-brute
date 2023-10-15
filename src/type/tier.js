@@ -4,7 +4,7 @@
  */
 
 /** @type {TierName} */
-export let TierName;
+let TierName;
 
 /**
  * @typedef QualityTier
@@ -14,7 +14,7 @@ export let TierName;
  */
 
 /** @type {QualityTier} */
-export let QualityTier;
+let QualityTier;
 
 /**
  * @typedef Tier
@@ -24,4 +24,7 @@ export let QualityTier;
 /**
  * @type {Tier}
  */
-export let Tier;
+let Tier;
+
+// noinspection JSUnusedAssignment
+module.exports = {QualityTier, Tier, TierName};

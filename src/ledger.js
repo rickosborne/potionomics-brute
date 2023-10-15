@@ -1,11 +1,11 @@
-import console from "node:console";
-import {mkdirSync} from "node:fs";
-import {existsSync} from "./exists-sync.js";
-import {RECIPE_DB_HEADERS} from "./recipe-db-headers.js";
-import {spreadsheetStream} from "./spreadsheet-stream.js";
-import {Potion} from "./type/potion.js";
-import {Quality} from "./type/quality.js";
-import {Recipe} from "./type/recipe.js";
+const console = require("node:console");
+const {mkdirSync} = require("node:fs");
+const {existsSync} = require("./exists-sync.js");
+const {RECIPE_DB_HEADERS} = require("./recipe-db-headers.js");
+const {spreadsheetStream} = require("./spreadsheet-stream.js");
+const {Potion} = require("./type/potion.js");
+const {Quality} = require("./type/quality.js");
+const {Recipe} = require("./type/recipe.js");
 
 // /**
 //  * @param {Recipe} recipe
@@ -18,7 +18,7 @@ import {Recipe} from "./type/recipe.js";
  * @type {string}
  */
 
-export class Ledger {
+class Ledger {
 	/**
 	 * @param {{[key: string]:*}} config
 	 * @param {string|undefined} [config.prefix]
@@ -92,3 +92,5 @@ export class Ledger {
 		// this.allOut.write(combinedRecipe);
 	}
 }
+
+module.exports = {Ledger};

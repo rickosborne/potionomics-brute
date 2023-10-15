@@ -1,11 +1,11 @@
-import {Recipe} from "./type/recipe.js";
-import {BAD, GOOD, NEUTRAL, RANDOM, SENSES} from "./type/sense.js";
+const {Recipe} = require("./type/recipe.js");
+const {BAD, GOOD, NEUTRAL, RANDOM, SENSES} = require("./type/sense.js");
 
 /**
  * @param {Recipe} recipe
  * @returns {{approx: boolean, mod: number, mods: string, price: string}}
  */
-export const priceModForRecipe = (recipe) => {
+const priceModForRecipe = (recipe) => {
 	let mod = 0;
 	let approx = false;
 	const mods = SENSES.map((sense) => recipe[sense])
@@ -22,3 +22,5 @@ export const priceModForRecipe = (recipe) => {
 	}
 	return {approx, mod: mod / 100, mods, price};
 };
+
+module.exports = {priceModForRecipe};

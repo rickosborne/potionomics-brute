@@ -6,7 +6,7 @@
  */
 
 /** @type {SpreadsheetValueSerializer} */
-export let SpreadsheetValueSerializer;
+let SpreadsheetValueSerializer;
 
 /**
  * @typedef SpreadsheetHeader
@@ -17,4 +17,7 @@ export let SpreadsheetValueSerializer;
  */
 
 /** @type {SpreadsheetHeader} */
-export let SpreadsheetHeader;
+let SpreadsheetHeader;
+
+// noinspection JSUnusedAssignment
+module.exports = {SpreadsheetHeader, SpreadsheetValueSerializer};

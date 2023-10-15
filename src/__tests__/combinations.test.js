@@ -1,5 +1,5 @@
-import {expect} from "chai";
-import {multiChooseCount} from "../combinations.js";
+const {expect} = require("chai");
+const {multiChooseCount} = require("../combinations.js");
 
 describe(multiChooseCount.name, () => {
 	const cases = [

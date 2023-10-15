@@ -1,4 +1,4 @@
-import {Color} from "./color.js";
+const {Color} = require("./color.js");
 
 /**
  * @typedef PotionName
@@ -8,7 +8,7 @@ import {Color} from "./color.js";
 /**
  * @type {PotionName}
  */
-export let PotionName;
+let PotionName;
 
 /**
  * @typedef PotionCategory
@@ -18,7 +18,7 @@ export let PotionName;
 /**
  * @type {PotionCategory}
  */
-export let PotionCategory;
+let PotionCategory;
 
 /**
  * @typedef Potion
@@ -37,7 +37,7 @@ export let PotionCategory;
 /**
  * @type {Potion}
  */
-export let Potion;
+let Potion;
 
 /**
  * @typedef ExpandedPotion
@@ -49,7 +49,7 @@ export let Potion;
 /**
  * @type {ExpandedPotion}
  */
-export let ExpandedPotion;
+let ExpandedPotion;
 
 /**
  * @typedef PotionsRow
@@ -68,4 +68,7 @@ export let ExpandedPotion;
 /**
  * @type {PotionsRow}
  */
-export let PotionsRow;
+let PotionsRow;
+
+// noinspection JSUnusedAssignment
+module.exports = {ExpandedPotion, Potion, PotionCategory, PotionName, PotionsRow};

@@ -1,20 +1,20 @@
-import console from "node:console";
-import {addIngredient} from "./add-ingredient.js";
-import {givens} from "./givens.js";
-import {incrementOffsets} from "./increment-offsets.js";
-import {assertIsArray} from "./is-array.js";
-import {Ledger} from "./ledger.js";
-import {qualityFromMagimins} from "./quality-from-magimins.js";
-import {stabilityOfRecipe} from "./stability-of-recipe.js";
-import {CAULDRON_SIZE_MAX} from "./type/cauldron.js";
-import {Ingredient} from "./type/ingredient.js";
-import {Potion} from "./type/potion.js";
-import {EMPTY_RECIPE, Recipe} from "./type/recipe.js";
+const console = require("node:console");
+const {addIngredient} = require("./add-ingredient.js");
+const {givens} = require("./givens.js");
+const {incrementOffsets} = require("./increment-offsets.js");
+const {assertIsArray} = require("./is-array.js");
+const {Ledger} = require("./ledger.js");
+const {qualityFromMagimins} = require("./quality-from-magimins.js");
+const {stabilityOfRecipe} = require("./stability-of-recipe.js");
+const {CAULDRON_SIZE_MAX} = require("./type/cauldron.js");
+const {Ingredient} = require("./type/ingredient.js");
+const {Potion} = require("./type/potion.js");
+const {EMPTY_RECIPE, Recipe} = require("./type/recipe.js");
 
 /**
  * @class
  */
-export class TryEverything {
+class TryEverything {
 	/**
 	 * @param {{[key: string]: *}} config
 	 * @param {Ingredient[]} config.ingredients
@@ -84,3 +84,5 @@ export class TryEverything {
 		this.ledger.close();
 	}
 }
+
+module.exports = {TryEverything};

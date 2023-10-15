@@ -4,4 +4,6 @@
  * @param {number} high Exclusive
  * @returns {number}
  */
-export const randInt = (low, high) => low + Math.floor(Math.random() * (high - low));
+const randInt = (low, high) => low + Math.floor(Math.random() * (high - low));
+
+module.exports = {randInt};

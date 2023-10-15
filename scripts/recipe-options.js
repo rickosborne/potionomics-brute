@@ -1,22 +1,22 @@
-import console from "node:console";
-import {readdirSync} from "node:fs";
-import {parseArgs} from "node:util";
-import {formatRecipe} from "../format-recipe.js";
-import {comparatorBuilder, ComparatorBuilder} from "../src/comparator.js";
-import {Predicate} from "../src/filter-pipeline.js";
-import {filterRecipesByInventory} from "../src/filter-recipes-by-inventory.js";
-import {givens} from "../src/givens.js";
-import {isEmpty, undefIfEmpty} from "../src/is-empty.js";
-import {loadInventory} from "../src/load-inventory.js";
-import {priceModForRecipe} from "../src/price-mod-for-recipe.js";
-import {rarityForRecipe} from "../src/rarity-for-recipe.js";
-import {senseModsSummary} from "../src/sense-mods-summary.js";
-import {maybeIntFrom} from "../src/spreadsheet-helpers.js";
-import {CAULDRON_SIZE_MAX} from "../src/type/cauldron.js";
-import {PotionName} from "../src/type/potion.js";
-import {Recipe} from "../src/type/recipe.js";
-import {SENSES} from "../src/type/sense.js";
-import {zeroPad} from "../src/zero-pad.js";
+const console = require("node:console");
+const {readdirSync} = require("node:fs");
+const {parseArgs} = require("node:util");
+const {formatRecipe} = require("../src/format-recipe.js");
+const {comparatorBuilder, ComparatorBuilder} = require("../src/comparator.js");
+const {Predicate} = require("../src/filter-pipeline.js");
+const {filterRecipesByInventory} = require("../src/filter-recipes-by-inventory.js");
+const {givens} = require("../src/givens.js");
+const {isEmpty, undefIfEmpty} = require("../src/is-empty.js");
+const {loadInventory} = require("../src/load-inventory.js");
+const {priceModForRecipe} = require("../src/price-mod-for-recipe.js");
+const {rarityForRecipe} = require("../src/rarity-for-recipe.js");
+const {senseModsSummary} = require("../src/sense-mods-summary.js");
+const {maybeIntFrom} = require("../src/spreadsheet-helpers.js");
+const {CAULDRON_SIZE_MAX} = require("../src/type/cauldron.js");
+const {PotionName} = require("../src/type/potion.js");
+const {Recipe} = require("../src/type/recipe.js");
+const {SENSES} = require("../src/type/sense.js");
+const {zeroPad} = require("../src/zero-pad.js");
 
 const {
 	values: {

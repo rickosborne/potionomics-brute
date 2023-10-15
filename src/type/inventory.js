@@ -1,4 +1,4 @@
-import {IngredientName} from "./ingredient.js";
+const {IngredientName} = require("./ingredient.js");
 
 /**
  * @typedef InventoryRow
@@ -10,7 +10,7 @@ import {IngredientName} from "./ingredient.js";
  */
 
 /** @type {InventoryRow} */
-export let InventoryRow;
+let InventoryRow;
 
 /**
  * @typedef InventoryItem
@@ -21,7 +21,7 @@ export let InventoryRow;
  */
 
 /** @type {InventoryItem} */
-export let InventoryItem;
+let InventoryItem;
 
 /**
  * @typedef Inventory
@@ -29,4 +29,7 @@ export let InventoryItem;
  */
 
 /** @type {Inventory} */
-export let Inventory;
+let Inventory;
+
+// noinspection JSUnusedAssignment
+module.exports = {Inventory, InventoryItem, InventoryRow};

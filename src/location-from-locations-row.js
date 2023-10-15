@@ -1,12 +1,14 @@
-import {intFrom} from "./spreadsheet-helpers.js";
-import {Location, LocationsRow} from "./type/location.js";
+const {intFrom} = require("./spreadsheet-helpers.js");
+const {Location, LocationsRow} = require("./type/location.js");
 
 /**
  * @function
  * @param {LocationsRow} row
  * @returns {Location}
  */
-export const locationFromLocationsRow = (row) => ({
-    chapter: intFrom(row.Chapter),
-    name: row.Name,
+const locationFromLocationsRow = (row) => ({
+	chapter: intFrom(row.Chapter),
+	name: row.Name,
 });
+
+module.exports = {locationFromLocationsRow};

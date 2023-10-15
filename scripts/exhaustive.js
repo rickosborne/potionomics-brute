@@ -1,11 +1,11 @@
-import console from "node:console";
-import path from "node:path";
-import workerpool from "workerpool";
-import {comparatorBuilder} from "../src/comparator.js";
-import {existsSync} from "../src/exists-sync.js";
-import {givens} from "../src/givens.js";
-import {range} from "../src/range.js";
-import {Potion} from "../src/type/potion.js";
+const console = require("node:console");
+const path = require("node:path");
+const workerpool = require("workerpool");
+const {comparatorBuilder} = require("../src/comparator.js");
+const {existsSync} = require("../src/exists-sync.js");
+const {givens} = require("../src/givens.js");
+const {range} = require("../src/range.js");
+const {Potion} = require("../src/type/potion.js");
 
 const exhaustive = async () => {
 	const workerScript = path.resolve("src", "worker", "exhaustive-worker.js");

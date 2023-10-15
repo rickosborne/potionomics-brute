@@ -1,7 +1,7 @@
-import console from "node:console";
-import {parseArgs} from "node:util";
-import {bruteRecipes} from "../src/brute-recipes.js";
-import {intFrom, maybeFloatFrom, maybeIntFrom} from "../src/spreadsheet-helpers.js";
+const console = require("node:console");
+const {parseArgs} = require("node:util");
+const {bruteRecipes} = require("../src/brute-recipes.js");
+const {intFrom, maybeFloatFrom, maybeIntFrom} = require("../src/spreadsheet-helpers.js");
 
 const {
 	values: {

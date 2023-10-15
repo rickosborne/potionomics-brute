@@ -1,15 +1,15 @@
-import {cauldronFromCauldronsRow} from "./cauldron-from-cauldrons-row.js";
-import {ingredientFromIngredientsRow} from "./ingredient-from-ingredients-row.js";
-import {loadSpreadsheet} from "./load-csv.js";
-import {locationFromLocationsRow} from "./location-from-locations-row.js";
-import {potionFromPotionsRow} from "./potion-from-potions-row.js";
-import {readJsonSync} from "./read-json-sync.js";
-import {Cauldron, CAULDRON_SIZE_MAX} from "./type/cauldron.js";
-import {Chapter} from "./type/chapter.js";
-import {Ingredient} from "./type/ingredient.js";
-import {Location} from "./type/location.js";
-import {Potion} from "./type/potion.js";
-import {QualityTier, TierName} from "./type/tier.js";
+const {cauldronFromCauldronsRow} = require("./cauldron-from-cauldrons-row.js");
+const {ingredientFromIngredientsRow} = require("./ingredient-from-ingredients-row.js");
+const {loadSpreadsheet} = require("./load-csv.js");
+const {locationFromLocationsRow} = require("./location-from-locations-row.js");
+const {potionFromPotionsRow} = require("./potion-from-potions-row.js");
+const {readJsonSync} = require("./read-json-sync.js");
+const {Cauldron, CAULDRON_SIZE_MAX} = require("./type/cauldron.js");
+const {Chapter} = require("./type/chapter.js");
+const {Ingredient} = require("./type/ingredient.js");
+const {Location} = require("./type/location.js");
+const {Potion} = require("./type/potion.js");
+const {QualityTier, TierName} = require("./type/tier.js");
 
 /**
  * @typedef Givens
@@ -25,67 +25,73 @@ import {QualityTier, TierName} from "./type/tier.js";
  */
 
 /** @type {Givens} */
-export let Givens;
+let Givens;
 
 /** @type {Givens} */
-export const givens = (() => {
-    /** @type {Cauldron[]|undefined} */
-    let cauldrons;
-    /** @type {{[key: LocationName]: Chapter}} */
-    let chaptersByLocation;
-    /** @type {Ingredient[]|undefined} */
-    let ingredients;
-    /** @type {Location[]|undefined} */
-    let locations;
-    /** @type {number|undefined} */
-    let MAGIMINS_MAX;
-    /** @type {Potion[]|undefined} */
-    let potions;
-    /** @type {QualityTier[]|undefined} */
-    let qualityTiers;
-    /** @type {TierName[]|undefined} */
-    let tierNames;
-    const _givens = Object.freeze({
-        /** @returns {Cauldron[]} */
-        get cauldrons() {
-            cauldrons ??= Object.freeze(loadSpreadsheet("data/cauldrons.tsv", cauldronFromCauldronsRow));
-            return cauldrons;
-        },
-        /** @returns {{[key: LocationName]: Chapter}} */
-        get chaptersByLocation() {
-            chaptersByLocation ??= Object.fromEntries(_givens.locations.map((l) => [l.name, l.chapter]));
-            return chaptersByLocation;
-        },
-        /** @returns {Ingredient[]} */
-        get ingredients() {
-            ingredients ??= Object.freeze(loadSpreadsheet("data/ingredients.tsv", ingredientFromIngredientsRow));
-            return ingredients;
-        },
-        /** @returns {Location[]} */
-        get locations() {
-            locations ??= Object.freeze(loadSpreadsheet("data/locations.tsv", locationFromLocationsRow));
-            return locations;
-        },
-        /** @returns {number} */
-        get MAGIMINS_MAX() {
-            MAGIMINS_MAX ??= _givens.ingredients.map((i) => i.magimins).reduce((p, c) => Math.max(p, c)) * CAULDRON_SIZE_MAX;
-            return MAGIMINS_MAX;
-        },
-        /** @returns {Potion[]} */
-        get potions() {
-            potions ??= Object.freeze(loadSpreadsheet("data/potions.tsv", potionFromPotionsRow));
-            return potions;
-        },
-        /** @returns {QualityTier[]} */
-        get qualityTiers() {
-            qualityTiers ??= Object.freeze(readJsonSync("data/quality-tiers.json"));
-            return qualityTiers;
-        },
-        /** @returns {TierName[]} */
-        get tierNames() {
-            tierNames ??= Object.freeze(_givens.qualityTiers.map((tier) => tier.name));
-            return tierNames;
-        },
-    });
-    return _givens;
+const givens = (() => {
+	/** @type {Cauldron[]|undefined} */
+	let cauldrons;
+	/** @type {{[key: LocationName]: Chapter}} */
+	let chaptersByLocation;
+	/** @type {Ingredient[]|undefined} */
+	let ingredients;
+	/** @type {Location[]|undefined} */
+	let locations;
+	/** @type {number|undefined} */
+	let MAGIMINS_MAX;
+	/** @type {Potion[]|undefined} */
+	let potions;
+	/** @type {QualityTier[]|undefined} */
+	let qualityTiers;
+	/** @type {TierName[]|undefined} */
+	let tierNames;
+	const _givens = Object.freeze({
+		/** @returns {Cauldron[]} */
+		get cauldrons() {
+			cauldrons ??= Object.freeze(loadSpreadsheet("data/cauldrons.tsv", cauldronFromCauldronsRow));
+			return cauldrons;
+		},
+		/** @returns {{[key: LocationName]: Chapter}} */
+		get chaptersByLocation() {
+			chaptersByLocation ??= Object.fromEntries(_givens.locations.map((l) => [l.name, l.chapter]));
+			return chaptersByLocation;
+		},
+		/** @returns {Ingredient[]} */
+		get ingredients() {
+			ingredients ??= Object.freeze(loadSpreadsheet("data/ingredients.tsv", ingredientFromIngredientsRow));
+			return ingredients;
+		},
+		/** @returns {Location[]} */
+		get locations() {
+			locations ??= Object.freeze(loadSpreadsheet("data/locations.tsv", locationFromLocationsRow));
+			return locations;
+		},
+		/** @returns {number} */
+		get MAGIMINS_MAX() {
+			MAGIMINS_MAX ??= _givens.ingredients.map((i) => i.magimins).reduce((p, c) => Math.max(p, c)) * CAULDRON_SIZE_MAX;
+			return MAGIMINS_MAX;
+		},
+		/** @returns {Potion[]} */
+		get potions() {
+			potions ??= Object.freeze(loadSpreadsheet("data/potions.tsv", potionFromPotionsRow));
+			return potions;
+		},
+		/** @returns {QualityTier[]} */
+		get qualityTiers() {
+			qualityTiers ??= Object.freeze(readJsonSync("data/quality-tiers.json"));
+			return qualityTiers;
+		},
+		/** @returns {TierName[]} */
+		get tierNames() {
+			tierNames ??= Object.freeze(_givens.qualityTiers.map((tier) => tier.name));
+			return tierNames;
+		},
+	});
+	return _givens;
 })();
+
+// noinspection JSUnusedAssignment
+module.exports = {
+	givens,
+	Givens,
+};

@@ -1,19 +1,19 @@
-import console from "node:console";
-import {parseArgs} from "node:util";
-import {existsSync} from "../src/exists-sync.js";
-import {Predicate} from "../src/filter-pipeline.js";
-import {givens} from "../src/givens.js";
-import {isEmpty} from "../src/is-empty.js";
-import {loadSpreadsheet} from "../src/load-csv.js";
-import {sortRecipesTopMagimin} from "../src/recipe-comparator.js";
-import {recipeFromRow} from "../src/recipe-from-row.js";
-import {recipeSet} from "../src/recipe-id-set.js";
-import {maybeIntFrom} from "../src/spreadsheet-helpers.js";
-import {spreadsheetStream, SpreadsheetStream} from "../src/spreadsheet-stream.js";
-import {CAULDRON_SIZE_MAX} from "../src/type/cauldron.js";
-import {PotionName} from "../src/type/potion.js";
-import {Recipe, WideRecipe} from "../src/type/recipe.js";
-import {recipeWidener, wideRecipeColumns} from "../src/widen-recipe.js";
+const console = require("node:console");
+const {parseArgs} = require("node:util");
+const {existsSync} = require("../src/exists-sync.js");
+const {Predicate} = require("../src/filter-pipeline.js");
+const {givens} = require("../src/givens.js");
+const {isEmpty} = require("../src/is-empty.js");
+const {loadSpreadsheet} = require("../src/load-csv.js");
+const {sortRecipesTopMagimin} = require("../src/recipe-comparator.js");
+const {recipeFromRow} = require("../src/recipe-from-row.js");
+const {recipeSet} = require("../src/recipe-id-set.js");
+const {maybeIntFrom} = require("../src/spreadsheet-helpers.js");
+const {spreadsheetStream, SpreadsheetStream} = require("../src/spreadsheet-stream.js");
+const {CAULDRON_SIZE_MAX} = require("../src/type/cauldron.js");
+const {PotionName} = require("../src/type/potion.js");
+const {Recipe, WideRecipe} = require("../src/type/recipe.js");
+const {recipeWidener, wideRecipeColumns} = require("../src/widen-recipe.js");
 
 const {
 	values: {

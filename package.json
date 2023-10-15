@@ -15,16 +15,15 @@
 	"name": "potionomics-brute",
 	"private": true,
 	"scripts": {
-		"brute": "node --no-warnings --experimental-specifier-resolution=node --experimental-modules scripts/brute.js",
+		"brute": "node scripts/brute.js",
 		"lint": "eslint .",
 		"lint:fix": "eslint --fix .",
 		"test": "mocha",
-		"test:coverage": "NODE_OPTIONS='--no-warnings --experimental-loader=@istanbuljs/esm-loader-hook' nyc mocha",
-		"recipe-options": "node --no-warnings --experimental-specifier-resolution=node --experimental-modules scripts/recipe-options.js",
-		"remove-ingredient": "node --no-warnings --experimental-specifier-resolution=node --experimental-modules scripts/remove-ingredient.js",
+		"test:coverage": "nyc mocha",
+		"recipe-options": "node scripts/recipe-options.js",
+		"remove-ingredient": "node scripts/remove-ingredient.js",
 		"update": "npx npm-check-updates -u",
-		"widen": "node --no-warnings --experimental-specifier-resolution=node --experimental-modules scripts/widen.js"
+		"widen": "node scripts/widen.js"
 	},
-	"type": "module",
 	"version": "1.0.0"
 }

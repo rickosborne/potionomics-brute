@@ -1,5 +1,5 @@
-import {IngredientName} from "./ingredient.js";
-import {TierName} from "./tier.js";
+const {IngredientName} = require("./ingredient.js");
+const {TierName} = require("./tier.js");
 
 /**
  * @typedef CauldronName
@@ -7,7 +7,7 @@ import {TierName} from "./tier.js";
  */
 
 /** @type {CauldronName} */
-export let CauldronName;
+let CauldronName;
 
 /**
  * @typedef CauldronsRow
@@ -24,7 +24,7 @@ export let CauldronName;
  */
 
 /** @type {CauldronsRow} */
-export let CauldronsRow;
+let CauldronsRow;
 
 /**
  * @typedef Cauldron
@@ -40,6 +40,9 @@ export let CauldronsRow;
  * @property {string} description
  */
 /** @type {Cauldron} */
-export let Cauldron;
+let Cauldron;
 
-export const CAULDRON_SIZE_MAX = 14;
+const CAULDRON_SIZE_MAX = 14;
+
+// noinspection JSUnusedAssignment
+module.exports = {Cauldron, CAULDRON_SIZE_MAX, CauldronName, CauldronsRow};

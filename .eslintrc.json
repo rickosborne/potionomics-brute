@@ -1,7 +1,9 @@
 {
 	"root": true,
 	"env": {
-		"es2021": true
+		"amd": true,
+		"es2021": true,
+		"node": true
 	},
 	"extends": [
 		"eslint:recommended",
@@ -9,7 +11,7 @@
 		"plugin:mocha/recommended"
 	],
 	"parserOptions": {
-		"sourceType": "module"
+		"sourceType": "script"
 	},
 	"plugins": [
 		"jsdoc",

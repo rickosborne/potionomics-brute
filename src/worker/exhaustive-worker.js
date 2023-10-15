@@ -1,6 +1,6 @@
-import console from "node:console";
-import workerpool from "workerpool";
-import {bruteRecipes} from "../brute-recipes.js";
+const console = require("node:console");
+const workerpool = require("workerpool");
+const {bruteRecipes} = require("../brute-recipes.js");
 
 /**
  * @typedef ExhaustiveWorkerConfig
@@ -13,7 +13,7 @@ import {bruteRecipes} from "../brute-recipes.js";
  */
 
 /** @type {ExhaustiveWorkerConfig} */
-export let ExhaustiveWorkerConfig;
+let ExhaustiveWorkerConfig;
 
 /**
  * @param {ExhaustiveWorkerConfig} config
@@ -37,3 +37,6 @@ async function exhaustiveWorker(config) {
 workerpool.worker({
 	exhaustiveWorker,
 });
+
+// noinspection JSUnusedAssignment
+module.exports = {exhaustiveWorker, ExhaustiveWorkerConfig};

@@ -1,15 +1,15 @@
-import {maybeBoolFrom} from "./bool-from.js";
-import {maybeIntFrom} from "./spreadsheet-helpers.js";
-import {InventoryItem, InventoryRow} from "./type/inventory.js";
+const {maybeBoolFrom} = require("./bool-from.js");
+const {maybeIntFrom} = require("./spreadsheet-helpers.js");
+const {InventoryItem, InventoryRow} = require("./type/inventory.js");
 
-export const STOCK_PLENTY = 99;
+const STOCK_PLENTY = 99;
 
 /**
  * @function
  * @param {InventoryRow} row
  * @returns {InventoryItem}
  */
-export const inventoryItemFromInventoryRow = (row) => {
+const inventoryItemFromInventoryRow = (row) => {
 	const stock = maybeIntFrom(row.Stock) ?? 0;
 	const quinn = maybeBoolFrom(row.Quinn) ?? (stock > 0);
 	return {
@@ -18,3 +18,5 @@ export const inventoryItemFromInventoryRow = (row) => {
 		stock,
 	};
 };
+
+module.exports = {inventoryItemFromInventoryRow, STOCK_PLENTY};

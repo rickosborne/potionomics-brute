@@ -4,7 +4,7 @@
  * @param {...(function(*): value is T)} guards
  * @returns {value is T}
  */
-export const isAnyOf = (value, ...guards) => guards.some((guard) => guard(value));
+const isAnyOf = (value, ...guards) => guards.some((guard) => guard(value));
 
 /**
  * @template T
@@ -13,9 +13,11 @@ export const isAnyOf = (value, ...guards) => guards.some((guard) => guard(value)
  * @param {...(function(*): value is T)} guards
  * @returns {T}
  */
-export const assertIsAnyOf = (value, name, ...guards) => {
-    if (!isAnyOf(value, ...guards)) {
-        throw new Error(`Unknown type: ${name} (${typeof value})`);
-    }
-    return value;
+const assertIsAnyOf = (value, name, ...guards) => {
+	if (!isAnyOf(value, ...guards)) {
+		throw new Error(`Unknown type: ${name} (${typeof value})`);
+	}
+	return value;
 };
+
+module.exports = {assertIsAnyOf, isAnyOf};

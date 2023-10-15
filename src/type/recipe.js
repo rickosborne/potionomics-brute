@@ -1,8 +1,8 @@
-import {Chapter} from "./chapter.js";
-import {IngredientName} from "./ingredient.js";
-import {PotionName} from "./potion.js";
-import {Stars, Tier} from "./quality.js";
-import {NEUTRAL, Sensation} from "./sense.js";
+const {Chapter} = require("./chapter.js");
+const {IngredientName} = require("./ingredient.js");
+const {PotionName} = require("./potion.js");
+const {Stars, Tier} = require("./quality.js");
+const {NEUTRAL, Sensation} = require("./sense.js");
 
 /**
  * @typedef Recipe
@@ -31,27 +31,27 @@ import {NEUTRAL, Sensation} from "./sense.js";
 /**
  * @type {Recipe}
  */
-export let Recipe;
+let Recipe;
 
 /**
  * @type {Recipe}
  */
-export const EMPTY_RECIPE = Object.freeze({
-    A: 0,
-    B: 0,
-    C: 0,
-    D: 0,
-    E: 0,
-    earliestChapter: 1,
-    ingredientCount: 0,
-    ingredientNames: [],
-    magimins: 0,
-    price: 0,
-    sight: NEUTRAL,
-    smell: NEUTRAL,
-    sound: NEUTRAL,
-    taste: NEUTRAL,
-    touch: NEUTRAL,
+const EMPTY_RECIPE = Object.freeze({
+	A: 0,
+	B: 0,
+	C: 0,
+	D: 0,
+	E: 0,
+	earliestChapter: 1,
+	ingredientCount: 0,
+	ingredientNames: [],
+	magimins: 0,
+	price: 0,
+	sight: NEUTRAL,
+	smell: NEUTRAL,
+	sound: NEUTRAL,
+	taste: NEUTRAL,
+	touch: NEUTRAL,
 });
 
 /**
@@ -105,4 +105,7 @@ export const EMPTY_RECIPE = Object.freeze({
  */
 
 /** @type {WideRecipe} */
-export let WideRecipe;
+let WideRecipe;
+
+// noinspection JSUnusedAssignment
+module.exports = {EMPTY_RECIPE, Recipe, WideRecipe};

@@ -1,13 +1,13 @@
-import {Predicate} from "./filter-pipeline.js";
-import {givens} from "./givens.js";
-import {checkRecipeFromInventory} from "./inventory-can-make.js";
-import {loadSpreadsheet} from "./load-csv.js";
-import {recipeFromRow, RecipeRow} from "./recipe-from-row.js";
-import {CAULDRON_SIZE_MAX} from "./type/cauldron.js";
-import {Inventory} from "./type/inventory.js";
-import {PotionName} from "./type/potion.js";
-import {Recipe} from "./type/recipe.js";
-import {BAD, GOOD, RANDOM, SENSES} from "./type/sense.js";
+const {Predicate} = require("./filter-pipeline.js");
+const {givens} = require("./givens.js");
+const {checkRecipeFromInventory} = require("./inventory-can-make.js");
+const {loadSpreadsheet} = require("./load-csv.js");
+const {recipeFromRow, RecipeRow} = require("./recipe-from-row.js");
+const {CAULDRON_SIZE_MAX} = require("./type/cauldron.js");
+const {Inventory} = require("./type/inventory.js");
+const {PotionName} = require("./type/potion.js");
+const {Recipe} = require("./type/recipe.js");
+const {BAD, GOOD, RANDOM, SENSES} = require("./type/sense.js");
 
 /**
  * @function
@@ -27,7 +27,7 @@ import {BAD, GOOD, RANDOM, SENSES} from "./type/sense.js";
  * @param {Predicate.<Recipe>|undefined} [predicate]
  * @returns {{recipes: Recipe[], topIngredients: {[key: string]: number}, topMagimins: number, topRecipes: Recipe[]}}
  */
-export const filterRecipesByInventory = (
+const filterRecipesByInventory = (
 	recipesFile,
 	inventory,
 	minIngredients = 2,
@@ -115,3 +115,5 @@ export const filterRecipesByInventory = (
 		topRecipes,
 	};
 };
+
+module.exports = {filterRecipesByInventory};

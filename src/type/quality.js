@@ -6,7 +6,7 @@
 /**
  * @type {Tier}
  */
-export let Tier;
+let Tier;
 
 /**
  * @typedef Stars
@@ -16,7 +16,7 @@ export let Tier;
 /**
  * @type {Stars}
  */
-export let Stars;
+let Stars;
 
 /**
  * @typedef Quality
@@ -28,5 +28,7 @@ export let Stars;
 /**
  * @type {Quality}
  */
-export let Quality;
+let Quality;
 
+// noinspection JSUnusedAssignment
+module.exports = {Quality, Stars, Tier};

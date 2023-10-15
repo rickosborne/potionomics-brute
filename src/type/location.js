@@ -1,4 +1,4 @@
-import {Chapter} from "./chapter.js";
+const {Chapter} = require("./chapter.js");
 
 /**
  * @typedef LocationName
@@ -8,7 +8,7 @@ import {Chapter} from "./chapter.js";
 /**
  * @type {LocationName}
  */
-export let LocationName;
+let LocationName;
 
 /**
  * @typedef Location
@@ -18,7 +18,7 @@ export let LocationName;
  */
 
 /** @type {Location} */
-export let Location;
+let Location;
 
 /**
  * @typedef LocationsRow
@@ -28,4 +28,7 @@ export let Location;
  */
 
 /** @type {LocationsRow} */
-export let LocationsRow;
+let LocationsRow;
+
+// noinspection JSUnusedAssignment
+module.exports = {Location, LocationName, LocationsRow};

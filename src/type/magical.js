@@ -12,4 +12,7 @@
 /**
  * @type {Magical}
  */
-export let Magical;
+let Magical;
+
+// noinspection JSUnusedAssignment
+module.exports = {Magical};

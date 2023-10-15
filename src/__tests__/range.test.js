@@ -1,5 +1,5 @@
-import {expect} from "chai";
-import {range} from "../range.js";
+const {expect} = require("chai");
+const {range} = require("../range.js");
 
 describe(range.name, () => {
 	it("handles single digits", () => {

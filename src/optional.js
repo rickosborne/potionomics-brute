@@ -1,4 +1,4 @@
-import {assertIsFunction} from "./is-function";
+const {assertIsFunction} = require("./is-function");
 
 /**
  * @typedef OptionalMapper
@@ -12,7 +12,7 @@ import {assertIsFunction} from "./is-function";
 /**
  * @type {OptionalMapper}
  */
-export let OptionalMapper;
+let OptionalMapper;
 
 /**
  * @typedef Optional
@@ -27,30 +27,33 @@ export let OptionalMapper;
 /**
  * @type {Optional}
  */
-export let Optional;
+let Optional;
 
 /**
  * @template T
  * @param {T|undefined} value
  * @returns {Optional<T>}
  */
-export const optional = (value) => ({
-    filter(predicate) {
-        if (value == null || predicate(value)) {
-            return optional(value);
-        }
-        return optional(undefined);
-    },
-    ifPresent(accept) {
-        if (value != null) {
-            accept(value);
-        }
-    },
-    map(apply) {
-        assertIsFunction(apply, "optional:map:mapper");
-        return optional(value == null ? undefined : apply(value));
-    },
-    orElse(defaultValue) {
-        return value ?? defaultValue;
-    },
+const optional = (value) => ({
+	filter(predicate) {
+		if (value == null || predicate(value)) {
+			return optional(value);
+		}
+		return optional(undefined);
+	},
+	ifPresent(accept) {
+		if (value != null) {
+			accept(value);
+		}
+	},
+	map(apply) {
+		assertIsFunction(apply, "optional:map:mapper");
+		return optional(value == null ? undefined : apply(value));
+	},
+	orElse(defaultValue) {
+		return value ?? defaultValue;
+	},
 });
+
+// noinspection JSUnusedAssignment
+module.exports = {optional, Optional, OptionalMapper};

@@ -1,4 +1,4 @@
-import {readFileSync} from "node:fs";
+const {readFileSync} = require("node:fs");
 
 /**
  * @function
@@ -6,7 +6,9 @@ import {readFileSync} from "node:fs";
  * @param {string} filePath
  * @returns {T}
  */
-export const readJsonSync = (filePath) => {
-    const text = readFileSync(filePath, {encoding: "utf8"});
-    return JSON.parse(text);
+const readJsonSync = (filePath) => {
+	const text = readFileSync(filePath, {encoding: "utf8"});
+	return JSON.parse(text);
 };
+
+module.exports = {readJsonSync};

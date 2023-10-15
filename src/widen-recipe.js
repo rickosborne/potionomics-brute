@@ -1,7 +1,7 @@
-import {givens} from "./givens.js";
-import {simpleColumn} from "./spreadsheet-helpers.js";
-import {CAULDRON_SIZE_MAX} from "./type/cauldron.js";
-import {Recipe, WideRecipe} from "./type/recipe.js";
+const {givens} = require("./givens.js");
+const {simpleColumn} = require("./spreadsheet-helpers.js");
+const {CAULDRON_SIZE_MAX} = require("./type/cauldron.js");
+const {Recipe, WideRecipe} = require("./type/recipe.js");
 
 
 /**
@@ -9,7 +9,7 @@ import {Recipe, WideRecipe} from "./type/recipe.js";
  * @param {number|undefined} [maxItems]
  * @returns {({name: string, toString:(function(*,string,WideRecipe):string)})[]}
  */
-export const wideRecipeColumns = (maxItems = CAULDRON_SIZE_MAX) => {
+const wideRecipeColumns = (maxItems = CAULDRON_SIZE_MAX) => {
 	/** @type {number[]} */
 	const indexes = "*".repeat(maxItems).split("").map((_v, index) => index + 1);
 	return [
@@ -41,7 +41,7 @@ export const wideRecipeColumns = (maxItems = CAULDRON_SIZE_MAX) => {
  * @function
  * @returns {function(Recipe):WideRecipe}
  */
-export const recipeWidener = () => {
+const recipeWidener = () => {
 	const stockRefs = Object.fromEntries(givens.ingredients
 		.map((i) => i.name)
 		.sort()
@@ -85,3 +85,5 @@ export const recipeWidener = () => {
 		return wide;
 	};
 };
+
+module.exports = {recipeWidener, wideRecipeColumns};

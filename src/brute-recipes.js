@@ -1,27 +1,27 @@
-import console from "node:console";
-import process from "node:process";
-import {maybeBoolFrom} from "./bool-from.js";
-import {chapterFromDay} from "./chapter-from-day.js";
-import {multiChooseCount} from "./combinations.js";
-import {countdownTimer} from "./countdown-timer.js";
-import {duration, DURATION_PARTS} from "./duration.js";
-import {filterPipeline, FilterPipeline} from "./filter-pipeline.js";
-import {givens} from "./givens.js";
-import {undefIfEmpty} from "./is-empty.js";
-import {lastSeenRecipe} from "./last-seen-recipe.js";
-import {Ledger} from "./ledger.js";
-import {loadInventory} from "./load-inventory.js";
-import {optional} from "./optional.js";
-import {maybeIntFrom} from "./spreadsheet-helpers.js";
-import {TryEverything} from "./try-everything.js";
-import {CAULDRON_SIZE_MAX} from "./type/cauldron.js";
-import {Chapter} from "./type/chapter.js";
-import {COLORS} from "./type/color.js";
-import {Ingredient} from "./type/ingredient.js";
-import {Inventory} from "./type/inventory.js";
-import {LocationName} from "./type/location.js";
-import {Potion, PotionName} from "./type/potion.js";
-import {Recipe} from "./type/recipe.js";
+const console = require("node:console");
+const process = require("node:process");
+const {maybeBoolFrom} = require("./bool-from.js");
+const {chapterFromDay} = require("./chapter-from-day.js");
+const {multiChooseCount} = require("./combinations.js");
+const {countdownTimer} = require("./countdown-timer.js");
+const {duration, DURATION_PARTS} = require("./duration.js");
+const {filterPipeline, FilterPipeline} = require("./filter-pipeline.js");
+const {givens} = require("./givens.js");
+const {undefIfEmpty} = require("./is-empty.js");
+const {lastSeenRecipe} = require("./last-seen-recipe.js");
+const {Ledger} = require("./ledger.js");
+const {loadInventory} = require("./load-inventory.js");
+const {optional} = require("./optional.js");
+const {maybeIntFrom} = require("./spreadsheet-helpers.js");
+const {TryEverything} = require("./try-everything.js");
+const {CAULDRON_SIZE_MAX} = require("./type/cauldron.js");
+const {Chapter} = require("./type/chapter.js");
+const {COLORS} = require("./type/color.js");
+const {Ingredient} = require("./type/ingredient.js");
+const {Inventory} = require("./type/inventory.js");
+const {LocationName} = require("./type/location.js");
+const {Potion, PotionName} = require("./type/potion.js");
+const {Recipe} = require("./type/recipe.js");
 
 /**
  * @typedef BruteRecipesConfig
@@ -41,13 +41,13 @@ import {Recipe} from "./type/recipe.js";
  */
 
 /** @type {BruteRecipesConfig} */
-export let BruteRecipesConfig;
+let BruteRecipesConfig;
 
 /**
  * @param {BruteRecipesConfig} config
  * @returns {Promise<boolean>}
  */
-export const bruteRecipes = (config) => {
+const bruteRecipes = (config) => {
 	/** @type {function(boolean):void} */
 	let stopComplete;
 	/** @type {function(*):void} */
@@ -238,3 +238,6 @@ export const bruteRecipes = (config) => {
 	keepGoing();
 	return donePromise;
 };
+
+// noinspection JSUnusedAssignment
+module.exports = {bruteRecipes, BruteRecipesConfig};

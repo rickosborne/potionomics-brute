@@ -6,9 +6,12 @@
 /**
  * @type {Color}
  */
-export let Color;
+let Color;
 
 /**
  * @type {Color[]}
  */
-export const COLORS = Object.freeze(["A", "B", "C", "D", "E"]);
+const COLORS = Object.freeze(["A", "B", "C", "D", "E"]);
+
+// noinspection JSUnusedAssignment
+module.exports = {Color, COLORS};

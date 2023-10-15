@@ -4,4 +4,7 @@
  */
 
 /** @type {Chapter} */
-export let Chapter;
+let Chapter;
+
+// noinspection JSUnusedAssignment
+module.exports = {Chapter};

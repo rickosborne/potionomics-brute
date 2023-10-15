@@ -1,6 +1,6 @@
-import {groupIngredientNames} from "./group-ingredients.js";
-import {Inventory} from "./type/inventory.js";
-import {Recipe} from "./type/recipe.js";
+const {groupIngredientNames} = require("./group-ingredients.js");
+const {Inventory} = require("./type/inventory.js");
+const {Recipe} = require("./type/recipe.js");
 
 /**
  * @typedef RecipeChecker
@@ -8,7 +8,7 @@ import {Recipe} from "./type/recipe.js";
  */
 
 /** @type {RecipeChecker} */
-export let RecipeChecker;
+let RecipeChecker;
 
 /**
  * @param {Inventory} inventory
@@ -16,18 +16,18 @@ export let RecipeChecker;
  * @param {function(Recipe,string,number):void} onNeed
  * @returns {RecipeChecker}
  */
-export const checkRecipeFromInventory = (inventory, ignoreStock = false, onNeed = undefined) => {
-    return (recipe) => {
-        const needs = groupIngredientNames(recipe.ingredientNames);
-        let entries = Object.entries(needs);
-        if (onNeed != null) {
-            entries.forEach((entry) => onNeed(recipe, entry[0], entry[1]));
-        }
-        return entries.every(([name, need]) => {
-            const stock = inventory[name] ?? 0;
-            return (ignoreStock && stock != null) || (stock >= need);
-        });
-    };
+const checkRecipeFromInventory = (inventory, ignoreStock = false, onNeed = undefined) => {
+	return (recipe) => {
+		const needs = groupIngredientNames(recipe.ingredientNames);
+		let entries = Object.entries(needs);
+		if (onNeed != null) {
+			entries.forEach((entry) => onNeed(recipe, entry[0], entry[1]));
+		}
+		return entries.every(([name, need]) => {
+			const stock = inventory[name] ?? 0;
+			return (ignoreStock && stock != null) || (stock >= need);
+		});
+	};
 };
 
 /**
@@ -36,6 +36,9 @@ export const checkRecipeFromInventory = (inventory, ignoreStock = false, onNeed 
  * @param {boolean|undefined} [ignoreStock]
  * @returns {boolean}
  */
-export const inventoryCanMake = (inventory, recipe, ignoreStock = false) => {
-    return checkRecipeFromInventory(inventory, ignoreStock)(recipe);
+const inventoryCanMake = (inventory, recipe, ignoreStock = false) => {
+	return checkRecipeFromInventory(inventory, ignoreStock)(recipe);
 };
+
+// noinspection JSUnusedAssignment
+module.exports = {checkRecipeFromInventory, inventoryCanMake, RecipeChecker};

@@ -6,12 +6,12 @@
 /**
  * @type {Sense}
  */
-export let Sense;
+let Sense;
 
 /**
  * @type {Sense[]}
  */
-export const SENSES = Object.freeze(["taste", "touch", "smell", "sight", "sound"]);
+const SENSES = Object.freeze(["taste", "touch", "smell", "sight", "sound"]);
 
 /**
  * @typedef Sensation
@@ -21,32 +21,32 @@ export const SENSES = Object.freeze(["taste", "touch", "smell", "sight", "sound"
 /**
  * @type {Sensation}
  */
-export let Sensation;
+let Sensation;
 
 /**
  * @type {Sensation}
  */
-export const GOOD = "+";
+const GOOD = "+";
 
 /**
  * @type {Sensation}
  */
-export const BAD = "-";
+const BAD = "-";
 
 /**
  * @type {Sensation}
  */
-export const NEUTRAL = "";
+const NEUTRAL = "";
 
 /**
  * @type {Sensation}
  */
-export const RANDOM = "~";
+const RANDOM = "~";
 
 /**
  * @type {Sensation[]}
  */
-export const SENSATIONS = Object.freeze([GOOD, BAD, NEUTRAL, RANDOM]);
+const SENSATIONS = Object.freeze([GOOD, BAD, NEUTRAL, RANDOM]);
 
 /**
  * @typedef HasSensations
@@ -59,5 +59,7 @@ export const SENSATIONS = Object.freeze([GOOD, BAD, NEUTRAL, RANDOM]);
  */
 
 /** @type {HasSensations} */
-export let HasSensations;
+let HasSensations;
 
+// noinspection JSUnusedAssignment
+module.exports = {BAD, GOOD, HasSensations, NEUTRAL, RANDOM, Sensation, SENSATIONS, Sense, SENSES};

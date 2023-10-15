@@ -1,6 +1,6 @@
-import {isEmpty, undefIfEmpty} from "./is-empty.js";
-import {optional} from "./optional.js";
-import {Recipe} from "./type/recipe.js";
+const {isEmpty, undefIfEmpty} = require("./is-empty.js");
+const {optional} = require("./optional.js");
+const {Recipe} = require("./type/recipe.js");
 
 /**
  * @typedef RecipeRow
@@ -42,53 +42,56 @@ import {Recipe} from "./type/recipe.js";
 /**
  * @type {RecipeRow}
  */
-export let RecipeRow;
+let RecipeRow;
 
 /**
  * @param {string|undefined|null}text
  * @returns {number|undefined}
  */
 const intFromText = (text) => optional(undefIfEmpty(text))
-    .map((t) => parseInt(t, 10))
-    .orElse(undefined);
+	.map((t) => parseInt(t, 10))
+	.orElse(undefined);
 
 /**
  * @param {RecipeRow} row
  * @returns {Recipe}
  */
-export const recipeFromRow = (row) => ({
-    A: parseInt(row.A, 10),
-    B: parseInt(row.B, 10),
-    C: parseInt(row.C, 10),
-    D: parseInt(row.D, 10),
-    E: parseInt(row.E, 10),
-    earliestChapter: parseInt(row.earliestChapter, 10),
-    ingredientCount: intFromText(row.ingredientCount),
-    ingredientNames: [
-        row.ingredient01,
-        row.ingredient02,
-        row.ingredient03,
-        row.ingredient04,
-        row.ingredient05,
-        row.ingredient06,
-        row.ingredient07,
-        row.ingredient08,
-        row.ingredient09,
-        row.ingredient10,
-        row.ingredient11,
-        row.ingredient12,
-        row.ingredient13,
-        row.ingredient14,
-    ].filter((i) => !isEmpty(i)),
-    magimins: intFromText(row.magimins),
-    potionName: undefIfEmpty(row.potionName),
-    price: intFromText(row.price),
-    sight: row.sight,
-    smell: row.smell,
-    sound: row.sound,
-    stability: optional(intFromText(row.stability)).map((n) => n / 1_000).orElse(undefined),
-    stars: intFromText(row.stars),
-    taste: row.taste,
-    tier: intFromText(row.tier),
-    touch: row.touch,
+const recipeFromRow = (row) => ({
+	A: parseInt(row.A, 10),
+	B: parseInt(row.B, 10),
+	C: parseInt(row.C, 10),
+	D: parseInt(row.D, 10),
+	E: parseInt(row.E, 10),
+	earliestChapter: parseInt(row.earliestChapter, 10),
+	ingredientCount: intFromText(row.ingredientCount),
+	ingredientNames: [
+		row.ingredient01,
+		row.ingredient02,
+		row.ingredient03,
+		row.ingredient04,
+		row.ingredient05,
+		row.ingredient06,
+		row.ingredient07,
+		row.ingredient08,
+		row.ingredient09,
+		row.ingredient10,
+		row.ingredient11,
+		row.ingredient12,
+		row.ingredient13,
+		row.ingredient14,
+	].filter((i) => !isEmpty(i)),
+	magimins: intFromText(row.magimins),
+	potionName: undefIfEmpty(row.potionName),
+	price: intFromText(row.price),
+	sight: row.sight,
+	smell: row.smell,
+	sound: row.sound,
+	stability: optional(intFromText(row.stability)).map((n) => n / 1_000).orElse(undefined),
+	stars: intFromText(row.stars),
+	taste: row.taste,
+	tier: intFromText(row.tier),
+	touch: row.touch,
 });
+
+// noinspection JSUnusedAssignment
+module.exports = {recipeFromRow, RecipeRow};

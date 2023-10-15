@@ -1,11 +1,11 @@
-import {Comparator, comparatorBuilder, ComparatorBuilder} from "./comparator.js";
-import {Recipe} from "./type/recipe.js";
+const {Comparator, comparatorBuilder, ComparatorBuilder} = require("./comparator.js");
+const {Recipe} = require("./type/recipe.js");
 
 /**
  *
  * @returns {Comparator.<Recipe>}
  */
-export const sortRecipesTopMagimin = () => {
+const sortRecipesTopMagimin = () => {
 	/** @type {ComparatorBuilder.<Recipe>} */
 	const recipeSortBuilder = comparatorBuilder();
 	/** @type {Comparator.<Recipe>} */
@@ -15,3 +15,5 @@ export const sortRecipesTopMagimin = () => {
 		.numbers((/**Recipe*/recipe) => recipe.ingredientCount)
 		.build();
 };
+
+module.exports = {sortRecipesTopMagimin};

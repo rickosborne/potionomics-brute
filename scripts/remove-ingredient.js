@@ -1,10 +1,10 @@
-import ReadLines from "n-readlines";
-import {execSync} from "node:child_process";
-import console from "node:console";
-import {closeSync, openSync, renameSync, writeSync} from "node:fs";
-import {parseArgs} from "node:util";
-import {existsSync} from "../src/exists-sync.js";
-import {givens} from "../src/givens.js";
+const ReadLines = require("n-readlines");
+const {execSync} = require("node:child_process");
+const console = require("node:console");
+const {closeSync, openSync, renameSync, writeSync} = require("node:fs");
+const {parseArgs} = require("node:util");
+const {existsSync} = require("../src/exists-sync.js");
+const {givens} = require("../src/givens.js");
 
 const {
 	values: {

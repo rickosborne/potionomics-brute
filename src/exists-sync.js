@@ -1,5 +1,5 @@
-import {Stats, statSync} from "node:fs";
-import {isFunction} from "./is-function.js";
+const {Stats, statSync} = require("node:fs");
+const {isFunction} = require("./is-function.js");
 
 /**
  * @function
@@ -7,14 +7,16 @@ import {isFunction} from "./is-function.js";
  * @param {function(Stats):boolean} [predicate]
  * @returns {boolean}
  */
-export const existsSync = (path, predicate) => {
-    try {
-        const stat = statSync(path);
-        if (isFunction(predicate)) {
-            return predicate(stat);
-        }
-        return true;
-    } catch (e) {
-        return false;
-    }
+const existsSync = (path, predicate) => {
+	try {
+		const stat = statSync(path);
+		if (isFunction(predicate)) {
+			return predicate(stat);
+		}
+		return true;
+	} catch (e) {
+		return false;
+	}
 };
+
+module.exports = {existsSync};

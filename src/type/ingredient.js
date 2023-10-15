@@ -1,8 +1,8 @@
-import {Chapter} from "./chapter.js";
-import {LocationName} from "./location.js";
-import {Magical} from "./magical.js";
-import {RarityName} from "./rarity.js";
-import {Sensation} from "./sense.js";
+const {Chapter} = require("./chapter.js");
+const {LocationName} = require("./location.js");
+const {Magical} = require("./magical.js");
+const {RarityName} = require("./rarity.js");
+const {Sensation} = require("./sense.js");
 
 /**
  * @typedef IngredientName
@@ -12,7 +12,7 @@ import {Sensation} from "./sense.js";
 /**
  * @type {IngredientName}
  */
-export let IngredientName;
+let IngredientName;
 
 /**
  * @typedef IngredientType
@@ -22,7 +22,7 @@ export let IngredientName;
 /**
  * @type {IngredientType}
  */
-export let IngredientType;
+let IngredientType;
 
 /**
  * @typedef Ingredient
@@ -50,7 +50,7 @@ export let IngredientType;
 /**
  * @type {Ingredient}
  */
-export let Ingredient;
+let Ingredient;
 
 /**
  * @typedef IngredientsRow
@@ -76,4 +76,7 @@ export let Ingredient;
 /**
  * @type {IngredientsRow}
  */
-export let IngredientsRow;
+let IngredientsRow;
+
+// noinspection JSUnusedAssignment
+module.exports = {Ingredient, IngredientName, IngredientsRow, IngredientType};

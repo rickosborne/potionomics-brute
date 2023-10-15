@@ -3,7 +3,7 @@
  * @param {number} last
  * @returns {number[]}
  */
-export const range = (first, last) => {
+const range = (first, last) => {
 	if (first === last) {
 		return [first];
 	}
@@ -18,3 +18,5 @@ export const range = (first, last) => {
 		.split("")
 		.map((_c, index) => result(index));
 };
+
+module.exports = {range};
