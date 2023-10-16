@@ -16,12 +16,14 @@
 	"private": true,
 	"scripts": {
 		"brute": "node scripts/brute.js",
+		"exhaustive": "node scripts scripts/exhaustive.js",
 		"lint": "eslint .",
 		"lint:fix": "eslint --fix .",
 		"test": "mocha",
 		"test:coverage": "nyc mocha",
 		"recipe-options": "node scripts/recipe-options.js",
 		"remove-ingredient": "node scripts/remove-ingredient.js",
+		"sums-to": "node scripts/sums-to.js",
 		"update": "npx npm-check-updates -u",
 		"widen": "node scripts/widen.js"
 	},

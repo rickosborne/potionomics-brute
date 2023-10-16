@@ -55,6 +55,64 @@ The data files (in `data/`) are not covered by this license, as I did not create
 
 Check out `scripts` in `package.json` for the basics.
 
+## `exhaustive`
+
+```shell
+npm run exhaustive
+```
+
+See the next section on `brute` for more details, but this will iterate through each Chapter, Potion, and Cauldron size
+to make data files like:
+
+> `Mana-c2-x8-recipes-perfect.tsv`
+
+You can read this as:
+
+> Mana potions made with ingredients from Chapter (c) 2, with an Ingredient limit (x) of 8, and a perfect ratio.
+
+This `exhaustive` script runs multiple worker threads/processes based on the number of CPU cores. There aren't any
+config options.
+
+In general, letting this run overnight on a relatively modern laptop will generate data files through Chapter 2, and
+will just about start on Chapter 3 at `x8`, an 8-ingredient limit.
+
+Getting through Chapter 3, where the potions generally range from 40 to 60 possible ingredients in combinations up to
+10, means this would take the better part of a year to run.
+
+But you can cheat ... sort-of.
+
+## `sums-to`
+
+Since all the ratios for the `exhuastive` recipes are perfect, the math works out that adding a recipe with `M`
+ingredients and a recipe with `N` ingredients will have `M+N` ingredients _and_ will still have a perfect ratio.
+
+In practical terms, f you wanted to make a 10-ingredient potion, you could combine the recipes of a 7-ingredient potion
+and a 3-ingredient potion.
+Or a 6 plus a 4.
+Or two 5-ingredient potions.
+
+The files named `data/sums-to-*` list all the ways you could combine smaller recipes to make larger recipes, up to 14.
+For example, in the `sums-to-8.tsv` file you would see the line:
+
+```shell
+1	3	4
+```
+
+This line shows you could combine a 1-ingredient recipe, a 2-ingredient recipe, and a 4-ingredient recipe, to make an
+8-ingredient recipe.
+You'd still be missing out on the recipes which used anything more than 4 ingredients, but once again, the math is in
+your favor: those high-ingredient-count recipes are increasingly rare.
+
+In this example, generating `x4` recipes and combining them to make 8-ingredient potions will still uncover ~68% of the
+total possible recipes, not just the 50% (4/8) you might expect.
+Going to `x5` gets you to ~82%, `x6` to 91%, and `x7` to ~95%.
+
+For 10-ingredient potions (Chapter 3 and 4), even just `x7` gets you to 90%.
+And remember, that `x7` will take a while, as you'll be working with even more ingredients in Chapter 3.
+
+By the time you get to 14-ingredient potions, you may want to stop at `x5`, which will still get you more than half the
+possible recipes.
+
 ## `brute`
 
 Example:

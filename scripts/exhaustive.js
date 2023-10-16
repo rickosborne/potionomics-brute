@@ -22,10 +22,7 @@ const exhaustive = async () => {
 			const cauldrons = givens.cauldrons
 				.filter((/**Cauldron*/c) => c.unlockDay >= firstDay && c.unlockDay <= lastDay);
 			const maxMagimins = cauldrons.map((c) => c.maxMagimins).reduce((p, c) => Math.max(p, c));
-			let minItems = cauldrons.map((c) => c.maxIngredients).reduce((p, c) => Math.min(p, c));
-			if ((minItems % 2) === 1) {
-				minItems--;
-			}
+			const minItems = 1;
 			const maxItems = cauldrons.map((c) => c.maxIngredients).reduce((p, c) => Math.max(p, c));
 			return range(minItems, maxItems).flatMap((itemCount) => {
 				return potions.flatMap((potion) => {
@@ -41,8 +38,8 @@ const exhaustive = async () => {
 			});
 		})
 		.sort(comparatorBuilder()
-			.numbers((c) => c.chapters.length)
 			.numbers((c) => c.itemCount)
+			.numbers((c) => c.chapters.length)
 			.strings((c) => c.potionNames[0])
 			.numbers((c) => c.maxMagimins)
 			.build);

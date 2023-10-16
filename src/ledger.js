@@ -76,16 +76,14 @@ class Ledger {
 			tier: quality.tier,
 		};
 		/** @type {Recipe} */
-		if (combinedRecipe.ingredientCount > 1) {
-			if (stability === 1) {
-				// console.log(recipeDescription(combinedRecipe));
-				this.perfectCount++;
-				this.perfectOut.write(combinedRecipe);
-			} else if (stability >= this.stableCutoff) {
-				// console.log(recipeDescription(combinedRecipe));
-				this.stableOut.write(combinedRecipe);
-				this.stableCount++;
-			}
+		if (stability === 1) {
+			// console.log(recipeDescription(combinedRecipe));
+			this.perfectCount++;
+			this.perfectOut.write(combinedRecipe);
+		} else if (stability >= this.stableCutoff) {
+			// console.log(recipeDescription(combinedRecipe));
+			this.stableOut.write(combinedRecipe);
+			this.stableCount++;
 		}
 		this.totalCount++;
 		this.onRecipe(combinedRecipe);
