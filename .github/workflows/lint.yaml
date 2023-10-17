@@ -25,13 +25,15 @@ jobs:
           node-version: "18.x"
           cache: 'npm'
 
-      - name: Install ESLint
+      - name: npm install/ci
         run: |
-          npm install eslint@8.10.0
+          npm ci
           npm install @microsoft/eslint-formatter-sarif@2.1.7
 
       - name: Run ESLint
         run: npx eslint .
+          --config ./.eslintrc.json
+          --ext .js
           --format @microsoft/eslint-formatter-sarif
           --output-file eslint-results.sarif
         continue-on-error: true
