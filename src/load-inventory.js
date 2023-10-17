@@ -29,7 +29,7 @@ const loadInventory = (filePath, config = {}) => {
 	const items = loadSpreadsheet(filePath, inventoryItemFromInventoryRow);
 	return Object.fromEntries(items
 		.filter((item) => {
-			const ingredient = givens.ingredients.find((ingredient) => ingredient.name === item.ingredientName);
+			const ingredient = givens.ingredientsByName[item.ingredientName];
 			if (ingredient == null) {
 				throw new Error(`Unknown item in inventory: ${JSON.stringify(item.ingredientName)}`);
 			}

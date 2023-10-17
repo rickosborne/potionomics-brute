@@ -8,7 +8,7 @@ const {Recipe} = require("./type/recipe.js");
  * @returns {{rarity: number, rarityName: RarityName}}
  */
 const rarityForRecipe = (recipe) => {
-	const rarity = recipe.ingredientNames.map((name) => givens.ingredients.find((i) => i.name === name).rarity)
+	const rarity = recipe.ingredientNames.map((name) => givens.ingredientsByName[name].rarity)
 		.map((rarity) => RARITY_NUM_BY_NAME[rarity])
 		.reduce((p, c) => Math.max(p, c));
 	const rarityName = RARITY_NAME_BY_NUM[rarity];

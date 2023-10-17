@@ -17,6 +17,8 @@ const {QualityTier, TierName} = require("./type/tier.js");
  * @property {Cauldron[]} cauldrons
  * @property {{[key: LocationName]: Chapter}} chaptersByLocation
  * @property {Ingredient[]} ingredients
+ * @property {Record.<string, Ingredient>} ingredientsByKey
+ * @property {Record.<string, Ingredient>} ingredientsByName
  * @property {Location[]} locations
  * @property {number} MAGIMINS_MAX
  * @property {Potion[]} potions
@@ -35,6 +37,10 @@ const givens = (() => {
 	let chaptersByLocation;
 	/** @type {Ingredient[]|undefined} */
 	let ingredients;
+	/** @type {Record.<string, Ingredient>|undefined} */
+	let ingredientsByName;
+	/** @type {Record.<string, Ingredient>|undefined} */
+	let ingredientsByKey;
 	/** @type {Location[]|undefined} */
 	let locations;
 	/** @type {number|undefined} */
@@ -60,6 +66,16 @@ const givens = (() => {
 		get ingredients() {
 			ingredients ??= Object.freeze(loadSpreadsheet("data/ingredients.tsv", ingredientFromIngredientsRow));
 			return ingredients;
+		},
+		/** @returns {Record.<string, Ingredient>} */
+		get ingredientsByKey() {
+			ingredientsByKey ??= Object.freeze(Object.fromEntries(_givens.ingredients.map((i) => [i.key, i])));
+			return ingredientsByKey;
+		},
+		/** @returns {Record.<string, Ingredient>} */
+		get ingredientsByName() {
+			ingredientsByName ??= Object.freeze(Object.fromEntries(_givens.ingredients.map((i) => [i.name, i])));
+			return ingredientsByName;
 		},
 		/** @returns {Location[]} */
 		get locations() {

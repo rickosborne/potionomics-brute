@@ -20,6 +20,7 @@ const INGREDIENTS_TSV_COLUMNS = [
 	simpleColumn("rarity"),
 	simpleColumn("location"),
 	simpleColumn("earliestChapter"),
+	simpleColumn("key"),
 ];
 
 module.exports = {INGREDIENTS_TSV_COLUMNS};

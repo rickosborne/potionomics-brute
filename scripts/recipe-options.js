@@ -204,7 +204,7 @@ if (recipes.length === 0) {
 	shopping.forEach(([name, count]) => {
 		const countText = count.toLocaleString();
 		const left = " ".repeat(maxCountLen - countText.length);
-		const ingredient = givens.ingredients.find((ingredient) => ingredient.name === name);
+		const ingredient = givens.ingredientsByName[name];
 		const senseMods = senseModsSummary(ingredient, "neutral");
 		console.log(["  ", left, countText, " ", name, " (", ingredient.rarity, ", ", senseMods, ")"].join(""));
 	});

@@ -14,6 +14,7 @@ const ingredientFromIngredientsRow = (row) => {
 	return {
 		A, B, C, D, E,
 		earliestChapter: intFrom(row.earliestChapter),
+		key: row.key,
 		location: row.location,
 		magimins: A + B + C + D + E,
 		name: row.name,

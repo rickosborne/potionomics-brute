@@ -17,7 +17,7 @@ const {
 	strict: true,
 });
 
-if (ingredient == null || givens.ingredients.find((i) => i.name === ingredient) == null) {
+if (ingredient == null || givens.ingredientsByName[ingredient] == null) {
 	throw new Error(`Unknown --ingredient: ${JSON.stringify(ingredient)}`);
 }
 

@@ -11,6 +11,7 @@ const cauldronFromCauldronsRow = (row) => ({
 	bestTier: row.BestTier,
 	description: row.Description,
 	ingredientCost: undefIfEmpty(row.IngredientCost),
+	key: row.Key,
 	maxIngredients: intFrom(row.MaxIngredients),
 	maxMagimins: intFrom(row.MaxMagimins),
 	name: row.Name,

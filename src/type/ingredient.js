@@ -45,6 +45,7 @@ let IngredientType;
  * @property {Sensation} smell
  * @property {Sensation} sight
  * @property {Sensation} sound
+ * @property {string} key
  */
 
 /**
@@ -71,6 +72,7 @@ let Ingredient;
  * @property {string} rarity
  * @property {string} location
  * @property {string} earliestChapter
+ * @property {string} key
  */
 
 /**

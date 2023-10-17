@@ -32,6 +32,7 @@ let PotionCategory;
  * @property {number} E
  * @property {number} earliestChapter
  * @property {number|undefined} [goalChapter]
+ * @property {string} key
  */
 
 /**
@@ -63,6 +64,7 @@ let ExpandedPotion;
  * @property {string} E
  * @property {string} EarliestChapter
  * @property {string} [GoalChapter]
+ * @property {string} Key
  */
 
 /**

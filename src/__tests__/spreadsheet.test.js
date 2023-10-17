@@ -27,6 +27,7 @@ describe("spreadsheet", () => {
 		recipe.stability = randInt(0, 1000);
 		recipe.stars = randInt(0, 5);
 		recipe.tier = randInt(0, 5);
+		delete recipe.key;
 		const recipeSerializer = spreadsheetSerializer(RECIPE_DB_HEADERS);
 		const row = recipeSerializer(recipe);
 		const headerNames = RECIPE_DB_HEADERS.map((h) => h.name);
@@ -46,6 +47,7 @@ describe("spreadsheet", () => {
 		const ingredient = {
 			A, B, C, D, E,
 			earliestChapter: randInt(1, 5),
+			key: "tx",
 			location: randomItem(givens.locations).name,
 			magimins: A + B + C + D + E,
 			name: "Test",

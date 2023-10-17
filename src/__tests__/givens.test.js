@@ -5,8 +5,13 @@ const {Ingredient} = require("../type/ingredient.js");
 const {Location} = require("../type/location.js");
 const {Potion} = require("../type/potion.js");
 const {BAD, GOOD, NEUTRAL} = require("../type/sense.js");
+const {COLORS} = require("../type/color");
 
 describe("givens", () => {
+	const keys = new Map();
+	// eslint-disable-next-line mocha/no-setup-in-describe
+	COLORS.forEach((color) => keys.set(color, color));
+
 	describe("cauldrons", () => {
 		it("seems reasonable", () => {
 			const {cauldrons} = givens;
@@ -18,6 +23,7 @@ describe("givens", () => {
 				bestTier: "Grand",
 				description: "Graceful details belie this industrial-strength cauldron's resilience to wear and tear.",
 				ingredientCost: undefined,
+				key: "KQ0",
 				maxIngredients: 8,
 				maxMagimins: 420,
 				name: "Steel Cauldron",
@@ -32,9 +38,20 @@ describe("givens", () => {
 			givens.cauldrons.forEach((cauldron) => {
 				const {ingredientCost} = cauldron;
 				if (ingredientCost != null) {
-					const ingredient = givens.ingredients.find((i) => i.name === ingredientCost);
+					const ingredient = givens.ingredientsByName[ingredientCost];
 					expect(ingredient, ingredientCost).to.exist;
 				}
+			});
+		});
+
+		it("has 3-character keys starting with K and ending with a number", () => {
+			givens.cauldrons.forEach((cauldron) => {
+				const key = cauldron.key;
+				expect(key).is.a("string");
+				expect(key.length, `${JSON.stringify(key)}.length`).eq(3);
+				expect(key).matches(/^K[F-Z][0-2]$/);
+				expect(keys.get(key), `key get ${JSON.stringify(key)}`).eq(undefined);
+				keys.set(key, cauldron.name);
 			});
 		});
 	});
@@ -57,6 +74,7 @@ describe("givens", () => {
 				D: 0,
 				E: 66,
 				earliestChapter: 4,
+				key: "at",
 				location: "Arctic",
 				magimins: 66,
 				name: "Abominable Tarantula",
@@ -82,6 +100,16 @@ describe("givens", () => {
 				expect(ingredient.location).is.a("string");
 				const location = locations.find((l) => l.name === ingredient.location);
 				expect(location, ingredient.location).not.to.be.undefined;
+			});
+		});
+
+		it("keys are 2 unique lowercase letters", () => {
+			givens.ingredients.forEach((ingredient) => {
+				const {key, name} = ingredient;
+				expect(key).is.a("string");
+				expect(key).matches(/^[a-z][a-z]$/);
+				expect(keys.get(key), name).eq(undefined);
+				keys.set(key, name);
 			});
 		});
 	});
@@ -118,10 +146,22 @@ describe("givens", () => {
 				E: 0,
 				earliestChapter: 1,
 				goalChapter: 1,
+				key: "F",
 				name: "Fire",
 			};
 			const fireTonic = potions.find((p) => p.name === "Fire");
 			expect(fireTonic).to.deep.equal(expectedFire);
+		});
+		it("each has unique 1-letter key not A-E", () => {
+			/** @type {Map.<string, string>} */
+			givens.potions.forEach((potion) => {
+				const key = potion.key;
+				expect(key).is.a("string");
+				expect(key.length, `${JSON.stringify(key)}.length`).eq(1);
+				expect(key).matches(/^[F-JL-Z]$/);
+				expect(keys.get(key), `get key ${JSON.stringify(key)}`).eq(undefined);
+				keys.set(key, potion.name);
+			});
 		});
 	});
 

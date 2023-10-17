@@ -14,6 +14,7 @@ const {NEUTRAL, Sensation} = require("./sense.js");
  * @property {number} E
  * @property {number} ingredientCount
  * @property {IngredientName[]} ingredientNames
+ * @property {string} key
  * @property {number} magimins
  * @property {number} price
  * @property {Sensation} taste
@@ -45,6 +46,7 @@ const EMPTY_RECIPE = Object.freeze({
 	earliestChapter: 1,
 	ingredientCount: 0,
 	ingredientNames: [],
+	key: "",
 	magimins: 0,
 	price: 0,
 	sight: NEUTRAL,
@@ -58,6 +60,7 @@ const EMPTY_RECIPE = Object.freeze({
  * @typedef WideRecipe
  * @type {object}
  * @property {string} Potion
+ * @property {string} Key
  * @property {number} Tier
  * @property {number} Stars
  * @property {number} MM

@@ -15,6 +15,7 @@ const potionFromPotionsRow = (row) => ({
 	E: intFrom(row.E),
 	earliestChapter: intFrom(row.EarliestChapter),
 	goalChapter: maybeIntFrom(row.GoalChapter),
+	key: row.Key,
 	name: row.Name,
 });
 

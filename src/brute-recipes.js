@@ -21,7 +21,7 @@ const {Inventory} = require("./type/inventory.js");
 const {LocationName} = require("./type/location.js");
 const {Potion, PotionName} = require("./type/potion.js");
 const {Recipe} = require("./type/recipe.js");
-const {calculateAttempts} = require("./calculate-attempts");
+const {calculateSpace} = require("./calculate-space");
 
 /**
  * @typedef BruteRecipesConfig
@@ -163,7 +163,7 @@ const bruteRecipes = (config) => {
 		console.log(`Last recipe: ${lastRecipe.ingredientNames.join(" + ")}`);
 		tryEverything.offsets = offsets;
 		itemCount = offsets.length;
-		const attempts = calculateAttempts({ingredientCount: ingredients.length, itemCount, logging: true});
+		const attempts = calculateSpace({ingredients, itemCount, logging: true}).combinations;
 		countdown = countdownTimer(attempts);
 	}
 	let shouldContinue = true;
@@ -188,7 +188,7 @@ const bruteRecipes = (config) => {
 				countdown.tick();
 				if (tryEverything.offsets.length > itemCount) {
 					itemCount = tryEverything.offsets.length;
-					const attempts = calculateAttempts({ingredientCount: ingredients.length, itemCount, logging: true});
+					const attempts = calculateSpace({ingredients, itemCount, logging: true}).combinations;
 					countdown = countdownTimer(attempts);
 				}
 			}

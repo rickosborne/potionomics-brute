@@ -21,6 +21,7 @@ let CauldronName;
  * @property {string} Description
  * @property {string} BestTier
  * @property {string} BestStars
+ * @property {string} Key
  */
 
 /** @type {CauldronsRow} */
@@ -38,6 +39,7 @@ let CauldronsRow;
  * @property {TierName} bestTier
  * @property {number} bestStars
  * @property {string} description
+ * @property {string} key
  */
 /** @type {Cauldron} */
 let Cauldron;

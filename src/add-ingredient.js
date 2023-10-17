@@ -2,6 +2,7 @@ const {combineSensations} = require("./combine-sensations.js");
 const {maybeAdd} = require("./maybe-add.js");
 const {Ingredient} = require("./type/ingredient.js");
 const {Recipe} = require("./type/recipe.js");
+const {recipeKey} = require("./recipe-key");
 
 /**
  * @function
@@ -15,6 +16,7 @@ const addIngredient = (recipe, ingredient) => {
 	const sight = combineSensations(recipe.sight, ingredient.sight);
 	const smell = combineSensations(recipe.smell, ingredient.smell);
 	const sound = combineSensations(recipe.sound, ingredient.sound);
+	const ingredientNames = recipe.ingredientNames.concat(ingredient.name);
 	return {
 		A: recipe.A + ingredient.A,
 		B: recipe.B + ingredient.B,
@@ -23,7 +25,8 @@ const addIngredient = (recipe, ingredient) => {
 		E: recipe.E + ingredient.E,
 		earliestChapter: Math.max(recipe.earliestChapter, ingredient.earliestChapter),
 		ingredientCount: recipe.ingredientCount + 1,
-		ingredientNames: recipe.ingredientNames.concat(ingredient.name),
+		ingredientNames,
+		key: recipeKey(ingredientNames),
 		magimins: recipe.magimins + ingredient.magimins,
 		price: maybeAdd(recipe.price, ingredient.price),
 		sight,
