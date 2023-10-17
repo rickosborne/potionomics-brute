@@ -16,7 +16,7 @@
 	"private": true,
 	"scripts": {
 		"brute": "node scripts/brute.js",
-		"exhaustive": "node scripts scripts/exhaustive.js",
+		"exhaustive": "node scripts/exhaustive.js",
 		"lint": "eslint .",
 		"lint:fix": "eslint --fix .",
 		"test": "mocha",

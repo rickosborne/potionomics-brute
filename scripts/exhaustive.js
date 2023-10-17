@@ -6,6 +6,7 @@ const {existsSync} = require("../src/exists-sync.js");
 const {givens} = require("../src/givens.js");
 const {range} = require("../src/range.js");
 const {Potion} = require("../src/type/potion.js");
+const {calculateAttempts} = require("../src/calculate-attempts");
 
 const exhaustive = async () => {
 	const workerScript = path.resolve("src", "worker", "exhaustive-worker.js");
@@ -27,7 +28,9 @@ const exhaustive = async () => {
 			return range(minItems, maxItems).flatMap((itemCount) => {
 				return potions.flatMap((potion) => {
 					const prefix = `${potion.name}-c${chapter}-x${itemCount}-`;
+					const attempts = calculateAttempts({chapter, itemCount, potions: [potion]});
 					return {
+						attempts,
 						chapters: range(1, chapter),
 						itemCount,
 						maxMagimins,
@@ -38,13 +41,18 @@ const exhaustive = async () => {
 			});
 		})
 		.sort(comparatorBuilder()
+			.numbers((c) => c.attempts)
 			.numbers((c) => c.itemCount)
 			.numbers((c) => c.chapters.length)
 			.strings((c) => c.potionNames[0])
 			.numbers((c) => c.maxMagimins)
-			.build);
+			.build());
 	console.log(`Tasks: ${taskDatas.length}`);
 	const pool = workerpool.pool(workerScript);
+	setInterval(() => {
+		const stats = pool.stats();
+		console.log(`Pool: ${stats.activeTasks} active, ${stats.pendingTasks} queued`);
+	}, 30_000);
 	return Promise.all(taskDatas.map((taskData) => {
 		return pool.exec('exhaustiveWorker', [taskData]);
 	}));

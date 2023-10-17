@@ -2,7 +2,6 @@ const console = require("node:console");
 const process = require("node:process");
 const {maybeBoolFrom} = require("./bool-from.js");
 const {chapterFromDay} = require("./chapter-from-day.js");
-const {multiChooseCount} = require("./combinations.js");
 const {countdownTimer} = require("./countdown-timer.js");
 const {duration, DURATION_PARTS} = require("./duration.js");
 const {filterPipeline, FilterPipeline} = require("./filter-pipeline.js");
@@ -22,6 +21,7 @@ const {Inventory} = require("./type/inventory.js");
 const {LocationName} = require("./type/location.js");
 const {Potion, PotionName} = require("./type/potion.js");
 const {Recipe} = require("./type/recipe.js");
+const {calculateAttempts} = require("./calculate-attempts");
 
 /**
  * @typedef BruteRecipesConfig
@@ -163,7 +163,8 @@ const bruteRecipes = (config) => {
 		console.log(`Last recipe: ${lastRecipe.ingredientNames.join(" + ")}`);
 		tryEverything.offsets = offsets;
 		itemCount = offsets.length;
-		countdown = countdownTimer(multiChooseCount(ingredients.length, itemCount));
+		const attempts = calculateAttempts({ingredientCount: ingredients.length, itemCount, logging: true});
+		countdown = countdownTimer(attempts);
 	}
 	let shouldContinue = true;
 	let timeUntilNextLog = 1000;
@@ -187,7 +188,8 @@ const bruteRecipes = (config) => {
 				countdown.tick();
 				if (tryEverything.offsets.length > itemCount) {
 					itemCount = tryEverything.offsets.length;
-					countdown = countdownTimer(multiChooseCount(ingredients.length, itemCount));
+					const attempts = calculateAttempts({ingredientCount: ingredients.length, itemCount, logging: true});
+					countdown = countdownTimer(attempts);
 				}
 			}
 			if (!okay) {

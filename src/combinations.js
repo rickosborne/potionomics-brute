@@ -6,7 +6,7 @@ const console = require("node:console");
  * @param {boolean} log
  * @returns {number}
  */
-const multiChooseCount = (range, count, log = true) => {
+const multiChooseCount = (range, count, log = false) => {
 	// (n + k - 1)! / (k! * (n - 1)!)
 	// n=10,k=3: (10 + 3 - 1)!/(3! * (10 - 1)!) => 12!/(3!*9!)
 	// => (12*11*10)/3!
