@@ -2,6 +2,8 @@ const {Recipe} = require("./type/recipe");
 const {Ingredient} = require("./type/ingredient");
 const {givens} = require("./givens");
 
+const COUNT_CHARS = " 1234567890!@#$".split("");
+
 /**
  * @param {Recipe|string[]|Ingredient[]} known
  * @returns {string}
@@ -27,18 +29,18 @@ const recipeKey = (known) => {
 		}
 		return i.key;
 	}).sort();
+	/** @type {{key: string, count: number}[]} */
 	const pairs = [];
 	let lastKey = undefined;
 	for (let key of keys) {
 		if (lastKey === key) {
-			pairs[pairs.length - 1]++;
+			pairs[pairs.length - 1].count++;
 		} else {
-			pairs.push(key);
-			pairs.push(1);
+			pairs.push({count: 1, key});
 			lastKey = key;
 		}
 	}
-	return pairs.join("");
+	return pairs.map((p) => `${p.key}${COUNT_CHARS[p.count]}`).join("");
 };
 
 module.exports = {recipeKey};

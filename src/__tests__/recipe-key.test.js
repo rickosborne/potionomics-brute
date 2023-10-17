@@ -2,6 +2,7 @@ const {expect} = require("chai");
 const {recipeKey} = require("../recipe-key");
 const {EMPTY_RECIPE, Recipe} = require("../type/recipe");
 const {givens} = require("../givens");
+const {range} = require("../range");
 
 describe("recipeKey", () => {
 	it("returns empty string for empty recipe", () => {
@@ -45,5 +46,14 @@ describe("recipeKey", () => {
 			givens.ingredientsByName["Eye of Newt"],
 			givens.ingredientsByName["Yeti Antler"],
 		])).eq("en1wv1ya2");
+	});
+
+	it("counts using single characters", () => {
+		expect(recipeKey(range(1, 9).map(() => "Ectoplasm"))).eq("ep9");
+		expect(recipeKey(range(1, 10).map(() => "Ectoplasm"))).eq("ep0");
+		expect(recipeKey(range(1, 11).map(() => "Ectoplasm"))).eq("ep!");
+		expect(recipeKey(range(1, 12).map(() => "Ectoplasm"))).eq("ep@");
+		expect(recipeKey(range(1, 13).map(() => "Ectoplasm"))).eq("ep#");
+		expect(recipeKey(range(1, 14).map(() => "Ectoplasm"))).eq("ep$");
 	});
 });
