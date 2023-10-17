@@ -2,7 +2,7 @@
 	"devDependencies": {
 		"@istanbuljs/esm-loader-hook": "0.2.0",
 		"chai": "4.3.10",
-		"eslint": "8.50.0",
+		"eslint": "8.51.0",
 		"eslint-plugin-jsdoc": "46.8.2",
 		"eslint-plugin-mocha": "10.2.0",
 		"eslint-plugin-sort-keys-fix": "1.1.2",
@@ -12,9 +12,14 @@
 		"nyc": "15.1.0",
 		"workerpool": "6.5.1"
 	},
+	"engines": {
+		"node": ">=18.18.0",
+		"npm": ">=9.8.1"
+	},
 	"name": "potionomics-brute",
 	"private": true,
 	"scripts": {
+		"audit": "npm audit",
 		"brute": "node scripts/brute.js",
 		"exhaustive": "node scripts/exhaustive.js",
 		"lint": "eslint .",
@@ -22,6 +27,7 @@
 		"test": "mocha",
 		"test:coverage": "nyc mocha",
 		"recipe-options": "node scripts/recipe-options.js",
+		"reinstall": "rm -Rf ./node_modules && rm -f ./package-lock.json && npm install",
 		"remove-ingredient": "node scripts/remove-ingredient.js",
 		"sums-to": "node scripts/sums-to.js",
 		"update": "npx npm-check-updates -u",
