@@ -16,7 +16,7 @@ const multiChooseCount = (range, count, log = false) => {
 		num *= range + i;
 		den *= 1 + i;
 	}
-	const total = num / den;
+	const total = Math.round(num / den);
 	if (log) {
 		console.log(`${range} multichoose ${count} => ${total.toLocaleString()}`);
 	}

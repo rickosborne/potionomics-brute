@@ -37,6 +37,9 @@ const duration = (ms) => {
 		const s = zeroPad(value, digits);
 		parts.unshift(s);
 	}
+	if (ms < 1000) {
+		parts.unshift("00.");
+	}
 	return parts.join("");
 };
 

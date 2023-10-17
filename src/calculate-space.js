@@ -23,7 +23,10 @@ let CalculateSpaceConfig;
  * @typedef BruteSpace
  * @type {object}
  * @property {number} combinations
+ * @property {number} ingredientCount
+ * @property {number} itemCount
  * @property {string} key
+ * @property {number} potionCount
  */
 
 /** @type {BruteSpace} */
@@ -46,6 +49,7 @@ const calculateSpace = (config = {}) => {
 	if (Array.isArray(config.potionNames)) {
 		potions = potions.filter((p) => config.potionNames.includes(p.name));
 	}
+	const potionCount = potions.length;
 	/** @type {Record.<Color, boolean>} */
 	const wantColors = Object.fromEntries(COLORS.map((c) => [c, false]));
 	potions.forEach((potion) => {
@@ -73,7 +77,10 @@ const calculateSpace = (config = {}) => {
 	}
 	return {
 		combinations,
+		ingredientCount,
+		itemCount,
 		key,
+		potionCount,
 	};
 };
 

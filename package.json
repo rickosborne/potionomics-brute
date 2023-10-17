@@ -30,6 +30,7 @@
 		"reinstall": "rm -Rf ./node_modules && rm -f ./package-lock.json && npm install",
 		"remove-ingredient": "node scripts/remove-ingredient.js",
 		"sums-to": "node scripts/sums-to.js",
+		"total-space": "node scripts/total-space.js",
 		"update": "npx npm-check-updates -u",
 		"widen": "node scripts/widen.js"
 	},
